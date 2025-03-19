@@ -2,11 +2,283 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nablus Soap</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            overflow: hidden;
+        }
+
+        /* الخلفية */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('image/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .slider-container {
+            width: 1300px;
+            height: 690px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider img {
+            position: absolute;
+            width: 1300px;
+            height: 690px;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            display: block;
+            margin: auto;
+            left: 0;
+        }
+
+        /* الصورة النشطة */
+        .slider img.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* تأثير المسح عند الانتقال */
+        .swipe-next {
+            animation: swipe-in-right 1s ease-in-out;
+        }
+
+        .swipe-prev {
+            animation: swipe-in-left 1s ease-in-out;
+        }
+
+        @keyframes swipe-in-right {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes swipe-in-left {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(150, 111, 51, 0.5);
+            font-size: 40px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: color 0.3s ease;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            color: white;
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .text-overlay {
+            position: absolute;
+            right: 20px;
+            text-align: right;
+            background: rgba(101, 67, 33, 0.6); /* خلفية باهتة */
+            padding: 15px 25px;
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        /* النص الأول */
+        .text-overlay.first {
+            bottom: 190px;
+            font-size: 22px;
+            font-weight: normal;
+            color: #EDE0C8;
+            font-family: "Georgia", serif;
+        }
+
+        /* النص الثاني */
+        .text-overlay.second {
+            bottom: 130px;
+            font-size: 20px;
+            font-weight: normal;
+            color: #EDE0C8;
+            font-family: "Georgia", serif;
+        }
+
+        /* حركة ظهور النص الأول */
+        .text-overlay.first.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        /* حركة ظهور النص الثاني */
+        .text-overlay.second.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* النص العلوي الجديد */
+        .top-text {
+            position: absolute;
+            top: 25px; /* المسافة من الأعلى */
+            left: 200px; /* المسافة من اليسار */
+            font-size: 25px;
+            color:#DEC5A0;
+            font-family: "Georgia", serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        /* ظهور النص العلوي */
+        .top-text.active {
+            opacity: 1;
+        }
+
+    </style>
 </head>
 <body>
-<ul>
-  hiiii
-</ul>
+
+<div class="background"></div>
+
+<div class="slider-container">
+    <button class="arrow arrow-left" onclick="prevSlide()">❮</button>
+    <div class="slider">
+        <!-- النص العلوي الجديد -->
+        <div class="top-text">Home</div>
+
+        <!-- الصورة الأولى مع النصوص الخاصة بها -->
+        <img src="image/main.png" alt="Nablus Soap" class="active">
+        <div class="text-overlay first">A RETURN TO PURITY</div>
+        <div class="text-overlay second">Natural & Shapely</div>
+
+        <img src="image/main1.png" alt="Nablus Soap">
+        <div class="text-overlay first">
+            Pure Virgin Olive Oil</div>
+        <div class="text-overlay second">Clear, refresh and moisturize your skin</div>
+
+        <img src="image/main2.png" alt="Nablus Soap">
+        <div class="text-overlay first">
+            FOR 2000 YEARS</div>
+        <div class="text-overlay second">Nablus Lives & Breathes Olive Oil Soap</div>
+    </div>
+    <button class="arrow arrow-right" onclick="nextSlide()">❯</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll(".slider img");
+    const overlays = document.querySelectorAll(".text-overlay");
+    const topText = document.querySelector(".top-text");
+
+    function resetTextOverlays() {
+        overlays.forEach(overlay => overlay.classList.remove("active"));
+    }
+
+    function updateSlider(nextIndex, direction) {
+        const currentImage = images[currentIndex];
+        const nextImage = images[nextIndex];
+
+        resetTextOverlays();
+
+        currentImage.classList.remove("active", "swipe-next", "swipe-prev");
+        nextImage.classList.add("active");
+
+        const nextOverlayFirst = nextImage.nextElementSibling;
+        const nextOverlaySecond = nextOverlayFirst ? nextOverlayFirst.nextElementSibling : null;
+
+        if (nextOverlayFirst && nextOverlayFirst.classList.contains("text-overlay")) {
+            nextOverlayFirst.classList.add("active");
+        }
+
+        if (nextOverlaySecond && nextOverlaySecond.classList.contains("text-overlay")) {
+            setTimeout(() => {
+                nextOverlaySecond.classList.add("active");
+            }, 1000);
+        }
+
+        if (direction === "right") {
+            nextImage.classList.add("swipe-next");
+        } else {
+            nextImage.classList.add("swipe-prev");
+        }
+
+        currentIndex = nextIndex;
+    }
+
+    function nextSlide() {
+        let nextIndex = (currentIndex + 1) % images.length;
+        updateSlider(nextIndex, "right");
+    }
+
+    function prevSlide() {
+        let prevIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider(prevIndex, "left");
+    }
+
+    window.onload = function() {
+        const firstImage = images[0];
+        const firstOverlayFirst = firstImage.nextElementSibling;
+        const firstOverlaySecond = firstOverlayFirst ? firstOverlayFirst.nextElementSibling : null;
+
+        if (firstOverlayFirst) {
+            firstOverlayFirst.classList.add("active");
+        }
+
+        if (firstOverlaySecond) {
+            setTimeout(() => {
+                firstOverlaySecond.classList.add("active");
+            }, 1000);
+        }
+
+        // إضافة حركة ظهور النص العلوي
+        topText.classList.add("active");
+    };
+</script>
+
 </body>
 </html>
