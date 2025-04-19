@@ -52,7 +52,6 @@ body {
     filter: brightness(1.05);
     z-index: 1;
 }
-
 /* تنسيق النص في المنتصف فوق الصور */
 .header-content {
     position: absolute;
@@ -62,21 +61,38 @@ body {
     z-index: 10;
     text-align: center;
     width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* خلفية شبه شفافة */
+    backdrop-filter: blur(5px); /* تأثير ضبابي */
+    border-radius: 10px;
+    max-width: 80%; /* لمنع اتساع النص أكثر من اللازم */
+    box-shadow: 0 4px 15px rgba(90, 57, 33, 0.2); /* ظل بني خفيف */
 }
 
 .header-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 800;
-    color: #5a3921; /* اللون البني */
+    color: #5a3921;
     text-shadow:
-            0 1px 0 #d2c4b6,
-            0 2px 0 #c5b4a1,
-            0 3px 0 #b8a58d,
-            0 4px 0 #ab9678,
-            0 5px 10px rgba(0,0,0,0.3); /* ظل متدرج */
+            0 2px 4px rgba(0, 0, 0, 0.3),
+            0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-    animation: titleEntrance 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    animation: fadeInDown 0.8s ease-out both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-title::after {
@@ -105,16 +121,6 @@ body {
     }
 }
 
-@keyframes lineExpand {
-    0% {
-        width: 0;
-        opacity: 0;
-    }
-    100% {
-        width: 100px;
-        opacity: 1;
-    }
-}
 
 /*!* تأثيرات الحركة *!*/
 /*@keyframes titleEntrance {*/
