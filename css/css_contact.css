@@ -688,18 +688,20 @@ body {
 }
 
 
+
 .footer {
-    position: fixed;
+    background: linear-gradient(to right, #2a1a0f, #3a2516);
+    color: #f0e6d2;
+    padding: 25px 0 0;
+    font-family: 'Raleway', sans-serif;
+    position:relative;
+    width: 100%;
+    z-index: 100;
+    border-top: 1px solid #b4976d;
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    background: linear-gradient(to right, #3a2516, #5a3921);
-    color: #f8f5f0;
-    z-index: 100;
-    margin-bottom: 0; /* للصفحات القصيرة */
-    padding: 50px 0 0;
-    font-family: 'Raleway', sans-serif;
     overflow: hidden;
 }
 
@@ -954,19 +956,6 @@ body {
 
 
 
-
-
-.footer {
-    background: linear-gradient(to right, #2a1a0f, #3a2516);
-    color: #f0e6d2;
-    padding: 25px 0 0;
-    font-family: 'Raleway', sans-serif;
-    position:relative;
-    width: 100%;
-    z-index: 100;
-    border-top: 1px solid #b4976d;
-    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
-}
 
 .footer-container {
     max-width: 1200px;

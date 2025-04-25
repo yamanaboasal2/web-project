@@ -687,20 +687,6 @@ body {
 }
 
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: linear-gradient(to right, #3a2516, #5a3921);
-    color: #f8f5f0;
-    z-index: 100;
-    margin-bottom: 0; /* للصفحات القصيرة */
-    padding: 50px 0 0;
-    font-family: 'Raleway', sans-serif;
-    overflow: hidden;
-}
 
 /* لمنع تداخل المحتوى مع الفوتر */
 @media (max-width: 768px) {
@@ -965,6 +951,10 @@ body {
     z-index: 100;
     border-top: 1px solid #b4976d;
     box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
 }
 
 .footer-container {
