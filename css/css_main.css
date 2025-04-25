@@ -413,7 +413,6 @@
     position: relative;
 }
 
-
 .navbar-brand::after {
     content: "";
     position: absolute;
