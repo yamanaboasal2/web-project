@@ -82,11 +82,13 @@
 .text-content h1 {
     margin-top: 0;
     font-size: 32px;
+    color: #5A3921;
 }
 .text-content p {
     margin-top: 10px;
     font-size: 16px;
     line-height: 1.5;
+    color:#7A563C		;
 }
 .acnebutton {
     border-radius: 10px;

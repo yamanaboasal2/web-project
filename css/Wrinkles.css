@@ -12,6 +12,8 @@
     font-size: 40px;
     font-family: 'Times New Roman';
     margin: 10px 0 0 0;
+    color: #5A3921;
+
 }
 
 .Wrinkles_section {
@@ -81,14 +83,14 @@
 .product-name {
     font-family: 'Times New Roman';
     font-size: 24px;
-    color: #333;
+    color: #5A3921;
     text-align: center;
     margin: 10px 0 0 0;
 }
 .product-price {
     font-family: 'Arial';
     font-size: 16px;
-    color: #999;
+    color: #B9AA9B	;
     text-align: center;
     margin: 0;
 }
@@ -215,14 +217,14 @@
 }
 
 .text-section h2 {
-    color: #333;
+    color: #5A3921;
     margin-bottom: 20px;
     font-size: 28px;
 }
 
 .text-section p {
     line-height: 1.6;
-    color: #555;
+    color:#7A563C;
     margin-bottom: 20px;
 }
 
@@ -240,7 +242,7 @@
     }
 }
 .back {
-    color:#999;
+    color:#B9AA9B	;
     font-size: 15px;
     text-decoration: none;
     margin: 0 5px;
@@ -248,10 +250,15 @@
 .back:hover {
     text-decoration: underline;
 }
-.cart {
+.button_group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cart, .wishlist {
     border-radius: 10px;
     color: #E8D9C5;
-    padding: 10px 20px;
     font-family: "Times New Roman";
     font-size: 18px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -262,10 +269,31 @@
     cursor: pointer;
     transition: 0.3s ease;
 }
+
+.cart {
+    padding: 10px 20px;
+}
+
+.wishlist {
+    padding: 10px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+}
+
+/* تحريك الخلفية */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* لما تمرر الماوس عليهم */
+.cart:hover, .wishlist:hover {
+    opacity: 0.8;
 }
 
 
