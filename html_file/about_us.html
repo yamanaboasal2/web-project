@@ -1,74 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Us</title>
-    <link rel="stylesheet" href="../css/about_us.css ">
+  <meta charset="UTF-8">
+  <title>About us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/about_us.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 </head>
-
 <body>
-<img src="../image/p2.png" width="1512" height="400" class="img">
-<p class="aboutus">About Us</p>
-<div><img src="../image/i1.png" width="150" height="200" class="img1"></div>
-<div><img src="../image/i3.png" width="200" height="150" class="img2"></div>
-<div><img src="../image/i4.png" width="150" height="200" class="img3"></div>
-<div><img src="../image/i2.png" width="200" height="150" class="img4"></div>
 
-<div  class="first">
-    <h3>Welcome to The Nablus Soap Company</h3>
-    <p>The Nablus Soap Company is the most important pioneer in the soap industry of Palestine.<br>
-        Our main goal is to provide our customers with outstanding handmade natural soap,<br> made from the most natural organic ingredients. In NABLUS SOAP,we believe that everyone is<br>
-        beautiful by nature and none should be disquiet about their skin's hitches because we know that Nature will handle this.</p>
-    <br>
-    <p><strong> Nablus Soap consists of 100% natural ingredients</strong></p>
-    <ul>
-        <li>Olive oil first pressed</li>
-        <li>Natural ingredients</li>
-        <li>Dead Sea minerals</li>
-        <li>Herbs with healing and nourishing effects</li>
-        <li>Essential oils</li>
-        <li>Natural Oils</li>
-    </ul>
+<section class="background">
+  <div class = "main_nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" >Nablus Soap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html" data-translate="navbar.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-translate="navbar.contact">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.skincare">
+                Skin Care
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.acne">Acne</a></li>
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.dry">Dry Skin</a></li>
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.products">
+                Shop
+              </a>
+              <div class="dropdown-menu mega-dropdown-menu">
+                <div class="container-fluid">
+                  <div class="row">
+                    <!-- العمود الأول: Face Care -->
+                    <div class="col-md-4 dropdown-column">
+                      <h6>Face Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Cleansers</a></li>
+                        <li><a class="dropdown-item" href="#">Serums</a></li>
+                        <li><a class="dropdown-item" href="#">Moisturizers</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                      </ul>
+                    </div>
 
-    <div class="video-text-container">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/I310C6oBV4s"
-                    frameborder="0" allowfullscreen>
-            </iframe>
+                    <!-- العمود الثاني: Hair Care -->
+                    <div class="col-md-4 dropdown-column">
+                      <h6>Hair Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Shampoos</a></li>
+                        <li><a class="dropdown-item" href="#">Conditioners</a></li>
+                        <li><a class="dropdown-item" href="#">Hair masks</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                      </ul>
+                    </div>
+
+                    <!-- العمود الثالث: Body Care -->
+                    <div class="col-md-4 dropdown-column">
+                      <h6>Body Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Body soaps</a></li>
+                        <li><a class="dropdown-item" href="#">Scrubs</a></li>
+                        <li><a class="dropdown-item" href="#">Lotions</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown">
+                <span id="current-language" data-translate="language.lang">Language</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item language-option" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item language-option" href="#" data-lang="ar">العربية</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" data-translate="search.button">Search</button>
+          </form>
+
+          <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
+            <div class="profile-icons" style="display: flex; gap: 8px;">
+              <a href="#" class="icon-link cart-icon">
+                <img src="../image/shopping-cart-xxl.png" alt="سلة المشتريات" width="24" height="24">
+              </a>
+              <a href="#" class="icon-link favorite-icon">
+                <img src="../image/hearts-xxl.png" alt="المفضلات" width="24" height="24">
+              </a>
+              <a href="#" class="icon-link profile-icon">
+                <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
+              </a>
+
+            </div>
+          </form>
         </div>
-        <div class="video-text">
-            <h3>The Nablus Soap Company</h3>
-            <p>The most important soap maker in Nablus is the Nablus Soap Company. It was founded in 1971 by Mojtaba Adnan Tbeleh, a descendant from a 400-year tradition of soap makers. All the soaps of the Nablus Soap Company are 100% natural and made by hand.</p>
-            <br>
-            <p>The family has been well-known for hundreds of years in the sector. That reputation goes so far that the man who cuts the soap into blocks is called ‘Tubeili’, a clear reference to the family.</p>
-        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<div class="about_background_wrapper">
+  <img src="../image/about_back.png" class="about_background">
+  <div class="overlay"></div>
+  <div class="text_on_image">
+    About Us
+    <div class="back_links">
+      <a href="index.html" class="back">Home</a>
+      <span> / </span>
+      <a href="about_us.html" class="back">About Us</a>
     </div>
-    <h3>Our History</h3>
-    <p>The truly vintage making of soap from the Holy Land’s olive oil was the majestic tradition in Nablus city.<br> During the British Mandate, the British Government analysed the soap in the London Institution in 1934,<br> and found that all the ingredients were totally Natural and Chemical-free.</p>
-    <br>
-    <p>Today there are still a few soap makers active in Nablus, with the most prominent of them being the Nablus Soap Company,<br> which was founded in 1971 by Mojtaba Tbeleh , a descendant from a 400-year tradition of soap makers.<br> The family has been well-known for hundreds of years in this sector.</p>
-    <br>
-    <p>Their soap has built its own distinct reputation over the centuries.<br> In the 19th century, a peak was experienced when the product was distributed by travelling salesmen far beyond the borders of the Middle East.<br>Bedouins were responsible for the soap reaching the islands of the Mediterranean Sea, from whence it made its way to the Queen of England. From there it did not take long before European women learnt about the nourishing and healing benefits of the soap from Nablus.</p>
-    <div class="social-container">
-        <div class="social-text">
-            <h3>Social Responsibility</h3>
-            <p>This is a truly Natural Product that enhances the belief in the power of natural beauty, and we can recognize our impact on the social awareness about the Natural,simply safe and simply available advantages of Nature that are environment friendly and chemicals free<br> long a way from harmful, environmentally dangerous and health perilous products.</p>
-            <br>
-            <p>At Nablus Soap, we’re dedicated to meeting our sustainable development objectives by having a positive impact on the communities around our markets. To help achieve this goal, we’ve joined forces with Global Organic societies like ECOCERT, and FairTrade, which helps producers in the developing world to earn a reasonable wage.</p>
-        </div>
-        <img src="../image/about2.png" width="600" height="300" class="imgabout">
-    </div>
-    <h3> Vision And Mission</h3>
-    <p>We here in Nablus Soap have one distinctive Vision : “A World Of Natural Beauty-Be Beautiful,Be Natural”,<br> so we are on a mission to encourage people to grow their relationship with nature to make them believe <br>in the Natural Beauty they can get from their Land’s treasures.</p>
-    <br>
-    <br>
-    <p style="font-size: 16px;text-align: center;" >Nablus Soap & Cosmetics Company</p>
-    <p style="font-size: 16px;text-align: center;">©2024 All rights reserved.</p><br>
-    <img src="../image/down.png" style="margin-right: 0; margin-left: 0">
-
+  </div>
 </div>
-<img src="../image/date.png" width="400" height="400" class="date">
+
+<div class="next_div">
+  <div class="about_text">
+    <h2 class="fade_in">Welcome to The Nablus Soap Company</h2>
+    <p class="fade_in">
+      The Nablus Soap Company is the most important pioneer in the soap industry of<br>
+      Palestine. Our main goal is to provide our customers with outstanding handmade<br>
+      natural soap, made from the most natural organic ingredients.
+      In NABLUS SOAP,<br>
+      we believe that everyone is beautiful by nature and none should be disquiet<br>
+      about their skin's hitches because we know that Nature will handle this.
+    </p>
+    <button class="readmore" onclick="location.href='#text_about'">Read More</button>
+  </div>
+  <img src="../image/aboutus1.png" class="about_div">
+</div>
+
+<div class="our_team">
+  <p class="para_team">OUR TEAM</p>
+
+  <div class="team_images">
+    <div class="team_member">
+      <div class="img_wrapper">
+        <img src="../image/roaa.jpg" class="img_team">
+        <div class="overlay_img"></div>
+        <a href="https://www.facebook.com/roaa.mbzoor.1" class="social_icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+      <p class="name_team">Roaa</p>
+    </div>
+
+    <div class="team_member">
+      <div class="img_wrapper">
+        <img src="../image/yaman.jpg" class="img_team">
+        <div class="overlay_img"></div>
+        <a href="https://www.facebook.com/yaman.abuasal" class="social_icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+      <p class="name_team">Yaman</p>
+    </div>
+  </div>
+</div>
+
+<div class="aboutus_para">
+  <div class="images_about">
+    <img src="../image/about1.png" class="img_about">
+    <img src="../image/about2.png" class="img_about">
+    <img src="../image/about3.png" class="img_about">
+  </div>
+
+  <div class="text_about" id="text_about">
+    <h2 id="about_title" class="fade_in">About Our History</h2>
+    <p>
+      The truly vintage making of soap from the Holy Land’s olive oil was the majestic tradition in Nablus city. During the British Mandate, the British Government analysed the soap in the London Institution in 1934, and found that all the ingredients were totally Natural and Chemical-free.</p>
+    <p>
+      Their soap has built its own distinct reputation over the centuries. In the 19th century, a peak was experienced when the product was distributed by travelling salesmen far beyond the borders of the Middle East. Bedouins were responsible for the soap reaching the islands of the Mediterranean Sea, from whence it made its way to the Queen of England. From there it did not take long before European women learnt about the nourishing and healing benefits of the soap from Nablus.    </p>
+  </div>
+
+  <div class="images_about">
+    <img src="../image/about1.png" class="img_about">
+    <img src="../image/about2.png" class="img_about">
+    <img src="../image/about3.png" class="img_about">
+  </div>
+</div>
 
 
+<div class="features-bar">
+  <div class="feature-item">
+    <i class="fas fa-truck"></i> Fast delivery
+  </div>
+  <div class="feature-item">
+    <i class="fas fa-lock"></i> Secure checkout
+  </div>
+  <div class="feature-item">
+    <i class="fas fa-headset"></i> Customer support
+  </div>
+  <div class="feature-item">
+    <i class="fas fa-redo-alt"></i> Easy returns
+  </div>
+  <div class="feature-item">
+    <i class="fas fa-thumbs-up"></i> Satisfaction guarantee
+  </div>
+</div>
+
+
+<div class="vid_text">
+  <div class="text_content">
+    <h2 class="fade_in">100% Natural & Organic</h2>
+    <p class="fade_in">The ingredients are processed by a method that aims to preserve a healing and nourishing effect. It is proven that people with varying skin problems experience an improvement of the skin after using the soap for a while.</p>
+    <h2 class="fade_in">Nablus Soap consists of 100% natural ingredients</h2>
+    <ul class="fade_in">
+      <li>Olive oil first pressed</li>
+      <li>Natural ingredients</li>
+      <li>Dead Sea minerals</li>
+      <li>Herbs with healing and nourishing effects</li>
+      <li>Essential oils</li>
+      <li>Natural Oils</li>
+    </ul>
+  </div>
+  <div class="image_with_icon">
+    <img src="../image/vid_text.png" class="vid_image">
+    <i class="fas fa-play-circle icon" id="playIcon"></i>
+  </div>
+</div>
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <iframe id="videoIframe" src="../image/videos.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+<div class="leave_comments">
+  <p>LEAVE A COMMENT</p>
+  <input type="text" id="comment_name" placeholder="Your Name" required>
+  <input type="email" id="comment_email" placeholder="Your Email" required>
+  <textarea id="comment_text" placeholder="Your Comment" required></textarea>
+
+  <div class="privacy-policy">
+    <label>
+      <input type="checkbox" id="privacy_checkbox" required>
+      By using this form, you agree with the storage and handling of your data by this website. For further details on handling user data, see our
+      <a href="https://your-privacy-policy-link.com" target="_blank">Privacy Policy</a>.
+    </label>
+  </div>
+
+  <button class="button_comment" id="submit_button" disabled>LEAVE A COMMENT</button>
+</div>
+
+<div class="comments_section" id="comments_section">
+  <p>COMMENTS</p>
+</div>
+
+<div class="alert-message" id="alert_message">
+  <span id="alert_icon">ℹ️</span>
+  <span id="alert_text">This is an alert message</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- العمود الأيسر: Follow Us و Certifications -->
+      <div class="left-column">
+        <div class="footer-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/nablussoapco/" target="_blank" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/nablussoapco/" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nablus-soap-b0218929/" target="_blank" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://goo.gl/X8ZmNR" target="_blank" class="social-icon">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Our Certifications</h3>
+          <div class="certificates">
+            <div class="certificates">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/final-Halal-2012.jpg" alt="Halal Certified">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/psi.jpg" alt="PSI Certified">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/ecocert-logo.jpg" alt="Ecocert">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/logo-GMP-scaled.jpg" alt="GMP Certified">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="newsletter-section">
+        <div class="newsletter-container">
+          <img src="../image/Iqon (1).png"></img>
+          <h3 class="newsletter-title">Be the first to know</h3>
+          <p class="newsletter-subtitle">Subscribe to our newsletter for updates and offers</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter Your Email" required class="email-input">
+            <button type="submit" class="submit-arrow"></button>
+          </form>
+        </div>
+      </div>
+
+      <!-- العمود الأيمن: Quick Links -->
+      <div class="right-column">
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="https://nablussoap.ps/media-photo-gallery/">Our Products</a></li>
+            <li><a href="https://nablussoap.ps/careers/">Career Opportunities</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="copyright-section">
+      <div class="copyright-content">
+        <div class="company-info">
+          <span class="company-name">Nablus Soap & Cosmetics Company</span>
+          <span class="copyright-text">© 2024 All Rights Reserved</span>
+        </div>
+        <div class="developer-credit">
+          Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
+          <a href="https://salman.ps" target="_blank">SALMAN.ps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js_file/nav&footer.js"></script>
+<script>
+  const faders = document.querySelectorAll('.fade_in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  faders.forEach(fader => {
+    observer.observe(fader);
+  });
+</script>
+<script>
+  var modal = document.getElementById("videoModal");
+
+  // Get the icon (the button that opens the modal)
+  var playIcon = document.getElementById("playIcon");
+
+  // Get the <span> element that closes the modal
+  var closeModal = document.getElementById("closeModal");
+
+  // When the user clicks the icon, open the modal
+  playIcon.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks the <span> (x), close the modal
+  closeModal.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const submitBtn = document.getElementById('submit_button');
+    const privacyCheckbox = document.getElementById('privacy_checkbox');
+
+    // تفعيل/تعطيل الزر حسب حالة الـ checkbox
+    privacyCheckbox.addEventListener('change', function() {
+      submitBtn.disabled = !this.checked;
+    });
+
+    // عند النقر على الزر
+    submitBtn.addEventListener('click', function() {
+      const name = document.getElementById('comment_name').value.trim();
+      const email = document.getElementById('comment_email').value.trim();
+      const comment = document.getElementById('comment_text').value.trim();
+
+      // التحقق من الحقول المطلوبة
+      if (!name || !email || !comment) {
+        alert("الرجاء تعبئة جميع الحقول!");
+        return;
+      }
+
+      // التحقق من صحة الإيميل
+      if (!validateEmail(email)) {
+        alert("البريد الإلكتروني غير صالح!");
+        return;
+      }
+
+      // إنشاء التعليق وإضافته إلى الصفحة
+      addNewComment(name, comment);
+
+      // مسح الحقول بعد الإضافة
+      clearForm();
+    });
+
+    // دالة لإضافة تعليق جديد
+    function addNewComment(name, comment) {
+      const commentHTML = `
+            <div class="comment" style="margin: 15px 0; padding: 15px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+                <h4 style="margin: 0 0 5px 0; color: #333;">${name}</h4>
+                <p style="margin: 0 0 10px 0; color: #555;">${comment}</p>
+                <small style="color: #888;">${new Date().toLocaleString()}</small>
+            </div>
+        `;
+
+      // إدراج التعليق في الأعلى
+      document.getElementById('comments_section').insertAdjacentHTML('afterbegin', commentHTML);
+    }
+
+    // دالة لمسح الحقول
+    function clearForm() {
+      document.getElementById('comment_name').value = '';
+      document.getElementById('comment_email').value = '';
+      document.getElementById('comment_text').value = '';
+      privacyCheckbox.checked = false;
+      submitBtn.disabled = true;
+    }
+
+    // دالة للتحقق من صحة الإيميل
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const submitBtn = document.getElementById('submit_button');
+    const commentForm = document.querySelector('.leave_comments');
+
+    // تحميل التعليقات عند تحميل الصفحة
+    loadComments();
+
+    // تفعيل/تعطيل زر الإرسال حسب الصح على الخصوصية
+    document.getElementById('privacy_checkbox').addEventListener('change', function() {
+      submitBtn.disabled = !this.checked;
+    });
+
+    // عند إرسال الفورم
+    commentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      addNewComment();
+    });
+
+    function addNewComment() {
+      const name = document.getElementById('comment_name').value.trim();
+      const email = document.getElementById('comment_email').value.trim();
+      const comment = document.getElementById('comment_text').value.trim();
+
+      if (name && email && comment) {
+        if (!validateEmail(email)) {
+          alert('Email is invalid');
+          return;
+        }
+
+        const commentData = {
+          name: name,
+          email: email,
+          comment: comment,
+          date: new Date().toISOString()
+        };
+
+        saveComment(commentData);
+        displayComments();
+        clearForm();
+      }
+    }
+
+    function saveComment(comment) {
+      let comments = JSON.parse(localStorage.getItem('comments')) || [];
+      comments.unshift(comment); // نضيفه في أول اللستة
+      localStorage.setItem('comments', JSON.stringify(comments));
+    }
+
+    function displayComments() {
+      const commentsSection = document.getElementById('comments_section');
+      const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+      // نمسح كل التعليقات القديمة بس نخلي العنوان
+      commentsSection.querySelectorAll('.comment').forEach(el => el.remove());
+
+      comments.forEach(comment => {
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'comment';
+        commentDiv.innerHTML = `
+        <div class="comment_header">
+          <span class="comment_author">${escapeHtml(comment.name)}</span>
+          <span class="comment_date">${formatDate(comment.date)}</span>
+        </div>
+        <div class="comment_content">${escapeHtml(comment.comment)}</div>
+      `;
+        commentsSection.appendChild(commentDiv);
+      });
+    }
+
+    function loadComments() {
+      displayComments();
+    }
+
+    function clearForm() {
+      document.getElementById('comment_name').value = '';
+      document.getElementById('comment_email').value = '';
+      document.getElementById('comment_text').value = '';
+      document.getElementById('privacy_checkbox').checked = false;
+      submitBtn.disabled = true;
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function formatDate(isoString) {
+      const date = new Date(isoString);
+      return date.toLocaleString();
+    }
+  });
+</script>
 </body>
 </html>
