@@ -30,7 +30,7 @@
               <a class="nav-link" href="#" data-translate="navbar.contact">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="skincare.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.skincare">
+              <a class="nav-link dropdown-toggle" href="skincare.html"  data-bs-toggle="dropdown" aria-expanded="false">
                 Skin Care
               </a>
               <ul class="dropdown-menu">
@@ -103,10 +103,22 @@
               <a href="#" class="icon-link cart-icon">
                 <img src="../image/shopping-cart-xxl.png" alt="سلة المشتريات" width="24" height="24">
               </a>
-              <a href="#" class="icon-link favorite-icon">
-                <img src="../image/hearts-xxl.png" alt="المفضلات" width="24" height="24">
+              <a href="Wishlist.html" class="icon-link favorite-icon">
+                <img src="../image/hearts-xxl.png" id="wishlist-icon"  alt="المفضلات" width="24" height="24">
+                <span id="wishlist-count" style="
+                                  position: absolute;
+                                     top: -5px;
+                                    right: -5px;
+                                      background:#a58070;
+                                       color:#e8d9c5;
+                                        font-size: 10px;
+                                        padding: 2px 6px;
+                                          border-radius: 50%;
+                                      display: none;
+                                       font-weight: bold;
+                                       ">0</span>
               </a>
-              <a href="#" class="icon-link profile-icon">
+              <a href="login.html" class="icon-link profile-icon">
                 <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
               </a>
 
@@ -208,7 +220,9 @@
     <p>Honey has active features to resist oxidation. The anti-oxidation works on the protection of the skin from harm such as exposure to the sun,which can cause early aging of the skin and skin cancer.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist"  data-name="Honey Soap"
+              data-price="$55.99"
+              data-image="../image/Honey1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>  </div>
@@ -243,7 +257,9 @@
     <p>Dates are a beauty treasure – they eliminate the skin dryness, delay skin aging ,and are a source of nutrition for the skin.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist" data-name="Dates Soap"
+              data-price="$27.99"
+              data-image="../image/Dates1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -280,7 +296,9 @@
     <p>Studies have shown that pomegranate has strong anti-oxidative properties and can renew the cells in the two most important strata (layers) of skin: the epidermis and the dermis. It is also rich in potassium and vitamin C. It helps skin resists aging, and reduces the wrinkles of the skin.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist" data-name="Pomegranates Soap"
+              data-price="$35.99"
+              data-image="../image/Pomegranates1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -317,7 +335,9 @@
     <p>Grapes also contain substances that enhance the youthfulness of the skin .</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist" data-name="Grapes Soap"
+              data-price="$44.99"
+              data-image="../image/Grapes1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>  </div>
@@ -354,7 +374,9 @@
     <p>Lemon provides strength and nutrition to the skin.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist" data-name="Lemon Soap"
+              data-price="$14.99"
+              data-image="../image/Lemon1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -445,148 +467,7 @@
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js_file/nav&footer.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const wrappers = document.querySelectorAll('.img-wrapper');
+<script src="../js_file/Wrinkles.js"></script>
 
-    function animateWave(wrapper, delay) {
-      const img = wrapper.querySelector('.aging-img');
-      const wave = document.createElement('div');
-      wave.className = 'wave';
-      wrapper.querySelector('.image-container').appendChild(wave);
-
-      // إعداد الحالة الأولية
-      img.style.opacity = '0';
-      img.style.transform = 'translateY(20px)';
-      wave.style.transition = 'all 0.6s ease-out';
-
-      // التأثير المتتابع
-      setTimeout(() => {
-        // حركة الموجة الأولى
-        wave.style.transform = 'scaleY(3)';
-        wave.style.opacity = '0.8';
-
-        setTimeout(() => {
-          // حركة الموجة الثانية
-          wave.style.transform = 'scaleY(0)';
-          wave.style.opacity = '0';
-
-          // ظهور الصورة
-          img.style.opacity = '1';
-          img.style.transform = 'translateY(0)';
-
-          // حركة التمايل المؤقتة (ستتوقف بعد 3 دورات)
-          startTemporaryFloatAnimation(img);
-
-          // إزالة عنصر الموج بعد انتهاء الحركة
-          setTimeout(() => {
-            wave.remove();
-          }, 1000);
-
-        }, 600);
-      }, delay);
-    }
-
-    function startTemporaryFloatAnimation(img) {
-      let direction = 1;
-      let currentY = 0;
-      const floatSpeed = 0.05;
-      const maxY = 3;
-      let animationCount = 0;
-      const maxAnimations = 3; // عدد الدورات قبل التوقف
-
-      function float() {
-        currentY += floatSpeed * direction;
-
-        if (currentY >= maxY) {
-          direction = -1;
-          animationCount++;
-        }
-        if (currentY <= -maxY) {
-          direction = 1;
-          animationCount++;
-        }
-
-        img.style.transform = `translateY(${currentY}px)`;
-
-        if (animationCount < maxAnimations * 1) {
-          requestAnimationFrame(float);
-        } else {
-          img.style.transform = 'translateY(0)';
-        }
-      }
-
-      requestAnimationFrame(float);
-    }
-    wrappers.forEach((wrapper, index) => {
-      animateWave(wrapper, index * 200);
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function initSlider(sliderId) {
-      const container = document.getElementById(sliderId);
-      const mainImages = container.querySelectorAll('.main-image');
-      const thumbnails = container.querySelectorAll('.thumbnail');
-      const prevBtn = container.querySelector('.prev-arrow');
-      const nextBtn = container.querySelector('.next-arrow');
-      let currentIndex = 0;
-
-      function showImage(index) {
-        mainImages.forEach(img => img.classList.remove('active'));
-        thumbnails.forEach(thumb => thumb.classList.remove('active-thumbnail'));
-
-        mainImages[index].classList.add('active');
-        thumbnails[index].classList.add('active-thumbnail');
-        currentIndex = index;
-      }
-
-      prevBtn.addEventListener('click', function() {
-        const newIndex = currentIndex > 0 ? currentIndex - 1 : mainImages.length - 1;
-        showImage(newIndex);
-      });
-
-      nextBtn.addEventListener('click', function() {
-        const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-        showImage(newIndex);
-      });
-
-      thumbnails.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => showImage(index));
-      });
-
-      // Auto-slide
-      let autoSlide = setInterval(() => {
-        const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-        showImage(newIndex);
-      }, 3000);
-
-      container.querySelector('.slider-container').addEventListener('mouseenter', () => {
-        clearInterval(autoSlide);
-      });
-
-      container.querySelector('.slider-container').addEventListener('mouseleave', () => {
-        autoSlide = setInterval(() => {
-          const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-          showImage(newIndex);
-        }, 3000);
-      });
-    }
-
-    initSlider('slider1-container');
-
-    initSlider('slider2-container');
-
-    initSlider('slider3-container');
-
-    initSlider('slider4-container');
-
-    initSlider('slider5-container');
-  });
-
-</script>
 </body>
 </html>

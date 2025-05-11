@@ -8,7 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/about_us.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 </head>
 <body>
@@ -30,17 +33,17 @@
               <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-translate="navbar.contact">Contact Us</a>
+              <a class="nav-link" href="Contact.html" data-translate="navbar.contact">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.skincare">
+              <a class="nav-link dropdown-toggle" href="skincare.html" data-bs-toggle="dropdown" aria-expanded="false">
                 Skin Care
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.acne">Acne</a></li>
-                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.dry">Dry Skin</a></li>
-                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
-                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
+                <li><a class="dropdown-item" href="acne.html" data-translate="dropdown.skin.acne">Acne</a></li>
+                <li><a class="dropdown-item" href="Dry.html" data-translate="dropdown.skin.dry">Dry Skin</a></li>
+                <li><a class="dropdown-item" href="Wrinkles.html" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
+                <li><a class="dropdown-item" href="DarkSpots.html" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown mega-dropdown">
@@ -109,7 +112,7 @@
               <a href="#" class="icon-link favorite-icon">
                 <img src="../image/hearts-xxl.png" alt="المفضلات" width="24" height="24">
               </a>
-              <a href="#" class="icon-link profile-icon">
+              <a href="login.html" class="icon-link profile-icon">
                 <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
               </a>
 
@@ -260,21 +263,40 @@
       <a href="https://your-privacy-policy-link.com" target="_blank">Privacy Policy</a>.
     </label>
   </div>
-
   <button class="button_comment" id="submit_button" disabled>LEAVE A COMMENT</button>
 </div>
 
+<p class="p_comment">COMMENTS</p>
 <div class="comments_section" id="comments_section">
-  <p>COMMENTS</p>
+  <div class="comments_slider">
+    <!-- تعليق واحد -->
+    <div class="comment">
+      <div class="comment_header">
+        <div class="comment_author">Eleen Bzoor</div>
+        <div class="comment_date">April 27, 2025</div>
+      </div>
+      <div class="comment_content">
+        Great design and user experience. Keep up the good work!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment_header">
+        <div class="comment_author">Mohammad Bzoor</div>
+        <div class="comment_date">April 28, 2025</div>
+      </div>
+      <div class="comment_content">
+        Excellent! The user interface is so smooth and easy to navigate.
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <div class="alert-message" id="alert_message">
   <span id="alert_icon">ℹ️</span>
   <span id="alert_text">This is an alert message</span>
 </div>
-
-
-
 
 
 
@@ -367,212 +389,6 @@
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js_file/nav&footer.js"></script>
-<script>
-  const faders = document.querySelectorAll('.fade_in');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  });
-
-  faders.forEach(fader => {
-    observer.observe(fader);
-  });
-</script>
-<script>
-  var modal = document.getElementById("videoModal");
-
-  // Get the icon (the button that opens the modal)
-  var playIcon = document.getElementById("playIcon");
-
-  // Get the <span> element that closes the modal
-  var closeModal = document.getElementById("closeModal");
-
-  // When the user clicks the icon, open the modal
-  playIcon.onclick = function() {
-    modal.style.display = "block";
-  }
-
-  // When the user clicks the <span> (x), close the modal
-  closeModal.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const submitBtn = document.getElementById('submit_button');
-    const privacyCheckbox = document.getElementById('privacy_checkbox');
-
-    // تفعيل/تعطيل الزر حسب حالة الـ checkbox
-    privacyCheckbox.addEventListener('change', function() {
-      submitBtn.disabled = !this.checked;
-    });
-
-    // عند النقر على الزر
-    submitBtn.addEventListener('click', function() {
-      const name = document.getElementById('comment_name').value.trim();
-      const email = document.getElementById('comment_email').value.trim();
-      const comment = document.getElementById('comment_text').value.trim();
-
-      // التحقق من الحقول المطلوبة
-      if (!name || !email || !comment) {
-        alert("الرجاء تعبئة جميع الحقول!");
-        return;
-      }
-
-      // التحقق من صحة الإيميل
-      if (!validateEmail(email)) {
-        alert("البريد الإلكتروني غير صالح!");
-        return;
-      }
-
-      // إنشاء التعليق وإضافته إلى الصفحة
-      addNewComment(name, comment);
-
-      // مسح الحقول بعد الإضافة
-      clearForm();
-    });
-
-    // دالة لإضافة تعليق جديد
-    function addNewComment(name, comment) {
-      const commentHTML = `
-            <div class="comment" style="margin: 15px 0; padding: 15px; background: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
-                <h4 style="margin: 0 0 5px 0; color: #333;">${name}</h4>
-                <p style="margin: 0 0 10px 0; color: #555;">${comment}</p>
-                <small style="color: #888;">${new Date().toLocaleString()}</small>
-            </div>
-        `;
-
-      // إدراج التعليق في الأعلى
-      document.getElementById('comments_section').insertAdjacentHTML('afterbegin', commentHTML);
-    }
-
-    // دالة لمسح الحقول
-    function clearForm() {
-      document.getElementById('comment_name').value = '';
-      document.getElementById('comment_email').value = '';
-      document.getElementById('comment_text').value = '';
-      privacyCheckbox.checked = false;
-      submitBtn.disabled = true;
-    }
-
-    // دالة للتحقق من صحة الإيميل
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
-    }
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const submitBtn = document.getElementById('submit_button');
-    const commentForm = document.querySelector('.leave_comments');
-
-    // تحميل التعليقات عند تحميل الصفحة
-    loadComments();
-
-    // تفعيل/تعطيل زر الإرسال حسب الصح على الخصوصية
-    document.getElementById('privacy_checkbox').addEventListener('change', function() {
-      submitBtn.disabled = !this.checked;
-    });
-
-    // عند إرسال الفورم
-    commentForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      addNewComment();
-    });
-
-    function addNewComment() {
-      const name = document.getElementById('comment_name').value.trim();
-      const email = document.getElementById('comment_email').value.trim();
-      const comment = document.getElementById('comment_text').value.trim();
-
-      if (name && email && comment) {
-        if (!validateEmail(email)) {
-          alert('Email is invalid');
-          return;
-        }
-
-        const commentData = {
-          name: name,
-          email: email,
-          comment: comment,
-          date: new Date().toISOString()
-        };
-
-        saveComment(commentData);
-        displayComments();
-        clearForm();
-      }
-    }
-
-    function saveComment(comment) {
-      let comments = JSON.parse(localStorage.getItem('comments')) || [];
-      comments.unshift(comment); // نضيفه في أول اللستة
-      localStorage.setItem('comments', JSON.stringify(comments));
-    }
-
-    function displayComments() {
-      const commentsSection = document.getElementById('comments_section');
-      const comments = JSON.parse(localStorage.getItem('comments')) || [];
-
-      // نمسح كل التعليقات القديمة بس نخلي العنوان
-      commentsSection.querySelectorAll('.comment').forEach(el => el.remove());
-
-      comments.forEach(comment => {
-        const commentDiv = document.createElement('div');
-        commentDiv.className = 'comment';
-        commentDiv.innerHTML = `
-        <div class="comment_header">
-          <span class="comment_author">${escapeHtml(comment.name)}</span>
-          <span class="comment_date">${formatDate(comment.date)}</span>
-        </div>
-        <div class="comment_content">${escapeHtml(comment.comment)}</div>
-      `;
-        commentsSection.appendChild(commentDiv);
-      });
-    }
-
-    function loadComments() {
-      displayComments();
-    }
-
-    function clearForm() {
-      document.getElementById('comment_name').value = '';
-      document.getElementById('comment_email').value = '';
-      document.getElementById('comment_text').value = '';
-      document.getElementById('privacy_checkbox').checked = false;
-      submitBtn.disabled = true;
-    }
-
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
-    }
-
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-
-    function formatDate(isoString) {
-      const date = new Date(isoString);
-      return date.toLocaleString();
-    }
-  });
-</script>
+<script src="../js_file/about_us.js"></script>
 </body>
 </html>

@@ -1,248 +1,72 @@
-.product_aging {
-    text-align: center;
-    padding: 40px 20px 20px;
-    font-family: Arial, sans-serif;
-}
-
-.text-content {
-    margin-bottom: 20px;
-}
-
-.title {
-    font-size: 40px;
-    font-family: 'Times New Roman';
-    margin: 10px 0 0 0;
-    color: #5A3921;
-
-}
-
-.Wrinkles_section {
+.container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin-top: 80px;
+}
+.outer-frame {
+    animation: moveUpDown 3s ease-in-out infinite;
+    padding: 10px; /* مساحة حول الإطار المتحرك */
+    display: inline-block; /* لجعل الإطار يتكيف مع حجم المحتوى */
 }
 
-.img-wrapper {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 15px;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.image-container {
-    position: relative;
-    display: inline-block;
-}
-
-.aging-img {
-    height: 250px;
-    width: auto;
-    object-fit: cover;
-    display: block;
-    transform-origin: center bottom;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-}
-
-/* موجة CSS pura */
-.wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-    background: rgba(255, 255, 255, 0.4);
-    transform: scaleY(0);
-    transform-origin: bottom;
-    z-index: 2;
-}
-
-
-.hover-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #5A3921;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 25px;
-    font-size: 14px;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.product-name {
-    font-family: 'Times New Roman';
-    font-size: 24px;
-    color: #5A3921;
-    text-align: center;
-    margin: 10px 0 0 0;
-}
-.product-price {
-    font-family: 'Arial';
-    font-size: 16px;
-    color: #B9AA9B	;
-    text-align: center;
-    margin: 0;
-}
-
-.img-wrapper:hover .hover-btn {
+.image-wrapper {
+    width: 800px;
+    height: 500px;
+    padding: 5px;
+    border-radius: 50px 0 50px 0;
+    background: linear-gradient(45deg, #5d4037, #8d6e63, #5d4037);
+    background-size: 600% 600%;
+    animation: borderAnimation 8s linear infinite;
     opacity: 1;
+    transform: scale(1);
 }
 
-.img-wrapper:hover .aging-img {
-    filter: brightness(0.7);
-}
-
-
-.content-wrapper {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.gallery-section {
-    flex: 1;
-    min-width: 0;
-    margin-bottom: 90px;
-}
-
-.text-section {
-    flex: 1;
-    padding: 20px;
-}
-
-.main-slider {
-    margin-bottom: 15px;
-}
-
-.slider-container {
-    width: 100%;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.main-image {
+.image-inner {
     width: 100%;
     height: 100%;
+    border-radius: 50px 0 50px 0;
+    overflow: hidden;
+    background-color: #0c0c1c;
+}
+
+.image-inner img {
+    width: 100%;
+    height: 100%;
+    display: block;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.main-image.active {
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+h2 {
+    color: #5d4037;
+    font-size: 70px;
+    opacity: 0; /* بداية مخفية */
+    transform: translateY(30px); /* بداية من الأسفل */
+    transition: all 1.5s ease-out; /* انتقال الحركة */
+}
+
+.text-box h2.active {
     opacity: 1;
-}
-
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.7);
-    color: #333;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-.slider-container:hover .slider-arrow {
-    opacity: 1;
-}
-
-.slider-arrow:hover {
-    background: rgba(255,255,255,0.9);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev-arrow {
-    left: 15px;
-}
-
-.next-arrow {
-    right: 15px;
-}
-
-.thumbnail-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.thumbnail {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.thumbnail:hover {
-    transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.active-thumbnail {
-    border: 2px solid #4a6fa5;
-    box-shadow: 0 2px 8px rgba(74, 111, 165, 0.5);
-}
-
-.text-section h2 {
-    color: #5A3921;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.text-section p {
-    line-height: 1.6;
-    color:#7A563C;
-    margin-bottom: 20px;
-}
-
-
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .text-section {
-        padding: 20px 0;
-    }
-    .products-section{
-        flex-direction: column;
-    }
+    transform: translateY(0); /* الحركة للأعلى */
 }
 .back {
-    color:#B9AA9B	;
+    color:#8d6e63;
     font-size: 15px;
     text-decoration: none;
     margin: 0 5px;
@@ -250,62 +74,82 @@
 .back:hover {
     text-decoration: underline;
 }
-.button_group {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
 
-.cart, .wishlist {
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    color: #E8D9C5;
+    overflow: hidden;
+}
+
+/* تنسيق رأس الجدول */
+th {
+    background-color: #3a2516;
     font-family: "Times New Roman";
-    font-size: 18px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(-45deg, #5A3921, #A67B5B, #5A3921, #D4BFAA);
-    background-size: 300% 300%;
-    animation: gradientMove 5s ease infinite;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
+    color:  #e8d9c5;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.cart {
-    padding: 10px 20px;
+/* تنسيق الخلايا في الجدول */
+td {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #3a2516;
 }
 
-.wishlist {
-    padding: 10px;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    border-radius: 30px;
-    justify-content: center;
+/* تنسيق الصفوف عند التمرير عليها */
+tr:hover {
+    background-color: #e8d9c5;
 }
 
-/* تحريك الخلفية */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* لما تمرر الماوس عليهم */
-.cart:hover, .wishlist:hover {
-    opacity: 0.8;
-}
-
-.flying-img {
-    position: absolute;
-    width: 100px;
-    z-index: 1000;
+/* تنسيق الصورة في الجدول */
+td img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
     border-radius: 8px;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    pointer-events: none;
 }
 
+/* تنسيق زر الحذف */
+.remove {
+    font-size: 28px;
+    cursor: pointer;
+    color: #5d4037;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+}
 
+.remove:hover {
+    color: #8d6e63;
+}
+
+/* تنسيق الصفوف عند التمرير */
+tbody tr:nth-child(odd) {
+    background-color: transparent;
+}
+
+tbody tr:nth-child(even) {
+    background-color: transparent;
+}
+
+/* إضافة تأثير الظل على الصفوف */
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
 
 

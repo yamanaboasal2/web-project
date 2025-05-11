@@ -32,7 +32,7 @@
               <a class="nav-link" href="Contact.html" data-translate="navbar.contact">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.skincare">
+              <a class="nav-link dropdown-toggle" href="skincare.html"  data-bs-toggle="dropdown" aria-expanded="false">
                 Skin Care
               </a>
               <ul class="dropdown-menu">
@@ -105,10 +105,22 @@
               <a href="#" class="icon-link cart-icon">
                 <img src="../image/shopping-cart-xxl.png" alt="سلة المشتريات" width="24" height="24">
               </a>
-              <a href="#" class="icon-link favorite-icon">
-                <img src="../image/hearts-xxl.png" alt="المفضلات" width="24" height="24">
+              <a href="Wishlist.html" class="icon-link favorite-icon">
+                <img src="../image/hearts-xxl.png" id="wishlist-icon" alt="المفضلات" width="24" height="24">
+                <span id="wishlist-count" style="
+                                  position: absolute;
+                                     top: -5px;
+                                    right: -5px;
+                                      background:#a58070;
+                                       color:#e8d9c5;
+                                        font-size: 10px;
+                                        padding: 2px 6px;
+                                          border-radius: 50%;
+                                      display: none;
+                                       font-weight: bold;
+                                       ">0</span>
               </a>
-              <a href="#" class="icon-link profile-icon">
+              <a href="login.html" class="icon-link profile-icon">
                 <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
               </a>
 
@@ -201,7 +213,9 @@
     <p>Soap that contains milk is full of real value, since natural milk activates the skin, and restores its freshness. It works on moistening and whitening the skin, whilst removing dirt and dead cells.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist"  data-name="Goat Milk Soap"
+              data-price="$47.99"
+              data-image="../image/Goat1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -239,7 +253,10 @@
       This makes mint perfect for the treatment of acne, eczema, blackheads,dark spots,and fatty skin.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist"  data-name="Mint Soap"
+              data-price="$24.99"
+              data-image="../image/Mint1.png"
+      >
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -276,7 +293,9 @@
     <p>Thyme improves the color of the skin, and purifies the body as a whole. Thyme is known as ‘the wrinkle defeater’, hindering the appearance of wrinkles.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist"  data-name="Thyme Soap"
+              data-price="$27.99"
+              data-image="../image/Thyme1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -312,7 +331,9 @@
     <p>Skin care experts confirm that camel milk gently cleanses the skin while deeply moisturizing it. It shields the skin from environmental damage and helps reduce redness and irritation.</p>
     <div class="button_group">
       <button class="cart">Add to Cart</button>
-      <button class="wishlist">
+      <button class="wishlist"  data-name="Camel Milk Soap"
+              data-price="$48.99"
+              data-image="../image/Camel1.png">
         <i class="fa fa-heart"></i>
       </button>
     </div>
@@ -404,80 +425,6 @@
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js_file/nav&footer.js"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const wrappers = document.querySelectorAll('.img-wrapper');
-
-    wrappers.forEach((wrapper, index) => {
-      setTimeout(() => {
-        wrapper.classList.add('show');
-      }, index * 400);
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function initSlider(sliderId) {
-      const container = document.getElementById(sliderId);
-      const mainImages = container.querySelectorAll('.main-image');
-      const thumbnails = container.querySelectorAll('.thumbnail');
-      const prevBtn = container.querySelector('.prev-arrow');
-      const nextBtn = container.querySelector('.next-arrow');
-      let currentIndex = 0;
-
-      function showImage(index) {
-        mainImages.forEach(img => img.classList.remove('active'));
-        thumbnails.forEach(thumb => thumb.classList.remove('active-thumbnail'));
-
-        mainImages[index].classList.add('active');
-        thumbnails[index].classList.add('active-thumbnail');
-        currentIndex = index;
-      }
-
-      prevBtn.addEventListener('click', function() {
-        const newIndex = currentIndex > 0 ? currentIndex - 1 : mainImages.length - 1;
-        showImage(newIndex);
-      });
-
-      nextBtn.addEventListener('click', function() {
-        const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-        showImage(newIndex);
-      });
-
-      thumbnails.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => showImage(index));
-      });
-
-      // Auto-slide
-      let autoSlide = setInterval(() => {
-        const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-        showImage(newIndex);
-      }, 3000);
-
-      container.querySelector('.slider-container').addEventListener('mouseenter', () => {
-        clearInterval(autoSlide);
-      });
-
-      container.querySelector('.slider-container').addEventListener('mouseleave', () => {
-        autoSlide = setInterval(() => {
-          const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-          showImage(newIndex);
-        }, 3000);
-      });
-    }
-
-    initSlider('slider1-container');
-
-    initSlider('slider2-container');
-
-    initSlider('slider3-container');
-
-    initSlider('slider4-container');
-
-    initSlider('slider5-container');
-  });
-
-</script>
+<script src="../js_file/DarkSpots.js"></script>
 </body>
 </html>
