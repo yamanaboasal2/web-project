@@ -27,7 +27,7 @@
               <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-translate="navbar.contact">Contact Us</a>
+              <a class="nav-link" href="Contact.html" data-translate="navbar.contact">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="skincare.html"  data-bs-toggle="dropdown" aria-expanded="false">
@@ -100,13 +100,10 @@
 
           <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
             <div class="profile-icons" style="display: flex; gap: 8px;">
-              <a href="#" class="icon-link cart-icon">
-                <img src="../image/shopping-cart-xxl.png" alt="سلة المشتريات" width="24" height="24">
-              </a>
-              <a href="Wishlist.html" class="icon-link favorite-icon">
-                <img src="../image/hearts-xxl.png" id="wishlist-icon"  alt="المفضلات" width="24" height="24">
-                <span id="wishlist-count" style="
-                                  position: absolute;
+              <a href="shopping_cart.html" class="icon-link cart-icon">
+                <img src="../image/shopping-cart-xxl.png" id="cart-icon" alt="سلة المشتريات" width="24" height="24">
+                <span id="cart-count" style="
+                                    position: absolute;
                                      top: -5px;
                                     right: -5px;
                                       background:#a58070;
@@ -117,6 +114,22 @@
                                       display: none;
                                        font-weight: bold;
                                        ">0</span>
+              </a>
+              </a>
+              <a href="Wishlist.html" class="icon-link favorite-icon">
+                <img src="../image/hearts-xxl.png" id="wishlist-icon" alt="المفضلات" width="24" height="24">
+                <span id="wishlist-count" style="
+                                      position: absolute;
+                                         top: -5px;
+                                        right: -5px;
+                                          background:#a58070;
+                                           color:#e8d9c5;
+                                            font-size: 10px;
+                                            padding: 2px 6px;
+                                              border-radius: 50%;
+                                          display: none;
+                                           font-weight: bold;
+                                           ">0</span>
               </a>
               <a href="login.html" class="icon-link profile-icon">
                 <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
@@ -219,7 +232,12 @@
     <p>Honey contains vitamins, minerals, and amino acids. Among the vitamins it contains are B6, Thiamine, Niacin, and Pantothenic acid. In addition to this, honey includes minerals like Iron, Magnesium, Cooper, Manganese, Phosphorous, Potassium, Sodium and Zinc.</p>
     <p>Honey has active features to resist oxidation. The anti-oxidation works on the protection of the skin from harm such as exposure to the sun,which can cause early aging of the skin and skin cancer.</p>
     <div class="button_group">
-      <button class="cart">Add to Cart</button>
+      <button class="cart"
+              data-name="Honey Soap"
+              data-price="$55.99"
+              data-image="../image/Honey2.png">
+        Add to Cart
+      </button>
       <button class="wishlist"  data-name="Honey Soap"
               data-price="$55.99"
               data-image="../image/Honey1.png">
@@ -256,7 +274,10 @@
     <p>Dates are full of goodness! They contain sugars, the Vitamins B1,B2 and D, and elements such as Phosphorous, Calcium, Iron, Magnesium, Sodium, Sulfur and Chlorine.</p>
     <p>Dates are a beauty treasure – they eliminate the skin dryness, delay skin aging ,and are a source of nutrition for the skin.</p>
     <div class="button_group">
-      <button class="cart">Add to Cart</button>
+      <button class="cart" data-name="Dates Soap"
+              data-price="$27.99"
+              data-image="../image/Dates3.png">
+        Add to Cart</button>
       <button class="wishlist" data-name="Dates Soap"
               data-price="$27.99"
               data-image="../image/Dates1.png">
@@ -295,7 +316,10 @@
     <p>It is now well-known that Pomegranate is the main ingredient in many skin-care products.</p>
     <p>Studies have shown that pomegranate has strong anti-oxidative properties and can renew the cells in the two most important strata (layers) of skin: the epidermis and the dermis. It is also rich in potassium and vitamin C. It helps skin resists aging, and reduces the wrinkles of the skin.</p>
     <div class="button_group">
-      <button class="cart">Add to Cart</button>
+      <button class="cart"data-name="Pomegranates Soap"
+              data-price="$35.99"
+              data-image="../image/Pomegranates2.png">
+        Add to Cart</button>
       <button class="wishlist" data-name="Pomegranates Soap"
               data-price="$35.99"
               data-image="../image/Pomegranates1.png">
@@ -334,7 +358,10 @@
     <p>In addition to containing these substances, Grapes strengthen the structure of skin, and reduce the production of enzymes that affect the percentage of collagen and elastin in the internal stratum of the skin. </p>
     <p>Grapes also contain substances that enhance the youthfulness of the skin .</p>
     <div class="button_group">
-      <button class="cart">Add to Cart</button>
+      <button class="cart" data-name="Grapes Soap"
+              data-price="$44.99"
+              data-image="../image/Grapes2.png">
+        Add to Cart</button>
       <button class="wishlist" data-name="Grapes Soap"
               data-price="$44.99"
               data-image="../image/Grapes1.png">
@@ -373,7 +400,9 @@
     </p>
     <p>Lemon provides strength and nutrition to the skin.</p>
     <div class="button_group">
-      <button class="cart">Add to Cart</button>
+      <button class="cart"data-name="Lemon Soap"
+              data-price="$14.99"
+              data-image="../image/Lemon3.png">Add to Cart</button>
       <button class="wishlist" data-name="Lemon Soap"
               data-price="$14.99"
               data-image="../image/Lemon1.png">

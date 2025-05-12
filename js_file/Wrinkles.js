@@ -189,6 +189,59 @@ document.addEventListener('DOMContentLoaded', updateWishlistCount);
 
 
 
+function updatecartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const countElement = document.getElementById('cart-count');
+    countElement.textContent = cart.length;
+    countElement.style.display = cart.length > 0 ? 'inline-block' : 'none';
+}
+
+document.querySelectorAll('.cart').forEach(button => {
+    button.addEventListener('click', function () {
+        const name = button.getAttribute('data-name');
+        const price = button.getAttribute('data-price');
+        const image = button.getAttribute('data-image');
+        const product = { name, price, image };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // 👉 السماح بالتكرار
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // ✅ تحديث العداد دايماً
+        updatecartCount();
+
+        // ✈️ حركة الطيران
+        const flyingImg = document.createElement('img');
+        flyingImg.src = image;
+        flyingImg.className = 'flying-img';
+
+        const rect = button.getBoundingClientRect();
+        flyingImg.style.top = `${rect.top + window.scrollY}px`;
+        flyingImg.style.left = `${rect.left + window.scrollX}px`;
+
+        document.body.appendChild(flyingImg);
+
+        const target = document.getElementById('cart-icon').getBoundingClientRect();
+        const deltaX = target.left - rect.left;
+        const deltaY = target.top - rect.top;
+
+        requestAnimationFrame(() => {
+            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
+            flyingImg.style.opacity = '0';
+        });
+
+        setTimeout(() => flyingImg.remove(), 1000);
+    });
+});
+
+// 📦 عند تحميل الصفحة، نحدث العداد
+document.addEventListener('DOMContentLoaded', updatecartCount);
+
+
+
+
 
 
 

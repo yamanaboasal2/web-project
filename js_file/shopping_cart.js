@@ -1,184 +1,119 @@
-document.addEventListener('DOMContentLoaded', function() {
-    function initSlider(sliderId) {
-        const container = document.getElementById(sliderId);
-        const mainImages = container.querySelectorAll('.main-image');
-        const thumbnails = container.querySelectorAll('.thumbnail');
-        const prevBtn = container.querySelector('.prev-arrow');
-        const nextBtn = container.querySelector('.next-arrow');
-        let currentIndex = 0;
+// Retrieve cart data from localStorage, default to empty array if none exists
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        function showImage(index) {
-            mainImages.forEach(img => img.classList.remove('active'));
-            thumbnails.forEach(thumb => thumb.classList.remove('active-thumbnail'));
+// Add sample data for testing (remove in production if cart is populated elsewhere)
+if (cart.length === 0) {
+    cart.push(
+        { image: 'product-image1.jpg', name: 'Product Name 1', price: '$29.99', quantity: 1 },
+        { image: 'product-image2.jpg', name: 'Product Name 2', price: '$39.99', quantity: 1 }
+    );
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
-            mainImages[index].classList.add('active');
-            thumbnails[index].classList.add('active-thumbnail');
-            currentIndex = index;
-        }
+// Access the cart container
+const cartContainer = document.querySelector('#cart-table');
 
-        prevBtn.addEventListener('click', function() {
-            const newIndex = currentIndex > 0 ? currentIndex - 1 : mainImages.length - 1;
-            showImage(newIndex);
-        });
+// Function to display products in the cart and calculate subtotal
+function displayCart() {
+    // Clear existing content
+    cartContainer.innerHTML = '';
 
-        nextBtn.addEventListener('click', function() {
-            const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-            showImage(newIndex);
-        });
+    // Remove any existing subtotal
+    const existingSubtotal = document.querySelector('#subtotal');
+    if (existingSubtotal) existingSubtotal.remove();
 
-        thumbnails.forEach((thumb, index) => {
-            thumb.addEventListener('click', () => showImage(index));
-        });
-
-        // Auto-slide
-        let autoSlide = setInterval(() => {
-            const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-            showImage(newIndex);
-        }, 3000);
-
-        container.querySelector('.slider-container').addEventListener('mouseenter', () => {
-            clearInterval(autoSlide);
-        });
-
-        container.querySelector('.slider-container').addEventListener('mouseleave', () => {
-            autoSlide = setInterval(() => {
-                const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-                showImage(newIndex);
-            }, 3000);
-        });
+    // Check if cart is empty
+    if (cart.length === 0) {
+        cartContainer.innerHTML = '<p style="text-align: center; color: #555;">Your cart is empty.</p>';
+        // Add subtotal of $0.00
+        const subtotalElement = document.createElement('p');
+        subtotalElement.id = 'subtotal';
+        subtotalElement.textContent = 'Subtotal: $0.00';
+        cartContainer.insertAdjacentElement('afterend', subtotalElement);
+        return;
     }
 
-    initSlider('slider1-container');
-
-    initSlider('slider2-container');
-
-    initSlider('slider3-container');
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    const wrappers = document.querySelectorAll('.img-wrapper');
-
-    wrappers.forEach((wrapper, index) => {
-        setTimeout(() => {
-            wrapper.classList.add('show');
-        }, index * 500);
+    // Loop through cart items and create product cards
+    cart.forEach((product, index) => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        const basePrice = parseFloat(product.price.replace('$', '')); // Base price without quantity
+        const totalPrice = (basePrice * (product.quantity || 1)).toFixed(2); // Price * quantity
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Not+Found'">
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" data-index="${index}" data-action="decrease">-</button>
+                    <span>${product.quantity || 1}</span>
+                    <button class="quantity-btn" data-index="${index}" data-action="increase">+</button>
+                </div>
+                <p>$${totalPrice}</p>
+            </div>
+              <td><i class="fas fa-trash-alt remove" data-index="${index}"></i></td>  
+        `;
+        cartContainer.appendChild(productCard);
     });
-});
 
+    // Calculate subtotal
+    const subtotal = cart.reduce((sum, product) => {
+        const price = parseFloat(product.price.replace('$', '')); // Remove $ and convert to number
+        return sum + price * (product.quantity || 1);
+    }, 0);
 
-
-function updateWishlistCount() {
-    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    const countElement = document.getElementById('wishlist-count');
-    countElement.textContent = wishlist.length;
-    countElement.style.display = wishlist.length > 0 ? 'inline-block' : 'none';
+    // Display subtotal
+    const subtotalElement = document.createElement('p');
+    subtotalElement.id = 'subtotal';
+    subtotalElement.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    cartContainer.insertAdjacentElement('afterend', subtotalElement);
 }
 
-document.querySelectorAll('.wishlist').forEach(button => {
-    button.addEventListener('click', function () {
-        const name = button.getAttribute('data-name');
-        const price = button.getAttribute('data-price');
-        const image = button.getAttribute('data-image');
-        const product = { name, price, image };
+// Function to update quantity of a product
+function updateQuantity(index, change) {
+    const newQuantity = (cart[index].quantity || 1) + change;
+    if (newQuantity < 1) {
+        // Optionally remove item if quantity reaches 0
+        if (confirm('Remove this item from the cart?')) {
+            cart.splice(index, 1);
+        }
+    } else {
+        cart[index].quantity = newQuantity;
+    }
 
-        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    // Update localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-        // 👉 السماح بالتكرار
-        wishlist.push(product);
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
-
-        // ✅ تحديث العداد دايماً
-        updateWishlistCount();
-
-        // ✈️ حركة الطيران
-        const flyingImg = document.createElement('img');
-        flyingImg.src = image;
-        flyingImg.className = 'flying-img';
-
-        const rect = button.getBoundingClientRect();
-        flyingImg.style.top = `${rect.top + window.scrollY}px`;
-        flyingImg.style.left = `${rect.left + window.scrollX}px`;
-
-        document.body.appendChild(flyingImg);
-
-        const target = document.getElementById('wishlist-icon').getBoundingClientRect();
-        const deltaX = target.left - rect.left;
-        const deltaY = target.top - rect.top;
-
-        requestAnimationFrame(() => {
-            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-            flyingImg.style.opacity = '0';
-        });
-
-        setTimeout(() => flyingImg.remove(), 1000);
-    });
-});
-
-// 📦 عند تحميل الصفحة، نحدث العداد
-document.addEventListener('DOMContentLoaded', updateWishlistCount);
-
-
-
-
-
-function updatecartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const countElement = document.getElementById('cart-count');
-    countElement.textContent = cart.length;
-    countElement.style.display = cart.length > 0 ? 'inline-block' : 'none';
+    // Refresh cart display
+    displayCart();
 }
 
-document.querySelectorAll('.cart').forEach(button => {
-    button.addEventListener('click', function () {
-        const name = button.getAttribute('data-name');
-        const price = button.getAttribute('data-price');
-        const image = button.getAttribute('data-image');
-        const product = { name, price, image };
+// Function to remove a product from the cart
+function removeFromCart(index) {
+    // Remove product at the specified index
+    cart.splice(index, 1);
 
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // Update localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-        // 👉 السماح بالتكرار
-        cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
+    // Refresh cart display
+    displayCart();
+}
 
-        // ✅ تحديث العداد دايماً
-        updatecartCount();
-
-        // ✈️ حركة الطيران
-        const flyingImg = document.createElement('img');
-        flyingImg.src = image;
-        flyingImg.className = 'flying-img';
-
-        const rect = button.getBoundingClientRect();
-        flyingImg.style.top = `${rect.top + window.scrollY}px`;
-        flyingImg.style.left = `${rect.left + window.scrollX}px`;
-
-        document.body.appendChild(flyingImg);
-
-        const target = document.getElementById('cart-icon').getBoundingClientRect();
-        const deltaX = target.left - rect.left;
-        const deltaY = target.top - rect.top;
-
-        requestAnimationFrame(() => {
-            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-            flyingImg.style.opacity = '0';
-        });
-
-        setTimeout(() => flyingImg.remove(), 1000);
-    });
+// Add event listener for remove and quantity buttons
+cartContainer.addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove')) {
+        const index = event.target.getAttribute('data-index');
+        removeFromCart(Number(index)); // Convert to number for safety
+    } else if (event.target.classList.contains('quantity-btn')) {
+        const index = Number(event.target.getAttribute('data-index'));
+        const action = event.target.getAttribute('data-action');
+        const change = action === 'increase' ? 1 : -1;
+        updateQuantity(index, change);
+    }
 });
 
-// 📦 عند تحميل الصفحة، نحدث العداد
-document.addEventListener('DOMContentLoaded', updatecartCount);
-
-
-
-
-
-
-
-
-
+// Display cart on page load
+displayCart();
 
 
 
