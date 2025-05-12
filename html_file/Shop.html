@@ -3,8 +3,557 @@
 <head>
   <meta charset="UTF-8">
   <title>Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/Shop.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+
+
 </head>
 <body>
+
+<section class="background">
+  <div class = "main_nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" >Nablus Soap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html" data-translate="navbar.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-translate="navbar.contact">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.skincare">
+                Skin Care
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.acne">Acne</a></li>
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.dry">Dry Skin</a></li>
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
+                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+              <a class="nav-link dropdown-toggle" href="Shop.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.products">
+                Shop
+              </a>
+              <div class="dropdown-menu mega-dropdown-menu">
+                <div class="container-fluid">
+                  <div class="row">
+                    <!-- العمود الأول: Face Care -->
+                    <div class="col-md-4 dropdown-column">
+                      <h6>Face Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Cleansers</a></li>
+                        <li><a class="dropdown-item" href="#">Serums</a></li>
+                        <li><a class="dropdown-item" href="#">Moisturizers</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                      </ul>
+                    </div>
+
+                    <!-- العمود الثاني: Hair Care -->
+                    <div class="col-md-4 dropdown-column">
+                      <h6>Hair Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Shampoos</a></li>
+                        <li><a class="dropdown-item" href="#">Conditioners</a></li>
+                        <li><a class="dropdown-item" href="#">Hair masks</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                      </ul>
+                    </div>
+
+                    <!-- العمود الثالث: Body Care -->
+                    <div class="col-md-4 dropdown-column">
+                      <h6>Body Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item" href="#">Body soaps</a></li>
+                        <li><a class="dropdown-item" href="#">Scrubs</a></li>
+                        <li><a class="dropdown-item" href="#">Lotions</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown">
+                <span id="current-language" data-translate="language.lang">Language</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item language-option" href="#" data-lang="en">English</a></li>
+                <li><a class="dropdown-item language-option" href="#" data-lang="ar">العربية</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" data-translate="search.button">Search</button>
+          </form>
+
+          <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
+            <div class="profile-icons" style="display: flex; gap: 8px;">
+              <a href="#" class="icon-link cart-icon">
+                <img src="../image/shopping-cart-xxl.png" alt="سلة المشتريات" width="24" height="24">
+              </a>
+              <a href="#" class="icon-link favorite-icon">
+                <img src="../image/hearts-xxl.png" alt="المفضلات" width="24" height="24">
+              </a>
+              <a href="#" class="icon-link profile-icon">
+                <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
+              </a>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<div class="content-wrapper">
+
+  <div class="soap-container">
+    <img src="../image/1 (1).png" class="soap-img default" alt="Nablus Soap">
+    <img src="../image/2 (1).png" class="soap-img hover" alt="Nablus Soap Alternate">
+  </div>
+  <!-- النص على اليمين -->
+  <div class="text-content">
+    <h3 class="subtitle">Pure And Natural</h3>
+    <h2 class="title">Loved Skincare By Most International Beauticians</h2>
+    <p class="description">
+      Ex vehicula semper laoreet urna mi nostra quis ut. Egestas penatibus ut torquent,
+      porttitor blandit eros egestas maecenas maecenas. Tempus cursus ac semper finibus
+      penatibus turpis lorem porta.Curae justo vulputate, sed ullamcorper mi laoreet
+      aliquam.
+    </p>
+
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number" data-count="128">0</div>
+        <div class="stat-label">Global Stores</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="99">0</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="190">0</div>
+        <div class="stat-label">Professional Team</div>
+      </div>
+    </div>
+
+    <button class="explore-btn">
+      Explore Now <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+</div>
+
+<div class="full-width-section">
+  <!-- قسم النص العلوي -->
+  <div class="text1-content">
+    <h2 class="section-title">
+      <span class="text-part">Discover A Range Of Luxurious Skin</span>
+      <span class="text-part">Restore Your Skin From Cleansers To Moisturizers</span>
+      <span class="text-part">Dedicated To Give Radiant</span>
+    </h2>
+  </div>
+
+  <!-- قسم الصور السفلي -->
+  <div class="image-gallery">
+    <div class="image-row">
+      <div class="image-item"><img src="../image/w1.png" alt="Product 1"></div>
+      <div class="image-item"><img src="../image/w2.png" alt="Product 2"></div>
+      <div class="image-item"><img src="../image/w3.png" alt="Product 3"></div>
+      <div class="image-item"><img src="../image/w4.png" alt="Product 4"></div>
+    </div>
+    <div class="single-image">
+      <div class="image-item"><img src="../image/w5.png" alt="Special Offer"></div>
+    </div>
+  </div>
+</div>
+
+<div class="products-section">
+  <div class="products-grid">
+    <!-- الصف الأول - 4 صور -->
+    <div class="product-row">
+
+      <div class="product-card">
+        <a href="product1-details.html" class="product-link">
+          <div class="product-image-wrapper">
+            <img src="../image/y2.jpg" alt="Product 1" class="product-img">
+            <div class="product-overlay">
+              <h3 class="product-name">Scrub Soap</h3>
+              <p class="product-count">3 Items</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="product-card">
+        <a href="product1-details.html" class="product-link">
+          <div class="product-image-wrapper">
+            <img src="../image/y3.jpg" alt="Product 1" class="product-img">
+            <div class="product-overlay">
+              <h3 class="product-name">Cleansers</h3>
+              <p class="product-count">5 Items</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="product-card">
+        <a href="product1-details.html" class="product-link">
+          <div class="product-image-wrapper">
+            <img src="../image/y4.jpg" alt="Product 1" class="product-img">
+            <div class="product-overlay">
+              <h3 class="product-name">Conditioners</h3>
+              <p class="product-count">5 Items</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="product-card">
+        <a href="product1-details.html" class="product-link">
+          <div class="product-image-wrapper">
+            <img src="../image/y5.jpg" alt="Product 1" class="product-img">
+            <div class="product-overlay">
+              <h3 class="product-name">Body Soaps</h3>
+              <p class="product-count">5 Items</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="intro-offer-section">
+  <div class="content-container">
+    <!-- قسم المحتوى على اليسار -->
+    <div class="text-content1">
+      <h2 class="main-title">Face Care</h2>
+      <!-- حاوية المنتجات - صفوف مدمجة -->
+      <div class="products-container1">
+        <div class="products-row1">
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Cleansers</span>
+              <img src="../image/1-Picsart-BackgroundRemover.png" alt="Cleansers" class="main-img">
+              <img src="../image/3-Picsart-BackgroundRemover (1).png" alt="Cleansers Hover" class="hover-img">
+              <div class="clickable-area" onclick="window.location.href='product-link.html'"></div>
+            </div>
+          </div>
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Serums</span>
+              <img src="../image/3-Picsart-BackgroundRemover.png" alt="Serums" class="main-img">
+              <img src="../image/2-Picsart-BackgroundRemover (1).png" alt="Serums Hover" class="hover-img">
+            </div>
+          </div>
+        </div>
+        <div class="products-row1">
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Moisturizers</span>
+              <img src="../image/2-Picsart-BackgroundRemover.png" alt="Moisturizers" class="main-img">
+              <img src="../image/1-Picsart-BackgroundRemover (1).png" alt="Moisturizers Hover" class="hover-img">
+            </div>
+          </div>
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">All Shop</span>
+              <img src="../image/Untitled design (5)-Picsart-BackgroundRemover.png" alt="All Shop" class="main-img">
+              <img src="../image/Untitled design (6)-Picsart-BackgroundRemover.png" alt="All Shop" class="hover-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- النص الترويجي -->
+      <div class="offer-text">
+        <h3 class="offer-subtitle">Intro Offers</h3>
+        <h1 class="offer-title">Get 55% Off On Serums</h1>
+        <p class="offer-description">Limited time offer for our new organic scrub soaps collection.</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- قسم الفيديو على اليمين -->
+    <div class="video-container">
+      <video controls class="promo-video" autoplay muted>
+        <source src="../image/face care.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="luxury-marquee">
+  <div class="marquee-inner">
+    <div class="marquee-item">
+      <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+    </div>
+    <!-- تكرار العناصر للحركة السلسة -->
+    <div class="marquee-item">
+      <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+    </div>
+  </div>
+</div>
+
+<div class="intro-offer-section">
+  <div class="content-container">
+    <!-- قسم المحتوى على اليسار -->
+    <div class="text-content1">
+      <h2 class="main-title">Body Care</h2>
+      <!-- حاوية المنتجات - صفوف مدمجة -->
+      <div class="products-container1">
+        <div class="products-row1">
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Body soaps</span>
+              <img src="../image/bodysou.png" alt="Cleansers" class="main-img">
+              <img src="../image/bodysoup.png" alt="Cleansers Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Lotions</span>
+              <img src="../image/bodyl.png" alt="Serums" class="main-img">
+              <img src="../image/bodylotion.png" alt="Serums Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+        </div>
+        <div class="products-row1">
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Scrubs</span>
+              <img src="../image/bodys.png" alt="Moisturizers" class="main-img">
+              <img src="../image/bodyscrup.png" alt="Moisturizers Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">All Shop</span>
+              <img src="../image/alshop.png" alt="Toners" class="main-img">
+              <img src="../image/allshop.png" alt="Toners Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- النص الترويجي -->
+      <div class="offer-text">
+        <h3 class="offer-subtitle">Intro Offers</h3>
+        <h1 class="offer-title">Get 25% Off On Scrubs</h1>
+        <p class="offer-description">Limited time offer for our new organic scrub soaps collection.</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- قسم الفيديو على اليمين -->
+    <div class="video-container">
+      <video controls class="promo-video" autoplay muted>
+        <source src="../image/BOCARE.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="luxury-marquee">
+  <div class="marquee-inner">
+    <div class="marquee-item">
+      <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+    </div>
+    <!-- تكرار العناصر للحركة السلسة -->
+    <div class="marquee-item">
+      <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+    </div>
+    <div class="marquee-item">
+      <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+    </div>
+  </div>
+</div>
+
+<div class="intro-offer-section">
+  <div class="content-container">
+    <!-- قسم المحتوى على اليسار -->
+    <div class="text-content1">
+      <h2 class="main-title">Hair Care</h2>
+      <!-- حاوية المنتجات - صفوف مدمجة -->
+      <div class="products-container1">
+        <div class="products-row1">
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Shampoos</span>
+              <img src="../image/hairsh.png" alt="Cleansers" class="main-img">
+              <img src="../image/hairshampoo.png" alt="Cleansers Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Hair masks</span>
+              <img src="../image/mask.png" alt="Serums" class="main-img">
+              <img src="../image/hairmas.png" alt="Serums Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+        </div>
+        <div class="products-row1">
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">Conditioners</span>
+              <img src="../image/haircon.png" alt="Moisturizers" class="main-img">
+              <img src="../image/hairsha.png" alt="Moisturizers Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+          <div class="big-product-card">
+            <div class="image-wrapper">
+              <span class="product-name1">All Shop</span>
+              <img src="../image/alll.png" alt="Toners" class="main-img">
+              <img src="../image/allllllll.png" alt="Toners Hover" class="hover-img"> <!-- صورة الهوفر -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- النص الترويجي -->
+      <div class="offer-text">
+        <h3 class="offer-subtitle">Intro Offers</h3>
+        <h1 class="offer-title">Get 40% Off On Hair masks</h1>
+        <p class="offer-description">Limited time offer for our new organic scrub soaps collection.</p>
+        <a href="#" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- قسم الفيديو على اليمين -->
+    <div class="video-container">
+      <video controls class="promo-video" autoplay muted>
+        <source src="../image/hairrca.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- العمود الأيسر: Follow Us و Certifications -->
+      <div class="left-column">
+        <div class="footer-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/nablussoapco/" target="_blank" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/nablussoapco/" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nablus-soap-b0218929/" target="_blank" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://goo.gl/X8ZmNR" target="_blank" class="social-icon">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-title">Our Certifications</h3>
+          <div class="certificates">
+            <div class="certificates">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/final-Halal-2012.jpg" alt="Halal Certified">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/psi.jpg" alt="PSI Certified">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/ecocert-logo.jpg" alt="Ecocert">
+              <img src="https://nablussoap.ps/wp/wp-content/uploads/logo-GMP-scaled.jpg" alt="GMP Certified">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="newsletter-section">
+        <div class="newsletter-container">
+          <img src="../image/Iqon (1).png"></img>
+          <h3 class="newsletter-title">Be the first to know</h3>
+          <p class="newsletter-subtitle">Subscribe to our newsletter for updates and offers</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter Your Email" required class="email-input">
+            <button type="submit" class="submit-arrow"></button>
+          </form>
+        </div>
+      </div>
+
+      <!-- العمود الأيمن: Quick Links -->
+      <div class="right-column">
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="https://nablussoap.ps/media-photo-gallery/">Our Products</a></li>
+            <li><a href="https://nablussoap.ps/careers/">Career Opportunities</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- حقوق النشر -->
+    <div class="copyright-section">
+      <div class="copyright-content">
+        <div class="company-info">
+          <span class="company-name">Nablus Soap & Cosmetics Company</span>
+          <span class="copyright-text">© 2024 All Rights Reserved</span>
+        </div>
+        <div class="developer-credit">
+          Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
+          <a href="https://salman.ps" target="_blank">SALMAN.ps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js_file/Shop.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 </body>
 </html>

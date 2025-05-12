@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Plant-Based Soaps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/clean.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="background">
+    <div class = "main_nav">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" >Nablus Soap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" data-translate="navbar.home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-translate="navbar.contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.skincare">
+                                Skin Care
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.acne">Acne</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.dry">Dry Skin</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
+                                <li><a class="dropdown-item" href="#" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.products">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu mega-dropdown-menu">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <!-- العمود الأول: Face Care -->
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Face Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="#">Cleansers</a></li>
+                                                <li><a class="dropdown-item" href="#">Serums</a></li>
+                                                <li><a class="dropdown-item" href="#">Moisturizers</a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- العمود الثاني: Hair Care -->
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Hair Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="#">Shampoos</a></li>
+                                                <li><a class="dropdown-item" href="#">Conditioners</a></li>
+                                                <li><a class="dropdown-item" href="#">Hair masks</a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- العمود الثالث: Body Care -->
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Body Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="#">Body soaps</a></li>
+                                                <li><a class="dropdown-item" href="#">Scrubs</a></li>
+                                                <li><a class="dropdown-item" href="#">Lotions</a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown">
+                                <span id="current-language" data-translate="language.lang">Language</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item language-option" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item language-option" href="#" data-lang="ar">العربية</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" data-translate="search.button">Search</button>
+                    </form>
+
+                    <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
+                        <div class="profile-icons" style="display: flex; gap: 8px;">
+                            <a href="#" class="icon-link cart-icon">
+                                <img src="../image/shopping-cart-xxl.png" alt="سلة المشتريات" width="24" height="24">
+                            </a>
+                            <a href="#" class="icon-link favorite-icon">
+                                <img src="../image/hearts-xxl.png" alt="المفضلات" width="24" height="24">
+                            </a>
+                            <a href="#" class="icon-link profile-icon">
+                                <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
+                            </a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Full-width background colors -->
+    <div class="slider-bg slider-bg-left"></div>
+    <div class="slider-bg slider-bg-right"></div>
+
+    <!-- Product Slider -->
+    <div class="product-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="product-showcase active">
+                <div class="col-image">
+                    <img src="../image/clean.jpg" alt="Plant-Based Soap" class="product-image">
+                </div>
+                <div class="col-text">
+                    <div class="subheading">Suitable for all skin types</div>
+                    <h2 class="heading">Makeup Remover Bar with Squalane & Vitamin E</h2>
+                    <div class="description">
+                        <p>This gentle, soap-free makeup remover bar removes all traces of makeup from the skin to leave it clean, purified and hydrated!</p>
+                    </div>
+                    <div class="price">
+                        <span class="discounted-price">₹22,00</span>
+                    </div>
+                    <a href="#" class="buy-button">Buy Now - ₹22,00</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="product-showcase">
+                <div class="col-image">
+                    <img src="../image/fff.jpg" alt="Lavender Soap" class="product-image">
+                </div>
+                <div class="col-text">
+                    <div class="subheading">Suitable for all skin types</div>
+                    <h2 class="heading">Makeup Removing Cleansing Balm</h2>
+                    <div class="description">
+                        <p>This rich, waterless cleansing balm effortlessly melts away makeup, cleanses, and nourishes the skin in one simple step!</p>
+                    </div>
+                    <div class="price">
+                        <span class="discounted-price">₹40.00</span>
+                    </div>
+                    <a href="#" class="buy-button">Buy Now - ₹40.00</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="product-showcase">
+                <div class="col-image">
+                    <img src="../image/ppp.jpg" alt="Citrus Soap" class="product-image">
+                </div>
+                <div class="col-text">
+                    <div class="subheading">For dry, sensitive or reactive skin</div>
+                    <h2 class="heading">Cleansing Konjac Sponge - Soothing Rose Flower</h2>
+                    <div class="description">
+                        <p>Your beauty routine will never have been this easy! </p>
+                        <p>   Our soothing konjac facial sponge infused with rose flower extract will cleanse your face and remove all impurities in a single step.</p>
+                    </div>
+                    <div class="price">
+                        <span class="discounted-price">₹12,000</span>
+                    </div>
+                    <a href="#" class="buy-button">Buy Now - ₹12.00</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-arrows">
+            <div class="arrow arrow-left" id="prev-slide"><i class="fas fa-chevron-left"></i></div>
+            <div class="arrow arrow-right" id="next-slide"><i class="fas fa-chevron-right"></i></div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="slider-nav">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+    </div>
+</div>
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+<section class="product-section">
+    <h2> Makeup Remover & Cleansers </h2>
+    <div class="centered-text">
+        <div class="border-decoration top-left"></div>
+        <div class="border-decoration bottom-right"></div>
+        <p>
+            Effortlessly remove all traces of makeup and cleanse your skin with our eco-friendly Makeup Remover Bar and Konjac sponges. Achieve clean, refreshed skin, primed to absorb the benefits of your skincare products.
+        </p>
+        <span class="heart">♡</span>
+    </div>
+
+    <a href="#" class="cta">Explore the Collection</a>
+</section>
+
+<div class="items-container">
+    <!-- Product Item 1 -->
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/clean.jpg" alt="Product 1" class="item-img main-img">
+            <img src="../image/shop1.jpg" alt="Product 1 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Makeup Remover Bar with Squalane & Vitamin E</a>
+            <div class="item-cost">$22.00</div>
+            <button class="purchase-btn">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/../image/ppp.jpg" alt="Product 2" class="item-img main-img">
+            <img src="../image/yy.gif" alt="Product 2 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Cleansing Konjac Sponge - Purifying Bamboo Charcoal</a>
+            <div class="item-cost">$40.00</div>
+            <button class="purchase-btn">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Additional product items would follow the same pattern -->
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/cssss.PNG" alt="Product 2" class="item-img main-img">
+            <img src="../image/shop8.jpg" alt="Product 2 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">  Makeup Removing Cleansing Balm</a>
+            <div class="item-cost">$40.00</div>
+            <button class="purchase-btn">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Additional product items would follow the same pattern -->
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/hhh.jpg" alt="Product 2" class="item-img main-img">
+            <img src="../image/hhhhh.jpg" alt="Product 2 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Cleansing Konjac Sponge - Soothing Rose Flower</a>
+            <div class="item-cost">$40.00</div>
+            <button class="purchase-btn">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+<div class="routine-section">
+    <h2 class="routine-title">Discover Our Simple 5-Step Ritual</h2>
+    <p class="routine-subtitle">For perfectly clean and nourished skin</p>
+
+    <div class="routine-steps">
+        <!-- Step 1 -->
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3 class="step-title">Gentle Makeup Removal</h3>
+                <p class="step-description">Use our Makeup Remover Bar or balm to melt away all traces of makeup</p>
+            </div>
+            <div class="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b5a2b">
+                    <path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.522 4.82 3.889 6.115l-.78 2.77 3.116-1.65c.88.275 1.823.425 2.775.425 4.97 0 9-3.186 9-7.115C21 6.185 16.97 3 12 3z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3 class="step-title">Deep Cleansing</h3>
+                <p class="step-description">Cleanse with our Konjac Sponge for perfectly purified skin</p>
+            </div>
+            <div class="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b5a2b">
+                    <path d="M12 15a3 3 0 100-6 3 3 0 000 6zm0-10a7 7 0 100 14 7 7 0 000-14z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3 class="step-title">Gentle Exfoliation</h3>
+                <p class="step-description">Remove dead skin cells for a radiant complexion</p>
+            </div>
+            <div class="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b5a2b">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3 class="step-title">Targeted Treatment</h3>
+                <p class="step-description">Apply serum to address your specific skin concerns</p>
+            </div>
+            <div class="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b5a2b">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+                <h3 class="step-title">Hydration Lock</h3>
+                <p class="step-description">Finish with moisturizer to protect and nourish your skin</p>
+            </div>
+            <div class="step-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8b5a2b">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+<div class="skincare-steps">
+    <!-- Step 1 - Image Right -->
+    <div class="skincare-step">
+        <div class="step-container">
+            <div class="step-text">
+                <h2 class="step-heading">Step 1: Makeup Removal</h2>
+                <div class="step-details">
+                    <p>Begin your skincare routine by effectively removing makeup with our gentle Makeup Remover Bar. Our formula effortlessly dissolves even the toughest makeup, including waterproof mascara and long-wear foundation.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="visual-frame">
+                    <img src="../image/soaap.jpg" alt="Makeup Remover Bar" loading="lazy" class="step-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 2 - Image Left -->
+    <div class="skincare-step">
+        <div class="step-container reversed">
+            <div class="step-text">
+                <h2 class="step-heading">Step 2: Deep Cleansing</h2>
+                <div class="step-details">
+                    <p>Follow up by cleansing your skin with a Konjac Sponge. Its irregular texture allows a deep cleanse! Gently massage onto damp skin, then rinse thoroughly to reveal a fresh, radiant complexion.</p>
+                </div>
+            </div>
+            <div class="step-visual">
+                <div class="visual-frame">
+                    <img src="../image/esfng.jpg" alt="Konjac Sponge" loading="lazy" class="step-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-container">
+        <div class="faq-header">
+            <h2 class="faq-main-title">FAQs</h2>
+            <p class="faq-subtitle">Common questions about our products</p>
+        </div>
+
+        <div class="faq-content-wrapper">
+            <!-- قسم الأسئلة على اليسار -->
+            <div class="faq-accordion">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>What is a Makeup Remover Bar?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A Makeup Remover Bar is a solid skincare product designed to effectively remove makeup while being gentle on the skin. It's a convenient and eco-friendly alternative to traditional liquid makeup removers.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>How do I use a Makeup Remover Bar?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply wet the bar and the face with lukewarm water. Rub the bar between your hands to make it lightly lather and apply the makeup remover cream to the face. Massage in circular movements and rinse.</p>
+                        <p>You can follow up with a Konjac Sponge to deeply cleanse the skin after removing makeup.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>What is a Konjac Sponge?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Konjac Sponges are plant-based and biodegradable sponges made from Konjac root fibers. Its irregular texture allows to cleanse the skin without soap or cleanser.</p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>How do I use a Konjac Sponge?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Wet the konjac sponge with warm water until it becomes soft. Massage the skin by making circular movements. Splash your face with water to rinse. Also, rinse the sponge and hang it with the string to let it dry between uses.</p>
+                        <p>After 2 or 3 months of use (or 100 uses), put the konjac sponge in the compost.</p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>Why should I use a Makeup Remover Bar and a Konjac Sponge?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cleansing the skin with a Konjac Sponge after removing makeup is an important step in skincare!</p>
+                        <p>While makeup removers are effective at breaking down and lifting makeup from the skin's surface, they may leave behind traces of makeup residue, along with dirt, oil, and environmental pollutants. Cleansing the skin afterward ensures that all remaining impurities are thoroughly removed, leaving the skin clean, refreshed and ready for any skin care products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الصور الدائرية على اليمين -->
+            <div class="faq-images-column">
+                <!-- الصورة الأولى - يمكن تعديل top حسب الحاجة -->
+                <div class="faq-image-wrapper" style="top: 100px; left:260px;">
+                    <img src="../image/i1.png" alt="Product 1" class="faq-image">
+                </div>
+
+                <!-- الصورة الثانية - يمكن تعديل top حسب الحاجة -->
+                <div class="faq-image-wrapper" style="top: 250px;left:20px;">
+                    <img src="../image/i3.png" alt="Product 2" class="faq-image">
+                </div>
+
+                <!-- الصورة الثالثة - يمكن تعديل top حسب الحاجة -->
+                <div class="faq-image-wrapper" style="top: 410px;left:260px">
+                    <img src="../image/body4.jpg" alt="Product 3" class="faq-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- العمود الأيسر: Follow Us و Certifications -->
+            <div class="left-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/nablussoapco/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/nablussoapco/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nablus-soap-b0218929/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://goo.gl/X8ZmNR" target="_blank" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Our Certifications</h3>
+                    <div class="certificates">
+                        <div class="certificates">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/final-Halal-2012.jpg" alt="Halal Certified">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/psi.jpg" alt="PSI Certified">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/ecocert-logo.jpg" alt="Ecocert">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/logo-GMP-scaled.jpg" alt="GMP Certified">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-section">
+                <div class="newsletter-container">
+                    <img src="../image/Iqon (1).png"></img>
+                    <h3 class="newsletter-title">Be the first to know</h3>
+                    <p class="newsletter-subtitle">Subscribe to our newsletter for updates and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter Your Email" required class="email-input">
+                        <button type="submit" class="submit-arrow"></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- العمود الأيمن: Quick Links -->
+            <div class="right-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="https://nablussoap.ps/media-photo-gallery/">Our Products</a></li>
+                        <li><a href="https://nablussoap.ps/careers/">Career Opportunities</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->
+        <div class="copyright-section">
+            <div class="copyright-content">
+                <div class="company-info">
+                    <span class="company-name">Nablus Soap & Cosmetics Company</span>
+                    <span class="copyright-text">© 2024 All Rights Reserved</span>
+                </div>
+                <div class="developer-credit">
+                    Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
+                    <a href="https://salman.ps" target="_blank">SALMAN.ps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js_file/nav&footer.js"></script>
+
+
+
+<script>
+
+    window.addEventListener('load', function() {
+        const imagesColumn = document.querySelector('.faq-images-column');
+        const lastImage = document.querySelector('.faq-image-wrapper:last-child');
+
+        // حساب المساحة المتبقية
+        const columnBottom = imagesColumn.offsetTop + imagesColumn.offsetHeight;
+        const lastImageBottom = lastImage.offsetTop + lastImage.offsetHeight;
+
+        // إذا كانت الصورة الأخيرة ستُقطع
+        if (lastImageBottom > columnBottom) {
+            const difference = lastImageBottom - columnBottom;
+            imagesColumn.style.minHeight = `calc(100vh + ${difference}px)`;
+        }
+    });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Scroll animations
+        const faqHeader = document.querySelector('.faq-header');
+        const faqElements = document.querySelectorAll('.faq-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target === faqHeader) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.add('visible');
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(faqHeader);
+        faqElements.forEach(item => observer.observe(item));
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const steps = document.querySelectorAll('.skincare-step');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        steps.forEach(step => {
+            observer.observe(step);
+        });
+    });
+    // Intersection Observer for scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.section-block');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+    // Scroll Animation Trigger
+    document.addEventListener('DOMContentLoaded', function() {
+        const routineSection = document.querySelector('.routine-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(routineSection);
+    });
+
+    // Scroll Animation Trigger
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.item-box');
+
+        // Set order for staggered animation
+        items.forEach((item, index) => {
+            item.style.setProperty('--order', index);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        items.forEach(item => {
+            observer.observe(item);
+        });
+    });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.slider-container');
+    const slides = document.querySelectorAll('.product-showcase');
+    const dots = document.querySelectorAll('.slider-dot');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    let currentSlide = 0;
+    let isAnimating = false;
+
+    // Initialize first slide
+    updateActiveSlide(0);
+
+    // Navigation dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            if (!isAnimating && index !== currentSlide) {
+                goToSlide(index);
+            }
+        });
+    });
+
+    // Arrow navigation
+    prevBtn.addEventListener('click', () => {
+        if (!isAnimating) {
+            const newSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+            goToSlide(newSlide);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (!isAnimating) {
+            const newSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+            goToSlide(newSlide);
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' && !isAnimating) {
+            const newSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+            goToSlide(newSlide);
+        } else if (e.key === 'ArrowRight' && !isAnimating) {
+            const newSlide = currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+            goToSlide(newSlide);
+        }
+    });
+
+    function goToSlide(index) {
+        isAnimating = true;
+
+        // Deactivate current slide
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        // Update current slide
+        currentSlide = index;
+
+        // Scroll to new slide
+        slider.scrollTo({
+            left: slider.clientWidth * currentSlide,
+            behavior: 'smooth'
+        });
+
+        // Activate new slide with delay
+        setTimeout(() => {
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            isAnimating = false;
+        }, 300);
+    }
+
+    function updateActiveSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    // Show arrows with animation
+    setTimeout(() => {
+        prevBtn.classList.add('visible');
+        nextBtn.classList.add('visible');
+    }, 1000);
+});
+
+
+// Animation on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const productSection = document.querySelector('.product-section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(productSection);
+});
+// Example intersection observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+});
+
+document.querySelectorAll('.description').forEach(desc => {
+    observer.observe(desc);
+});
+</script>
+
+</body>
+</html>
+
+
