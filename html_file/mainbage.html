@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Nablus Soap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/mainbage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="background">
+    <div class = "main_nav">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" >Nablus Soap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" data-translate="navbar.home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html" data-translate="navbar.contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="skincare.html"  data-bs-toggle="dropdown" aria-expanded="false">
+                                Skin Care
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="acne.html" data-translate="dropdown.skin.acne">Acne</a></li>
+                                <li><a class="dropdown-item" href="Dry.html" data-translate="dropdown.skin.dry">Dry Skin</a></li>
+                                <li><a class="dropdown-item" href="Wrinkles.html" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
+                                <li><a class="dropdown-item" href="DarkSpots.html" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="Shop.html" role="button" aria-expanded="false" data-translate="navbar.products">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu mega-dropdown-menu">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Face Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="clean.html">Cleansers</a></li>
+                                                <li><a class="dropdown-item" href="Serums.html">Serums</a></li>
+                                                <li><a class="dropdown-item" href="Moisturizers.html">Moisturizers</a></li>
+                                                <li><a class="dropdown-item" href="allshop_facecare.html" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Hair Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="shampoo.html">Shampoos</a></li>
+                                                <li><a class="dropdown-item" href="Conditioner.html">Conditioners</a></li>
+                                                <li><a class="dropdown-item" href="Hairmasks.html">Hair masks</a></li>
+                                                <li><a class="dropdown-item" href="allshop_haircare.html" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Body Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="Bodycare.html">Body soaps</a></li>
+                                                <li><a class="dropdown-item" href="BodyScrub.html">Scrubs</a></li>
+                                                <li><a class="dropdown-item" href="Bodylotions.html">Lotions</a></li>
+                                                <li><a class="dropdown-item" href="allshop_bodycare.html" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown">
+                                <span id="current-language" data-translate="language.lang">Language</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item language-option" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item language-option" href="#" data-lang="ar">العربية</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" data-translate="search.button">Search</button>
+                    </form>
+
+                    <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
+                        <div class="profile-icons" style="display: flex; gap: 8px;">
+                            <a href="shopping_cart.html" class="icon-link cart-icon">
+                                <img src="../image/shopping-cart-xxl.png" id="cart-icon" alt="سلة المشتريات" width="24" height="24">
+                                <span id="cart-count" style="
+                                    position: absolute;
+                                     top: -5px;
+                                    right: -5px;
+                                      background:#a58070;
+                                       color:#e8d9c5;
+                                        font-size: 10px;
+                                        padding: 2px 6px;
+                                          border-radius: 50%;
+                                      display: none;
+                                       font-weight: bold;
+                                       ">0</span>
+                            </a>
+                            </a>
+                            <a href="Wishlist.html" class="icon-link favorite-icon">
+                                <img src="../image/hearts-xxl.png" id="wishlist-icon" alt="المفضلات" width="24" height="24">
+                                <span id="wishlist-count" style="
+                                      position: absolute;
+                                         top: -5px;
+                                        right: -5px;
+                                          background:#a58070;
+                                           color:#e8d9c5;
+                                            font-size: 10px;
+                                            padding: 2px 6px;
+                                              border-radius: 50%;
+                                          display: none;
+                                           font-weight: bold;
+                                           ">0</span>
+                            </a>
+                            <a href="login.html" class="icon-link profile-icon">
+                                <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
+                            </a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+
+<!-- Slider Section -->
+<section class="slider-section">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="image-with-text__grid">
+                    <div class="image-with-text__media-item">
+                        <div class="image-with-text__media">
+                            <img src="../image/body2.jpg" alt="Handmade Soap">
+                        </div>
+                    </div>
+                    <div class="image-with-text__text-item">
+                        <div class="image-with-text__content">
+                            <h6 class="sub-heading">Our Craftsmanship</h6>
+                            <h2 class="image-with-text__heading">Top-Certified Handmade Soaps</h2>
+                            <div class="image-with-text__text">
+                                <p>Indulge in our luxurious handmade soaps, crafted with natural ingredients for all skin types. Perfect for daily use or as a thoughtful gift.</p>
+                            </div>
+                            <div class="text-icon-section">
+                                <div class="text-icon">
+                                    <img class="image-with-icon" src="../image/icon_1.png" alt="Natural" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_2.png" alt="Vegan" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_3.png" alt="Eco-Friendly" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_4.png" alt="Handmade" width="60" height="60">
+                                </div>
+                            </div>
+                            <a href="allshop_bodycare.html" class="button button--secondary">
+                                Shop now
+                                <svg class="button-icon" width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.9205 2.9376C16.749 3.0201 13.5775 3.05391 10.4047 3.03363C7.23455 3.01334 4.05628 2.8267 0.888844 2.98359C0.149052 3.0201 0.169338 4.22514 0.888844 4.30358C4.04547 4.65251 7.23725 4.5619 10.4047 4.52944C13.5775 4.49833 16.749 4.41313 19.9205 4.27924C20.6603 4.24813 20.6657 2.91732 19.9205 2.93625V2.9376Z" fill="white"></path>
+                                    <path d="M19.7948 3.36401C18.1083 3.74134 16.4474 4.25122 14.811 4.85711C13.1989 5.45355 11.58 6.07838 10.0896 7.01833C9.65273 7.29423 9.94891 8.13681 10.4304 7.95964C12.0344 7.36862 13.5802 6.59637 15.1761 5.97289C16.7734 5.34941 18.3909 4.80707 20.0152 4.29179C20.5346 4.12679 20.3128 3.2477 19.7948 3.36401Z" fill="white"></path>
+                                    <path d="M19.5364 3.11653C16.8505 2.68375 14.4188 1.5531 12.0398 0.0748715C11.4921 -0.265946 11.0376 0.646958 11.5543 1.04052C13.8805 2.81088 16.6828 3.71702 19.4282 4.04026C19.8759 4.093 19.9868 3.18957 19.5351 3.11653H19.5364Z" fill="white"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="image-with-text__grid">
+                    <div class="image-with-text__media-item">
+                        <div class="image-with-text__media">
+                            <img src="../image/scup.jpg" alt="Body Scrub">
+                        </div>
+                    </div>
+                    <div class="image-with-text__text-item">
+                        <div class="image-with-text__content">
+                            <h6 class="sub-heading">Exfoliate Naturally</h6>
+                            <h2 class="image-with-text__heading">Luxurious Body Scrubs</h2>
+                            <div class="image-with-text__text">
+                                <p>Revitalize your skin with our eco-friendly body scrubs, made with sea salt and natural oils for a radiant glow.</p>
+                            </div>
+                            <div class="text-icon-section">
+                                <div class="text-icon">
+                                    <img class="image-with-icon" src="../image/icon_1.png" alt="Natural" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_2.png" alt="Vegan" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_3.png" alt="Eco-Friendly" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_4.png" alt="Handmade" width="60" height="60">
+                                </div>
+                            </div>
+                            <a href="allshop_bodycare.html" class="button button--secondary">
+                                Shop now
+                                <svg class="button-icon" width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.9205 2.9376C16.749 3.0201 13.5775 3.05391 10.4047 3.03363C7.23455 3.01334 4.05628 2.8267 0.888844 2.98359C0.149052 3.0201 0.169338 4.22514 0.888844 4.30358C4.04547 4.65251 7.23725 4.5619 10.4047 4.52944C13.5775 4.49833 16.749 4.41313 19.9205 4.27924C20.6603 4.24813 20.6657 2.91732 19.9205 2.93625V2.9376Z" fill="white"></path>
+                                    <path d="M19.7948 3.36401C18.1083 3.74134 16.4474 4.25122 14.811 4.85711C13.1989 5.45355 11.58 6.07838 10.0896 7.01833C9.65273 7.29423 9.94891 8.13681 10.4304 7.95964C12.0344 7.36862 13.5802 6.59637 15.1761 5.97289C16.7734 5.34941 18.3909 4.80707 20.0152 4.29179C20.5346 4.12679 20.3128 3.2477 19.7948 3.36401Z" fill="white"></path>
+                                    <path d="M19.5364 3.11653C16.8505 2.68375 14.4188 1.5531 12.0398 0.0748715C11.4921 -0.265946 11.0376 0.646958 11.5543 1.04052C13.8805 2.81088 16.6828 3.71702 19.4282 4.04026C19.8759 4.093 19.9868 3.18957 19.5351 3.11653H19.5364Z" fill="white"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <div class="image-with-text__grid">
+                    <div class="image-with-text__media-item">
+                        <div class="image-with-text__media">
+                            <img src="../image/lotion2.jpg" alt="Body Lotion">
+                        </div>
+                    </div>
+                    <div class="image-with-text__text-item">
+                        <div class="image-with-text__content">
+                            <h6 class="sub-heading">Hydrate Your Skin</h6>
+                            <h2 class="image-with-text__heading">Nourishing Body Lotions</h2>
+                            <div class="image-with-text__text">
+                                <p>Moisturize with our vegan body lotions, infused with natural scents for soft, glowing skin.</p>
+                            </div>
+                            <div class="text-icon-section">
+                                <div class="text-icon">
+                                    <img class="image-with-icon" src="../image/icon_1.png" alt="Natural" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_2.png" alt="Vegan" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_3.png" alt="Eco-Friendly" width="60" height="60">
+                                    <img class="image-with-icon" src="../image/icon_4.png" alt="Handmade" width="60" height="60">
+                                </div>
+                            </div>
+                            <a href="allshop_bodycare.html" class="button button--secondary">
+                                Shop now
+                                <svg class="button-icon" width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.9205 2.9376C16.749 3.0201 13.5775 3.05391 10.4047 3.03363C7.23455 3.01334 4.05628 2.8267 0.888844 2.98359C0.149052 3.0201 0.169338 4.22514 0.888844 4.30358C4.04547 4.65251 7.23725 4.5619 10.4047 4.52944C13.5775 4.49833 16.749 4.41313 19.9205 4.27924C20.6603 4.24813 20.6657 2.91732 19.9205 2.93625V2.9376Z" fill="white"></path>
+                                    <path d="M19.7948 3.36401C18.1083 3.74134 16.4474 4.25122 14.811 4.85711C13.1989 5.45355 11.58 6.07838 10.0896 7.01833C9.65273 7.29423 9.94891 8.13681 10.4304 7.95964C12.0344 7.36862 13.5802 6.59637 15.1761 5.97289C16.7734 5.34941 18.3909 4.80707 20.0152 4.29179C20.5346 4.12679 20.3128 3.2477 19.7948 3.36401Z" fill="white"></path>
+                                    <path d="M19.5364 3.11653C16.8505 2.68375 14.4188 1.5531 12.0398 0.0748715C11.4921 -0.265946 11.0376 0.646958 11.5543 1.04052C13.8805 2.81088 16.6828 3.71702 19.4282 4.04026C19.8759 4.093 19.9868 3.18957 19.5351 3.11653H19.5364Z" fill="white"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- العمود الأيسر: Follow Us و Certifications -->
+            <div class="left-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/nablussoapco/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/nablussoapco/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nablus-soap-b0218929/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://goo.gl/X8ZmNR" target="_blank" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Our Certifications</h3>
+                    <div class="certificates">
+                        <div class="certificates">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/final-Halal-2012.jpg" alt="Halal Certified">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/psi.jpg" alt="PSI Certified">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/ecocert-logo.jpg" alt="Ecocert">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/logo-GMP-scaled.jpg" alt="GMP Certified">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-section">
+                <div class="newsletter-container">
+                    <img src="../image/Iqon (1).png"></img>
+                    <h3 class="newsletter-title">Be the first to know</h3>
+                    <p class="newsletter-subtitle">Subscribe to our newsletter for updates and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter Your Email" required class="email-input">
+                        <button type="submit" class="submit-arrow"></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- العمود الأيمن: Quick Links -->
+            <div class="right-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="https://nablussoap.ps/media-photo-gallery/">Our Products</a></li>
+                        <li><a href="https://nablussoap.ps/careers/">Career Opportunities</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->
+        <div class="copyright-section">
+            <div class="copyright-content">
+                <div class="company-info">
+                    <span class="company-name">Nablus Soap & Cosmetics Company</span>
+                    <span class="copyright-text">© 2024 All Rights Reserved</span>
+                </div>
+                <div class="developer-credit">
+                    Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
+                    <a href="https://salman.ps" target="_blank">SALMAN.ps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="../js_file/mainn.js"></script>
+</body>
+</html>

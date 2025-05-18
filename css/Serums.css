@@ -40,13 +40,31 @@ body::before {
 
 .mega-dropdown-menu {
     width: 100%;
+    left: 0;
+    right: 0;
     padding: 20px;
-    left: 0 !important;
-    right: 0 !important;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    display: none;
+}  .mega-dropdown-menu.show {
+       opacity: 1;
+       transform: translateY(0);
+       display: block;
+   }
+.dropdown-column h6 {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .dropdown-column {
     padding: 0 15px;
+}
+/* Ensure dropdown stays open when hovering over menu */
+.mega-dropdown:hover .mega-dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .dropdown-column h6 {
@@ -2775,5 +2793,266 @@ body {
     .faq-image-wrapper {
         position: static;
         margin-bottom: 20px;
+    }
+}
+
+
+
+:root {
+    --gold: #4A3328;
+    --rose: #6B4F3A;
+    --dark: #3A3A3A;
+    --light: #FFF9FB;
+    --brown: #8B5A2B; /* اللون البني */
+}
+
+.product-image {
+    /* إطار بني كامل حول الصورة */
+    border: 2px solid var(--brown);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 4px 8px rgba(139, 90, 43, 0.2);
+}
+
+/* التعديل على التدرج اللوني لجعله بني */
+.product-image::after {
+    background: linear-gradient(to bottom,
+    rgba(139, 90, 43, 0.2) 0%,
+    rgba(139, 90, 43, 0) 40%);
+}
+
+:root {
+    --brown: #8B5A2B;
+    --light-brown: #E6D5C3;
+}
+
+.luxury-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.product-image {
+    border: 3px solid var(--brown);
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    overflow: hidden;
+    animation: borderPulse 4s infinite;
+}
+
+@keyframes borderPulse {
+    0%, 100% { border-color: var(--brown); }
+    50% { border-color: #B78D65; }
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px dashed var(--brown);
+    border-radius: 25px 25px 0 0;
+    animation: rotate 20s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.serum-title {
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 5px rgba(139, 90, 43, 0.3); }
+    to { text-shadow: 0 0 15px rgba(139, 90, 43, 0.6); }
+}
+
+.step {
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateX(10px);
+    color: var(--brown);
+}
+
+.beauty-tip {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.flying-img {
+    position: absolute;
+    width: 100px;
+    z-index: 1000;
+    border-radius: 8px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    pointer-events: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gold);
+    line-height: 1.6;
+}
+
+.luxury-card {
+    display: flex;
+    max-width: 900px;
+    margin: 5vh auto;
+
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeIn 0.8s 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.product-image {
+    flex: 1;
+    min-height: 400px;
+    background: url("../image/eef.jpg") center/cover;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    position: relative;
+    transition: all 0.5s ease;
+    margin-top: 50px;
+}
+.product-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(139, 90, 43, 0.15) 0%, rgba(139, 90, 43, 0) 30%);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+}
+
+.product-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.serum-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 28px;
+    margin-bottom: 25px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.serum-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+}
+
+.usage-steps {
+    margin: 25px 0;
+}
+
+.step {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+    animation: slideIn 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.step:nth-child(1) { animation-delay: 0.5s; }
+.step:nth-child(2) { animation-delay: 0.7s; }
+.step:nth-child(3) { animation-delay: 0.9s; }
+
+.step::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+}
+
+.beauty-tip {
+    background: var(--rose);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.98);
+    transition: transform 0.3s ease;
+}
+
+.beauty-tip:hover {
+    transform: scale(1);
+}
+
+.beauty-tip::before {
+    content: '✨ BEAUTY TIP';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.warning {
+    font-size: 13px;
+    color: #4A3328;
+    margin-top: 15px;
+    border-left: 2px solid #4A3328;
+    padding-left: 15px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .luxury-card {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .product-image {
+        min-height: 300px;
+        border-radius: 20px 20px 0 0;
     }
 }

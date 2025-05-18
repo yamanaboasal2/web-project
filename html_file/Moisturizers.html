@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Serums</title>
+    <link rel="stylesheet" href="../css/Moisturizers.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="background">
+    <div class = "main_nav">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" >Nablus Soap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" data-translate="navbar.home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.html" data-translate="navbar.contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="skincare.html"  data-bs-toggle="dropdown" aria-expanded="false">
+                                Skin Care
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="acne.html" data-translate="dropdown.skin.acne">Acne</a></li>
+                                <li><a class="dropdown-item" href="Dry.html" data-translate="dropdown.skin.dry">Dry Skin</a></li>
+                                <li><a class="dropdown-item" href="Wrinkles.html" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
+                                <li><a class="dropdown-item" href="DarkSpots.html" data-translate="dropdown.skin.spots">Blackheads & Dark Spots</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.products">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu mega-dropdown-menu">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <!-- العمود الأول: Face Care -->
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Face Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="#">Cleansers</a></li>
+                                                <li><a class="dropdown-item" href="#">Serums</a></li>
+                                                <li><a class="dropdown-item" href="#">Moisturizers</a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- العمود الثاني: Hair Care -->
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Hair Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="#">Shampoos</a></li>
+                                                <li><a class="dropdown-item" href="#">Conditioners</a></li>
+                                                <li><a class="dropdown-item" href="#">Hair masks</a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- العمود الثالث: Body Care -->
+                                        <div class="col-md-4 dropdown-column">
+                                            <h6>Body Care</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="#">Body soaps</a></li>
+                                                <li><a class="dropdown-item" href="#">Scrubs</a></li>
+                                                <li><a class="dropdown-item" href="#">Lotions</a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLanguage" role="button" data-bs-toggle="dropdown">
+                                <span id="current-language" data-translate="language.lang">Language</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item language-option" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item language-option" href="#" data-lang="ar">العربية</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit" data-translate="search.button">Search</button>
+                    </form>
+
+                    <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
+                        <div class="profile-icons" style="display: flex; gap: 8px;">
+                            <a href="shopping_cart.html" class="icon-link cart-icon">
+                                <img src="../image/shopping-cart-xxl.png" id="cart-icon" alt="سلة المشتريات" width="24" height="24">
+                                <span id="cart-count" style="
+                                    position: absolute;
+                                     top: -5px;
+                                    right: -5px;
+                                      background:#a58070;
+                                       color:#e8d9c5;
+                                        font-size: 10px;
+                                        padding: 2px 6px;
+                                          border-radius: 50%;
+                                      display: none;
+                                       font-weight: bold;
+                                       ">0</span>
+                            </a>
+                            </a>
+                            <a href="Wishlist.html" class="icon-link favorite-icon">
+                                <img src="../image/hearts-xxl.png" id="wishlist-icon" alt="المفضلات" width="24" height="24">
+                                <span id="wishlist-count" style="
+                                      position: absolute;
+                                         top: -5px;
+                                        right: -5px;
+                                          background:#a58070;
+                                           color:#e8d9c5;
+                                            font-size: 10px;
+                                            padding: 2px 6px;
+                                              border-radius: 50%;
+                                          display: none;
+                                           font-weight: bold;
+                                           ">0</span>
+                            </a>
+                            <a href="login.html" class="icon-link profile-icon">
+                                <img src="../image/user-xxl.png" alt="البروفايل" width="24" height="24">
+                            </a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<div class="container1">
+    <!-- Full-width background colors -->
+    <div class="slider-bg slider-bg-left"></div>
+    <div class="slider-bg slider-bg-right"></div>
+
+    <!-- Product Slider -->
+    <div class="product-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="product-showcase active">
+                <div class="col-image">
+                    <img src="../image/rtre.jpg" alt="Plant-Based Soap" class="product-image">
+                </div>
+                <div class="col-text">
+                    <div class="subheading">Suitable for all skin types, especially dry, sensitive, or mature skin</div>
+                    <h2 class="heading">Floral Face Moisturizer with Hyaluronic Acid</h2>
+                    <div class="description">
+                        <p>Soothing & Mattifying Floral Face Moisturizer – Day & Night</p>
+                    </div>
+                    <div class="price">
+                        <span class="discounted-price">₹76,00</span>
+                    </div>
+                    <a href="#" class="buy-button">Buy Now - ₹76,00</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="product-showcase">
+                <div class="col-image">
+                    <img src="../image/maskair.jpg" alt="Lavender Soap" class="product-image">
+                </div>
+                <div class="col-text">
+                    <div class="subheading">Ideal for oily, combination or blemish prone skins</div>
+                    <h2 class="heading">Marine Algae Face Moisturizer</h2>
+                    <div class="description">
+                        <p>Hydrating & Revitalizing Marine Algae Face Moisturizer - Day & Night</p>
+                    </div>
+                    <div class="price">
+                        <span class="discounted-price">₹82.00</span>
+                    </div>
+                    <a href="#" class="buy-button">Buy Now - ₹82.00</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="product-showcase">
+                <div class="col-image">
+                    <img src="../image/tregv.jpg" alt="Citrus Soap" class="product-image">
+                </div>
+                <div class="col-text">
+                    <div class="subheading">Ideal for dry or mature skins – New packaging, same formula</div>
+                    <h2 class="heading">Superfruit Face Moisturizer with Bakuchiol</h2>
+                    <div class="description">
+                        <p>Nourishing Superfruit Face Moisturizer – Day & Night</p>
+                    </div>
+                    <div class="price">
+                        <span class="discounted-price">₹42,000</span>
+                    </div>
+                    <a href="#" class="buy-button">Buy Now - ₹42.00</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-arrows">
+            <div class="arrow arrow-left" id="prev-slide"><i class="fas fa-chevron-left"></i></div>
+            <div class="arrow arrow-right" id="next-slide"><i class="fas fa-chevron-right"></i></div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+<section class="product-section">
+    <h2>Moisturizers</h2>
+    <div class="centered-text">
+        <div class="border-decoration top-left"></div>
+        <div class="border-decoration bottom-right"></div>
+        <p>
+            Keep your skin plumped and hydrated with our natural, vegan & eco-friendly face moisturizers! ♡ </p>
+
+        <p>  Take our short quiz to find your perfect match! </p>
+
+        <span class="heart">♡</span>
+    </div>
+
+    <a href="#" class="cta">Explore the Collection</a>
+</section>
+
+<div class="items-container">
+    <!-- Product Item 1 -->
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/rtre.jpg" alt="Product 1" class="item-img main-img">
+            <img src="../image/rrff.jpg" alt="Product 1 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist"
+                        data-name="Floral Face Moisturizer with Hyaluronic Acid"
+                        data-price="$76.00"
+                        data-image="../image/rtre.jpg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Floral Face Moisturizer with Hyaluronic Acid</a>
+            <div class="item-cost">$76.00</div>
+            <button class="purchase-btn"
+                    data-name="Floral Face Moisturizer with Hyaluronic Acid"
+                    data-price="$76.00"
+                    data-image="../image/rtre.jpg">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/maskair.jpg" alt="Product 2" class="item-img main-img">
+            <img src="../image/Moisturizers1.jpg" alt="Product 2 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist"
+                        data-name="Ideal for oily, combination or blemish prone skins"
+                        data-price="$22.00"
+                        data-image="../image/maskair.jpg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Ideal for oily, combination or blemish prone skins</a>
+            <div class="item-cost">$22.00</div>
+            <button class="purchase-btn"
+                    data-name="Ideal for oily, combination or blemish prone skins"
+                    data-price="$22.00"
+                    data-image="../image/maskair.jpg">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Additional product items would follow the same pattern -->
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/tregv.jpg" alt="Product 2" class="item-img main-img">
+            <img src="../image/eeeee.jpg" alt="Product 2 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist"
+                        data-name="Brightening Face Serum with vitamin C"
+                        data-price="$42.00"
+                        data-image="../image/tregv.jpg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Brightening Face Serum with vitamin C</a>
+            <div class="item-cost">$42.00</div>
+            <button class="purchase-btn"
+                    data-name="Brightening Face Serum with vitamin C"
+                    data-price="$42.00"
+                    data-image="../image/tregv.jpg">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Additional product items would follow the same pattern -->
+    <div class="item-box">
+        <div class="item-media">
+            <img src="../image/sss.PNG" alt="Product 2" class="item-img main-img">
+            <img src="../image/shop2.jpg" alt="Product 2 Alternate" class="item-img alt-img">
+
+            <div class="item-actions">
+                <button class="save-item" aria-label="Add to wishlist"
+                        data-name="Ideal for dry or mature skins – New packaging, same formula"
+                        data-price="$42.00"
+                        data-image="../image/sss.PNG" >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+                <button class="preview-item" aria-label="Quick view">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path d="M12 4a8 8 0 100 16 8 8 0 000-16z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="item-details">
+            <a href="#" class="item-name">Ideal for dry or mature skins – New packaging, same formula</a>
+            <div class="item-cost">$42.00</div>
+            <button class="purchase-btn"
+                    data-name="Ideal for dry or mature skins – New packaging, same formula"
+                    data-price="$42.00"
+                    data-image="../image/sss.PNG">
+                <svg class="basket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <!-- Hero Slider Section (Visible by default) -->
+    <div class="quiz-hero" id="heroSlider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/skk.jpg');">
+            <div class="hero-content">
+                <h2>Find Your Perfect Face Cream</h2>
+                <p>Answer a few questions to find your match!</p>
+                <button class="quiz-btn" id="startQuizBtn">Take the Quiz</button>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/skk.jpg');">
+            <div class="hero-content">
+                <h2>Personalized Skincare</h2>
+                <p>Get recommendations tailored to your unique skin type and concerns</p>
+                <button class="quiz-btn" id="startQuizBtn2">Take the Quiz</button>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/skins.jpg');">
+            <div class="hero-content">
+                <h2>Science-Backed Solutions</h2>
+                <p>Discover products with clinically proven ingredients for your skin needs</p>
+                <button class="quiz-btn" id="startQuizBtn3">Take the Quiz</button>
+            </div>
+        </div>
+
+        <div class="slider-dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+        </div>
+    </div>
+
+    <!-- Quiz Container (Hidden by default) -->
+    <div class="quiz-container" id="quizContainer">
+        <div class="quiz-header">
+            <h1>Skincare Quiz</h1>
+            <p>Answer a few questions and we'll help you find the perfect skincare product for your skin type and needs</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Step 1 - Skin Type -->
+        <div class="quiz-step active" id="step1">
+            <div class="step-header">
+                <h2>What is your skin type?</h2>
+                <p>Choose the description that best matches your skin</p>
+            </div>
+
+            <div class="options-container">
+                <div class="quiz-option" data-value="dry">
+                    <img src="../image/drys.jpg" alt="Dry skin" class="option-image">
+                    <h3 class="option-title">Dry</h3>
+                    <p class="option-description">Feels tight and flaky, needs constant moisture</p>
+                </div>
+
+                <div class="quiz-option" data-value="balanced">
+                    <img src="../image/Balanceds.jpg" alt="Balanced skin" class="option-image">
+                    <h3 class="option-title">Balanced</h3>
+                    <p class="option-description">Not too oily, not too dry, just right</p>
+                </div>
+
+                <div class="quiz-option" data-value="oily">
+                    <img src="../image/Oilys.jpg" alt="Oily skin" class="option-image">
+                    <h3 class="option-title">Oily</h3>
+                    <p class="option-description">Shiny appearance, prone to breakouts</p>
+                </div>
+
+                <div class="quiz-option" data-value="combination">
+                    <img src="../image/Combinations.jpg" alt="Combination skin" class="option-image">
+                    <h3 class="option-title">Combination</h3>
+                    <p class="option-description">Oily in T-zone, dry on cheeks</p>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav btn-prev" disabled>Previous</button>
+                <button class="quiz-btn-nav btn-next" id="next1" disabled>Next</button>
+            </div>
+        </div>
+
+        <!-- Step 2 - Skin Sensitivity -->
+        <div class="quiz-step" id="step2">
+            <div class="step-header">
+                <h2>Is your skin ever sensitive?</h2>
+                <p>Choose how often your skin reacts negatively to products</p>
+            </div>
+
+            <div class="options-container">
+                <div class="quiz-option" data-value="never">
+                    <h3 class="option-title">Never</h3>
+                    <p class="option-description">My skin rarely reacts to products</p>
+                </div>
+
+                <div class="quiz-option" data-value="rarely">
+                    <h3 class="option-title">Rarely</h3>
+                    <p class="option-description">Only with very harsh products</p>
+                </div>
+
+                <div class="quiz-option" data-value="sometimes">
+                    <h3 class="option-title">Sometimes</h3>
+                    <p class="option-description">Certain ingredients cause reactions</p>
+                </div>
+
+                <div class="quiz-option" data-value="always">
+                    <h3 class="option-title">Always</h3>
+                    <p class="option-description">My skin is easily irritated</p>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav btn-prev" id="prev2">Previous</button>
+                <button class="quiz-btn-nav btn-next" id="next2" disabled>Next</button>
+            </div>
+        </div>
+
+        <!-- Step 3 - Age Group -->
+        <div class="quiz-step" id="step3">
+            <div class="step-header">
+                <h2>What age group are you in?</h2>
+                <p>Age helps us recommend the right products for your skin's needs</p>
+            </div>
+
+            <div class="options-container">
+                <div class="quiz-option" data-value="20s">
+                    <h3 class="option-title">20s</h3>
+                    <p class="option-description">Focus on prevention and hydration</p>
+                </div>
+
+                <div class="quiz-option" data-value="30s">
+                    <h3 class="option-title">30s</h3>
+                    <p class="option-description">Early signs of aging appear</p>
+                </div>
+
+                <div class="quiz-option" data-value="40s">
+                    <h3 class="option-title">40s</h3>
+                    <p class="option-description">More noticeable aging signs</p>
+                </div>
+
+                <div class="quiz-option" data-value="50s">
+                    <h3 class="option-title">50s</h3>
+                    <p class="option-description">Focus on firmness and hydration</p>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav btn-prev" id="prev3">Previous</button>
+                <button class="quiz-btn-nav btn-next" id="next3" disabled>Next</button>
+            </div>
+        </div>
+
+        <!-- Step 4 - Moisturizer Preference -->
+        <div class="quiz-step" id="step4">
+            <div class="step-header">
+                <h2>You prefer when your moisturizer is...</h2>
+                <p>Choose the texture you like most</p>
+            </div>
+
+            <div class="options-container">
+                <div class="quiz-option" data-value="rich">
+                    <img src="../image/Richandcreamy.jpg" alt="Rich and creamy" class="option-image">
+                    <h3 class="option-title">Rich and creamy</h3>
+                    <p class="option-description">Deep hydration that lasts all day</p>
+                </div>
+
+                <div class="quiz-option" data-value="light">
+                    <img src="../image/Verylight.jpg" alt="Very light" class="option-image">
+                    <h3 class="option-title">Very light</h3>
+                    <p class="option-description">Quick absorption, no greasy feel</p>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav btn-prev" id="prev4">Previous</button>
+                <button class="quiz-btn-nav btn-next" id="next4" disabled>Next</button>
+            </div>
+        </div>
+
+        <!-- Step 5 - Goals -->
+        <div class="quiz-step" id="step5">
+            <div class="step-header">
+                <h2>What are your face moisturizer goals?</h2>
+                <p>Select up to 3 main concerns you want to address</p>
+            </div>
+
+            <div class="options-container">
+                <div class="quiz-option" data-value="moisturize">
+                    <h3 class="option-title">Moisturize</h3>
+                    <p class="option-description">Hydrate dry or dehydrated skin</p>
+                </div>
+
+                <div class="quiz-option" data-value="brighten">
+                    <h3 class="option-title">Brighten</h3>
+                    <p class="option-description">Even out dull or tired-looking skin</p>
+                </div>
+
+                <div class="quiz-option" data-value="soothe">
+                    <h3 class="option-title">Soothe</h3>
+                    <p class="option-description">Calm irritation or redness</p>
+                </div>
+
+                <div class="quiz-option" data-value="reduceRedness">
+                    <h3 class="option-title">Reduce redness</h3>
+                    <p class="option-description">Minimize visible redness</p>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav btn-prev" id="prev5">Previous</button>
+                <button class="quiz-btn-nav btn-next" id="next5" disabled>Continue</button>
+            </div>
+        </div>
+
+        <!-- Email Collection -->
+        <div class="quiz-step" id="step6">
+            <div class="step-header">
+                <h2>Get Your Personalized Recommendation</h2>
+                <p>Enter your email to receive your custom skincare solution</p>
+            </div>
+
+            <div class="email-step">
+                <input type="email" id="userEmail" class="email-input" placeholder="Your email address">
+                <button class="quiz-btn-nav" id="submitEmail">Get My Results</button>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav btn-prev" id="prev6">Previous</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="result-container" id="result">
+            <div class="result-header">
+                <h2>Here's the moisturizer for you 🧡</h2>
+                <p>Based on your quiz answers, we recommend:</p>
+            </div>
+
+            <div class="product-result">
+                <div class="product-image1">
+                    <img src="../image/rtre.jpg" alt="Marine Algae Face Moisturizer">
+                </div>
+
+                <div class="product-info">
+                    <h3 class="product-title">Floral Face Moisturizer with Hyaluronic Acid</h3>
+                    <div style="display: flex; gap: 10px; margin: 10px 0; flex-wrap: wrap;">
+                        <span style="background: #f0f8ff; padding: 5px 10px; border-radius: 20px; font-size: 0.8em;">Natural</span>
+                        <span style="background: #f0f8ff; padding: 5px 10px; border-radius: 20px; font-size: 0.8em;">Vegan</span>
+                        <span style="background: #f0f8ff; padding: 5px 10px; border-radius: 20px; font-size: 0.8em;">Made in Quebec</span>
+                        <span style="background: #f0f8ff; padding: 5px 10px; border-radius: 20px; font-size: 0.8em;">Recyclable packaging</span>
+                    </div>
+                    <p class="product-description">
+                        Made from aloe vera, this lightweight face moisturizer will soothe, moisturize and brighten your skin.
+                        It also contains algae (seaweed), Chlorella and Melissa flower water, with powerful anti-inflammatory
+                        and anti-aging properties to revitalise the skin and boost suppleness. Its light gel texture absorbs
+                        quickly to quench the skin!
+                    </p>
+                    <p style="font-style: italic; margin-top: 20px;">
+                        Get a FREE face scrub of your choice with the purchase of a moisturizer*
+                    </p>
+                    <a href="#" class="product-btn">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button class="quiz-btn-nav" id="restartQuiz">Retake Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="luxury-marquee">
+    <div class="marquee-inner">
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+        <!-- تكرار العناصر للحركة السلسة -->
+        <div class="marquee-item">
+            <a href="#"><i class="icon-gift"></i> #20% Off On All Natural Soaps!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-shipping"></i> #Free International Shipping Over $80!</a>
+        </div>
+        <div class="marquee-item">
+            <a href="#"><i class="icon-friends"></i> #Refer A Friend For 20% Off!</a>
+        </div>
+    </div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-container">
+        <div class="faq-header">
+            <h2 class="faq-main-title">FAQs</h2>
+            <p class="faq-subtitle">Common questions about our products</p>
+        </div>
+
+        <div class="faq-content-wrapper">
+            <!-- قسم الأسئلة على اليسار -->
+            <div class="faq-accordion">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>What are the benefits of face moisturizers?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Face moisturizers help to replenish and maintain the skin's hydration levels by trapping moisture in the outermost layer of the skin. This prevents dryness and keeps the skin feeling soft, smooth, and supple. Additionally, moisturizers help strengthen the skin's natural barrier function, keeping it looking youthful and protecting it from external aggressors. Regular use of a moisturizer can also improve overall texture and tone, promoting a healthier, more radiant complexion.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>Which face moisturizer should I choose?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You should pick your face moisturizer based on your skin type and needs!</p>
+
+                        <p> The Floral Face Moisturizer with Hyaluronic Acid is suitable for any skin type, especially dry, sensitive or mature skin. It contains flower waters, hibiscus oil and hyaluronic acid to brighten the complexion, improve skin elasticity and nourish the skin deeply. Texture: Soft and light</p>
+                        <p> The Marine Algae Face Moisturizer is ideal for oily, combination or blemish prone skins. It contains aloe vera, algae, Chlorella and Melissa flower water to to calm and revitalise the skin and boost suppleness. Texture: Gel-like</p>
+                        <p>  The Superfruit Face Moisturizer with Bakuchiol is ideal for very dry and/or mature skin. It contains mango butter, pomegranate seed oil and Bakuchiol to provide a wonderful hydration, prevent blemishes and keep skin looking youthful! Texture: Rich and decadent</p>
+
+
+
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>How often should I use a face moisturizer?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can use a face moisturizer daily, morning and night for best results!</p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>How do I apply a face moisturizer?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>After cleansing the face, take a small amount of your moisturizer and apply it to the face and neck in circular motions.</p>
+
+                        <p>   Please note that you should always apply lighter skin care before your moisturizer.</p>
+
+
+
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">+</span>
+                        <h3>Are the face moisturizers available in bulk?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes :) All 3 face moisturizers are available in bulk at our boutique on Saint-Laurent blvd in Montreal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الصور الدائرية على اليمين -->
+            <div class="faq-images-column">
+                <!-- الصورة الأولى - يمكن تعديل top حسب الحاجة -->
+                <div class="faq-image-wrapper" style="top: 100px; left:260px;">
+                    <img src="../image/rtre.jpg" alt="Product 1" class="faq-image">
+                </div>
+
+                <!-- الصورة الثانية - يمكن تعديل top حسب الحاجة -->
+                <div class="faq-image-wrapper" style="top: 250px;left:20px;">
+                    <img src="../image/maskair.jpg" alt="Product 2" class="faq-image">
+                </div>
+
+                <!-- الصورة الثالثة - يمكن تعديل top حسب الحاجة -->
+                <div class="faq-image-wrapper" style="top: 410px;left:260px">
+                    <img src="../image/sss.PNG" alt="Product 3" class="faq-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- العمود الأيسر: Follow Us و Certifications -->
+            <div class="left-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/nablussoapco/" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/nablussoapco/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nablus-soap-b0218929/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://goo.gl/X8ZmNR" target="_blank" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Our Certifications</h3>
+                    <div class="certificates">
+                        <div class="certificates">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/final-Halal-2012.jpg" alt="Halal Certified">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/psi.jpg" alt="PSI Certified">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/ecocert-logo.jpg" alt="Ecocert">
+                            <img src="https://nablussoap.ps/wp/wp-content/uploads/logo-GMP-scaled.jpg" alt="GMP Certified">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newsletter-section">
+                <div class="newsletter-container">
+                    <img src="../image/Iqon (1).png"></img>
+                    <h3 class="newsletter-title">Be the first to know</h3>
+                    <p class="newsletter-subtitle">Subscribe to our newsletter for updates and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter Your Email" required class="email-input">
+                        <button type="submit" class="submit-arrow"></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- العمود الأيمن: Quick Links -->
+            <div class="right-column">
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                        <li><a href="https://nablussoap.ps/media-photo-gallery/">Our Products</a></li>
+                        <li><a href="https://nablussoap.ps/careers/">Career Opportunities</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->
+        <div class="copyright-section">
+            <div class="copyright-content">
+                <div class="company-info">
+                    <span class="company-name">Nablus Soap & Cosmetics Company</span>
+                    <span class="copyright-text">© 2024 All Rights Reserved</span>
+                </div>
+                <div class="developer-credit">
+                    Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
+                    <a href="https://salman.ps" target="_blank">SALMAN.ps</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="../js_file/Serums.js"></script>
+
+<script>
+
+    // Check if EmailJS is loaded, use fallback if needed
+    if (typeof emailjs === 'undefined') {
+        console.error('EmailJS SDK not loaded from primary CDN. Attempting fallback CDN.');
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/@emailjs/browser@3/dist/email.min.js';
+        script.onload = initializeEmailJS;
+        script.onerror = () => console.error('EmailJS fallback CDN failed to load. Email functionality will be unavailable.');
+        document.head.appendChild(script);
+    } else {
+        initializeEmailJS();
+    }
+
+    function initializeEmailJS() {
+        // Initialize EmailJS with your User ID
+        // **CRITICAL**: Replace 'YOUR_EMAILJS_USER_ID' with your EmailJS User ID from the EmailJS dashboard
+        // Example: emailjs.init("user_1234567890abcdef");
+        emailjs.init("5UQDS_zOAqijaNXKQ");
+        console.log('EmailJS initialized successfully');
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM fully loaded, initializing quiz');
+
+        // Start quiz button functionality
+        const startQuizBtns = document.querySelectorAll('[id^="startQuizBtn"]');
+        const quizContainer = document.getElementById('quizContainer');
+        const heroSlider = document.getElementById('heroSlider');
+
+        // Check if critical elements exist
+        if (!quizContainer || !heroSlider) {
+            console.error('Critical elements missing. Check IDs: #quizContainer, #heroSlider');
+            return;
+        }
+
+        // Explicitly hide quiz container on load
+        quizContainer.classList.remove('active');
+        quizContainer.style.display = 'none';
+        heroSlider.style.display = 'block';
+        console.log('Initial state: Hero slider visible, quiz container hidden');
+
+        console.log('Found quiz buttons:', startQuizBtns.length);
+        startQuizBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Quiz button clicked:', btn.id);
+                heroSlider.style.display = 'none';
+                quizContainer.classList.add('active');
+                quizContainer.style.display = 'block';
+                quizContainer.scrollIntoView({ behavior: 'smooth' });
+                console.log('Toggled visibility: Hero slider hidden, quiz container shown');
+            });
+        });
+
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Auto-advance slides every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        // Pause on hover
+        const slider = document.querySelector('.quiz-hero');
+        slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        slider.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+
+        // Dot navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(slideInterval);
+                showSlide(parseInt(this.getAttribute('data-slide')));
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+
+        // Quiz navigation variables
+        const steps = document.querySelectorAll('.quiz-step');
+        const resultContainer = document.getElementById('result');
+        const progressBar = document.getElementById('progressBar');
+        const nextButtons = document.querySelectorAll('[id^="next"]');
+        const prevButtons = document.querySelectorAll('[id^="prev"]');
+        const submitEmail = document.getElementById('submitEmail');
+        const restartQuiz = document.getElementById('restartQuiz');
+        let currentStep = 0;
+        const totalSteps = 5; // Number of quiz steps (excluding email and result)
+
+        // User answers object
+        const userAnswers = {
+            skinType: '',
+            sensitivity: '',
+            ageGroup: '',
+            preference: '',
+            goals: []
+        };
+
+        // Initialize the quiz
+        function initQuiz() {
+            showStep(0);
+            setupOptionSelection();
+            console.log('Quiz initialized, showing step 1');
+        }
+
+        // Show current step and hide others
+        function showStep(stepIndex) {
+            // Hide all steps and result
+            steps.forEach(step => {
+                step.classList.remove('active');
+                step.style.display = 'none';
+            });
+            resultContainer.classList.remove('active');
+            resultContainer.style.display = 'none';
+
+            // Show the requested step
+            if (stepIndex >= 0 && stepIndex < steps.length) {
+                steps[stepIndex].classList.add('active');
+                steps[stepIndex].style.display = 'block';
+            } else if (stepIndex === steps.length) {
+                // Show result
+                resultContainer.classList.add('active');
+                resultContainer.style.display = 'block';
+            }
+
+            // Update progress bar (exclude result step)
+            if (stepIndex < totalSteps) {
+                const progress = ((stepIndex) / totalSteps) * 100;
+                progressBar.style.width = `${progress}%`;
+            } else {
+                progressBar.style.width = '100%';
+            }
+
+            currentStep = stepIndex;
+        }
+
+        // Setup option selection for each step
+        function setupOptionSelection() {
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // For steps with single selection (not goals)
+                    if (!this.closest('#step5')) {
+                        // Remove selected class from siblings
+                        const parent = this.parentElement;
+                        const siblings = parent.querySelectorAll('.quiz-option');
+                        siblings.forEach(sib => sib.classList.remove('selected'));
+
+                        // Add selected class to clicked option
+                        this.classList.add('selected');
+
+                        // Store the selected value
+                        const stepId = this.closest('.quiz-step').id;
+                        const value = this.getAttribute('data-value');
+
+                        if (stepId === 'step1') {
+                            userAnswers.skinType = value;
+                        } else if (stepId === 'step2') {
+                            userAnswers.sensitivity = value;
+                        } else if (stepId === 'step3') {
+                            userAnswers.ageGroup = value;
+                        } else if (stepId === 'step4') {
+                            userAnswers.preference = value;
+                        }
+
+                        // Enable next button
+                        const nextButton = document.querySelector(`#${stepId} .btn-next`);
+                        if (nextButton) {
+                            nextButton.disabled = false;
+                        }
+                    } else {
+                        // For goals step (multiple selection)
+                        const value = this.getAttribute('data-value');
+                        const index = userAnswers.goals.indexOf(value);
+                        if (index === -1) {
+                            if (userAnswers.goals.length < 3) {
+                                userAnswers.goals.push(value);
+                                this.classList.add('selected');
+                            }
+                        } else {
+                            userAnswers.goals.splice(index, 1);
+                            this.classList.remove('selected');
+                        }
+
+                        // Enable next button if at least one goal is selected
+                        const nextButton = document.querySelector('#step5 .btn-next');
+                        if (nextButton) {
+                            nextButton.disabled = userAnswers.goals.length === 0;
+                        }
+                    }
+                });
+            });
+        }
+
+        // Next button click handlers
+        nextButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStepId = this.closest('.quiz-step').id;
+                const nextStepIndex = parseInt(currentStepId.replace('step', ''));
+
+                // Special case for goals step
+                if (currentStepId === 'step5' && userAnswers.goals.length === 0) {
+                    alert('Please select at least one goal');
+                    return;
+                }
+
+                showStep(nextStepIndex);
+            });
+        });
+
+        // Previous button click handlers
+        prevButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const currentStepId = this.closest('.quiz-step').id;
+                const prevStepIndex = parseInt(currentStepId.replace('step', '')) - 1;
+                showStep(prevStepIndex);
+            });
+        });
+
+        // Submit email handler
+        submitEmail.addEventListener('click', function() {
+            const email = document.getElementById('userEmail').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Prepare email content to match results page
+            const emailContent = {
+                to_email: email,
+                product_title: "Marine Algae Face Moisturizer",
+                product_tags: "Natural, Vegan, Made in Quebec, Recyclable packaging",
+                product_description: "Made from aloe vera, this lightweight face moisturizer will soothe, moisturize and brighten your skin. It also contains algae (seaweed), Chlorella and Melissa flower water, with powerful anti-inflammatory and anti-aging properties to revitalise the skin and boost suppleness. Its light gel texture absorbs quickly to quench the skin!",
+                offer: "Get a FREE face scrub of your choice with the purchase of a moisturizer*",
+                user_answers: JSON.stringify(userAnswers, null, 2)
+            };
+
+            // Log email content for debugging
+            console.log('Attempting to send email with content:', emailContent);
+
+            // Send email using EmailJS
+            // **CRITICAL**: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS Service ID and Template ID
+            // Example: emailjs.send('service_xxxxxxx', 'template_xxxxxxx', emailContent)
+            emailjs.send('service_4mhwk0b', 'template_xjbsrh5', emailContent)
+                .then(function(response) {
+                    console.log('Email sent successfully:', response.status, response.text);
+                    console.log('User answers:', userAnswers);
+                    console.log('User email:', email);
+                    alert('Email sent successfully! Please check your inbox and spam/junk folder.');
+                    // Show results
+                    showStep(steps.length);
+                }, function(error) {
+                    console.error('Email sending failed:', error);
+                    let errorMessage = 'Failed to send email. ';
+                    if (error.status === 401) {
+                        errorMessage += 'Invalid User ID. Please check YOUR_EMAILJS_USER_ID in the EmailJS dashboard.';
+                    } else if (error.status === 400) {
+                        errorMessage += 'Invalid Service ID, Template ID, or template parameters. Please check YOUR_SERVICE_ID and YOUR_TEMPLATE_ID, and ensure template placeholders match the email content.';
+                    } else if (error.status === 429) {
+                        errorMessage += 'EmailJS quota exceeded (200 emails/month). Please check your EmailJS dashboard or upgrade your plan.';
+                    } else if (error.status === 0) {
+                        errorMessage += 'Network error or EmailJS SDK not loaded. Please check your internet connection and ensure the EmailJS script is loaded.';
+                    } else {
+                        errorMessage += error.text || 'Unknown error. Please check your EmailJS configuration and try again.';
+                    }
+                    alert(errorMessage + ' You can still view your results below. Contact support if the issue persists.');
+                    // Show results even if email fails
+                    showStep(steps.length);
+                });
+        });
+
+        // Restart quiz handler
+        restartQuiz.addEventListener('click', function() {
+            // Reset user answers
+            for (let key in userAnswers) {
+                if (Array.isArray(userAnswers[key])) {
+                    userAnswers[key] = [];
+                } else {
+                    userAnswers[key] = '';
+                }
+            }
+
+            // Reset UI
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+
+            document.querySelectorAll('.btn-next').forEach(btn => {
+                btn.disabled = true;
+            });
+
+            document.getElementById('userEmail').value = '';
+
+            // Show hero slider and hide quiz
+            heroSlider.style.display = 'block';
+            quizContainer.classList.remove('active');
+            quizContainer.style.display = 'none';
+            console.log('Quiz reset: Hero slider visible, quiz container hidden');
+
+            // Reset to first slide
+            showSlide(0);
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+
+            // Show first step
+            showStep(0);
+        });
+
+        // Initialize the quiz
+        initQuiz();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        let currentIndex = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev', 'next');
+
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i < index) {
+                    slide.classList.add('prev');
+                } else {
+                    slide.classList.add('next');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+            resetTimer();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+
+        // Event listeners
+        nextArrow.addEventListener('click', nextSlide);
+        prevArrow.addEventListener('click', prevSlide);
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                showSlide(currentIndex);
+                resetTimer();
+            });
+        });
+
+        // Auto-play with pause on hover
+        slideInterval = setInterval(nextSlide, 6000);
+
+        const slider = document.querySelector('.quiz-hero');
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        slider.addEventListener('mouseleave', resetTimer);
+
+        // Initialize first slide
+        showSlide(0);
+    });
+
+</script>
+</body>
+</html>
+

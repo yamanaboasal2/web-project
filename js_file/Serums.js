@@ -226,3 +226,170 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.description').forEach(desc => {
     observer.observe(desc);
 });
+
+
+
+
+
+function updateWishlistCount() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const countElement = document.getElementById('wishlist-count');
+    countElement.textContent = wishlist.length;
+    countElement.style.display = wishlist.length > 0 ? 'inline-block' : 'none';
+}
+
+document.querySelectorAll('.save-item').forEach(button => {
+    button.addEventListener('click', function () {
+        const name = button.getAttribute('data-name');
+        const price = button.getAttribute('data-price');
+        const image = button.getAttribute('data-image');
+        const product = { name, price, image };
+
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        // 👉 السماح بالتكرار
+        wishlist.push(product);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+        // ✅ تحديث العداد دايماً
+        updateWishlistCount();
+
+        // ✈️ حركة الطيران
+        const flyingImg = document.createElement('img');
+        flyingImg.src = image;
+        flyingImg.className = 'flying-img';
+
+        const rect = button.getBoundingClientRect();
+        flyingImg.style.top = `${rect.top + window.scrollY}px`;
+        flyingImg.style.left = `${rect.left + window.scrollX}px`;
+
+        document.body.appendChild(flyingImg);
+
+        const target = document.getElementById('wishlist-icon').getBoundingClientRect();
+        const deltaX = target.left - rect.left;
+        const deltaY = target.top - rect.top;
+
+        requestAnimationFrame(() => {
+            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
+            flyingImg.style.opacity = '0';
+        });
+
+        setTimeout(() => flyingImg.remove(), 1000);
+    });
+});
+
+// 📦 عند تحميل الصفحة، نحدث العداد
+document.addEventListener('DOMContentLoaded', updateWishlistCount);
+
+
+
+
+
+function updatecartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const countElement = document.getElementById('cart-count');
+    countElement.textContent = cart.length;
+    countElement.style.display = cart.length > 0 ? 'inline-block' : 'none';
+}
+
+document.querySelectorAll('.purchase-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const name = button.getAttribute('data-name');
+        const price = button.getAttribute('data-price');
+        const image = button.getAttribute('data-image');
+        const product = { name, price, image };
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // 👉 السماح بالتكرار
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // ✅ تحديث العداد دايماً
+        updatecartCount();
+
+        // ✈️ حركة الطيران
+        const flyingImg = document.createElement('img');
+        flyingImg.src = image;
+        flyingImg.className = 'flying-img';
+
+        const rect = button.getBoundingClientRect();
+        flyingImg.style.top = `${rect.top + window.scrollY}px`;
+        flyingImg.style.left = `${rect.left + window.scrollX}px`;
+
+        document.body.appendChild(flyingImg);
+
+        const target = document.getElementById('cart-icon').getBoundingClientRect();
+        const deltaX = target.left - rect.left;
+        const deltaY = target.top - rect.top;
+
+        requestAnimationFrame(() => {
+            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
+            flyingImg.style.opacity = '0';
+        });
+
+        setTimeout(() => flyingImg.remove(), 1000);
+    });
+});
+
+// 📦 عند تحميل الصفحة، نحدث العداد
+document.addEventListener('DOMContentLoaded', updatecartCount);
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const megaDropdown = document.querySelector('.mega-dropdown');
+    const dropdownToggle = megaDropdown.querySelector('.dropdown-toggle');
+    const dropdownMenu = megaDropdown.querySelector('.dropdown-menu');
+
+    // Check if device is mobile
+    function isMobile() {
+        return window.innerWidth <= 991.98 || 'ontouchstart' in window;
+    }
+
+    if (!isMobile()) {
+        // Show dropdown on hover over link or menu
+        megaDropdown.addEventListener('mouseenter', function () {
+            dropdownToggle.setAttribute('aria-expanded', 'true');
+            dropdownMenu.classList.add('show');
+        });
+
+        // Hide dropdown when leaving both link and menu
+        megaDropdown.addEventListener('mouseleave', function () {
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+            dropdownMenu.classList.remove('show');
+        });
+
+        // Allow navigation on click
+        dropdownToggle.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default to avoid Bootstrap toggle
+            window.location.href = this.getAttribute('href');
+        });
+    } else {
+        // Mobile: Toggle dropdown on first tap, navigate on second
+        dropdownToggle.addEventListener('click', function (e) {
+            if (!dropdownMenu.classList.contains('show')) {
+                e.preventDefault();
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+                dropdownMenu.classList.add('show');
+            } else {
+                window.location.href = this.getAttribute('href');
+            }
+        });
+
+        // Close dropdown on outside tap
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.mega-dropdown')) {
+                dropdownMenu.classList.remove('show');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
+
+
+
