@@ -33,6 +33,16 @@
     transform: translate(-50%, -50%) scale(1.05);
 }
 
+@media (max-width: 576px) {
+    .full-width-img {
+        aspect-ratio: 4 / 3; /* نسبة أفضل للجوالات */
+    }
+    .up_img {
+        top: 90%; /* اقتراب من الأسفل */
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
 
 .moving-bar {
     background-color: #333;
@@ -66,7 +76,15 @@
         transform: translateX(-100%);
     }
 }
-
+@media (max-width: 576px) {
+    .moving-bar {
+        padding: 6px 0;
+    }
+    .moving-text {
+        font-size: 14px;
+        animation: moveText 12s linear infinite; /* تسريع الحركة */
+    }
+}
 
 .skin1{
     width: 400px;
@@ -103,13 +121,33 @@
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
+
 }
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+.skin1, .text-content, .acnebutton {
+    will-change: transform, opacity;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
+.text-content h1 {
+    transition: color 0.4s ease;
+}
+
+.text-content h1:hover {
+    color: #7A563C;
+}
+
+.text-content p {
+    transition: transform 0.3s ease;
+}
+
+.text-content p:hover {
+    transform: translateX(3px);
+}
 
 .Wrinkles{
     width: 400px;
@@ -233,6 +271,50 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+
+@media (max-width: 576px) {
+    .divskin1, .divWrinkles, .divBlackheads, .divDry {
+        flex-direction: column; /* تخطيط عمودي */
+        align-items: flex-start;
+        margin: 20px 10px; /* تقليل الهوامش */
+        gap: 10px;
+    }
+
+    .skin1, .Wrinkles, .Blackheads, .Dry {
+        max-width: 100%; /* تأخذ عرض الشاشة */
+        border-radius: 80px 80px 0 0; /* تقليل الاستدارة للجوالات */
+    }
+
+    .text-content h1 {
+        font-size: 24px;
+    }
+
+    .text-content p {
+        font-size: 13px;
+    }
+
+    .acnebutton, .Wrinklesbutton, .Blackheadsbutton, .Drybutton {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

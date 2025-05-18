@@ -58,9 +58,14 @@
     text-decoration: underline;
 }
 
+.forgot-password{
+    font-size: 15px;
+    text-decoration: underline !important;
+}
 
-
-
+.forgot-password:hover {
+    color: #5A3921; /* Hover color (e.g., blue) */
+}
 
 
 .container{

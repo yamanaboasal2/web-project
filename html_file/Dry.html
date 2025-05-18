@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Open+Sans:wght@300&family=Tajawal:wght@400;500;700&family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/Dry.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
 
@@ -32,10 +31,10 @@
                             <a class="nav-link" href="Contact.html" data-translate="navbar.contact">Contact Us</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="skincare.html"  data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="skincare.html" id="skinCareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 Skin Care
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" aria-labelledby="skinCareDropdown">
                                 <li><a class="dropdown-item" href="acne.html" data-translate="dropdown.skin.acne">Acne</a></li>
                                 <li><a class="dropdown-item" href="Dry.html" data-translate="dropdown.skin.dry">Dry Skin</a></li>
                                 <li><a class="dropdown-item" href="Wrinkles.html" data-translate="dropdown.skin.wrinkles">Wrinkles and Aging</a></li>
@@ -43,42 +42,40 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.products">
+                            <a class="nav-link dropdown-toggle" href="Shop.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-translate="navbar.products">
                                 Shop
                             </a>
                             <div class="dropdown-menu mega-dropdown-menu">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <!-- العمود الأول: Face Care -->
+                                        <!-- Face Care -->
                                         <div class="col-md-4 dropdown-column">
                                             <h6>Face Care</h6>
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item" href="#">Cleansers</a></li>
-                                                <li><a class="dropdown-item" href="#">Serums</a></li>
-                                                <li><a class="dropdown-item" href="#">Moisturizers</a></li>
-                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                                <li><a class="dropdown-item" href="clean.html">Cleansers</a></li>
+                                                <li><a class="dropdown-item" href="Serums.html">Serums</a></li>
+                                                <li><a class="dropdown-item" href="Moisturizers.html">Moisturizers</a></li>
+                                                <li><a class="dropdown-item" href="allshop_facecare.html" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
                                             </ul>
                                         </div>
-
-                                        <!-- العمود الثاني: Hair Care -->
+                                        <!-- Hair Care -->
                                         <div class="col-md-4 dropdown-column">
                                             <h6>Hair Care</h6>
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item" href="#">Shampoos</a></li>
-                                                <li><a class="dropdown-item" href="#">Conditioners</a></li>
-                                                <li><a class="dropdown-item" href="#">Hair masks</a></li>
-                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                                <li><a class="dropdown-item" href="shampooo.html">Shampoos</a></li>
+                                                <li><a class="dropdown-item" href="Conditioner.html">Conditioners</a></li>
+                                                <li><a class="dropdown-item" href="Hairmasks.html">Hair masks</a></li>
+                                                <li><a class="dropdown-item" href="allshop_haircare.html" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
                                             </ul>
                                         </div>
-
-                                        <!-- العمود الثالث: Body Care -->
+                                        <!-- Body Care -->
                                         <div class="col-md-4 dropdown-column">
                                             <h6>Body Care</h6>
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item" href="#">Body soaps</a></li>
-                                                <li><a class="dropdown-item" href="#">Scrubs</a></li>
-                                                <li><a class="dropdown-item" href="#">Lotions</a></li>
-                                                <li><a class="dropdown-item" href="#" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
+                                                <li><a class="dropdown-item" href="Bodycare.html">Body soaps</a></li>
+                                                <li><a class="dropdown-item" href="BodyScrub.html">Scrubs</a></li>
+                                                <li><a class="dropdown-item" href="Bodylotions.html">Lotions</a></li>
+                                                <li><a class="dropdown-item" href="allshop_bodycare.html" style="font-weight: 600; color: #5a3921;">Shop all <i class="fas fa-arrow-right ms-2"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

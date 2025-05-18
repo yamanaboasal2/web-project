@@ -1,14 +1,7 @@
 // Retrieve cart data from localStorage, default to empty array if none exists
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Add sample data for testing (remove in production if cart is populated elsewhere)
-if (cart.length === 0) {
-    cart.push(
-        { image: 'product-image1.jpg', name: 'Product Name 1', price: '$29.99', quantity: 1 },
-        { image: 'product-image2.jpg', name: 'Product Name 2', price: '$39.99', quantity: 1 }
-    );
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
+
 
 // Access the cart container
 const cartContainer = document.querySelector('#cart-table');
@@ -33,25 +26,24 @@ function displayCart() {
         return;
     }
 
-    // Loop through cart items and create product cards
     cart.forEach((product, index) => {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
         const basePrice = parseFloat(product.price.replace('$', '')); // Base price without quantity
         const totalPrice = (basePrice * (product.quantity || 1)).toFixed(2); // Price * quantity
         productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Not+Found'">
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <div class="quantity-controls">
-                    <button class="quantity-btn" data-index="${index}" data-action="decrease">-</button>
-                    <span>${product.quantity || 1}</span>
-                    <button class="quantity-btn" data-index="${index}" data-action="increase">+</button>
-                </div>
-                <p>$${totalPrice}</p>
+        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Not+Found'">
+        <div class="product-info">
+            <h3>${product.name}</h3>
+            <div class="quantity-controls">
+                <button class="quantity-btn" data-index="${index}" data-action="decrease">−</button>
+                <span class="quantity">${product.quantity || 1}</span>
+                <button class="quantity-btn" data-index="${index}" data-action="increase">+</button>
             </div>
-              <td><i class="fas fa-trash-alt remove" data-index="${index}"></i></td>  
-        `;
+            <p>$${totalPrice}</p>
+        </div>
+        <td><i class="fas fa-trash-alt remove" data-index="${index}"></i></td>  
+    `;
         cartContainer.appendChild(productCard);
     });
 
@@ -118,6 +110,59 @@ displayCart();
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.nav-item.dropdown');
+    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    let timeout;
+
+    // Show dropdown on hover
+    dropdown.addEventListener('mouseenter', function () {
+        clearTimeout(timeout); // Clear any hide timeout
+        dropdownMenu.style.display = 'block';
+    });
+
+    // Delay hiding dropdown on mouse leave
+    dropdown.addEventListener('mouseleave', function () {
+        timeout = setTimeout(function () {
+            dropdownMenu.style.display = 'none';
+        }, 1000); // 1000ms = 1 second delay
+    });
+
+    // Ensure clicking the link navigates
+    document.getElementById('skinCareDropdown').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = this.getAttribute('href');
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.mega-dropdown');
+    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    let timeout;
+
+    // Show dropdown on hover
+    dropdown.addEventListener('mouseenter', function () {
+        clearTimeout(timeout);
+        dropdownMenu.style.display = 'block';
+        dropdownMenu.style.opacity = '1';
+        dropdownMenu.style.visibility = 'visible';
+    });
+
+    // Delay hiding dropdown on mouse leave
+    dropdown.addEventListener('mouseleave', function () {
+        timeout = setTimeout(function () {
+            dropdownMenu.style.display = 'none';
+        }, 1000); // 1-second delay
+    });
+
+    // Navigate to Shop.html on click
+    document.getElementById('shopDropdown').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = this.getAttribute('href');
+    });
+});
 
 
 

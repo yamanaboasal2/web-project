@@ -1,201 +1,56 @@
+document.querySelector('.submit-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // 1. مسح السلة تمامًا
+    localStorage.setItem('cart', JSON.stringify([])); // ⭐ الطريقة الأكيدة
+    // أو:
+    localStorage.removeItem('cart'); // ⭐ بديل جيد
+
+    // 2. توجيه المستخدم إلى صفحة السلة مع رسالة نجاح
+    window.location.href = 'shopping_cart.html?order=success';
+});
+
+document.querySelector('.submit-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // 1. مسح السلة تمامًا
+    localStorage.setItem('cart', JSON.stringify([]));
+
+    // 2. عرض تنبيه نجاح الطلب
+    alert('Thank you! Your order has been placed successfully.');
+
+    // 3. توجيه المستخدم إلى صفحة السلة مع رسالة نجاح
+    window.location.href = 'shopping_cart.html?order=success';
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
-    function initSlider(sliderId) {
-        const container = document.getElementById(sliderId);
-        const mainImages = container.querySelectorAll('.main-image');
-        const thumbnails = container.querySelectorAll('.thumbnail');
-        const prevBtn = container.querySelector('.prev-arrow');
-        const nextBtn = container.querySelector('.next-arrow');
-        let currentIndex = 0;
+    function updateOrderSummary() {
+        try {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            console.log('Cart data:', cart); // للتأكد من وجود بيانات
 
-        function showImage(index) {
-            mainImages.forEach(img => img.classList.remove('active'));
-            thumbnails.forEach(thumb => thumb.classList.remove('active-thumbnail'));
+            let subtotal = 0;
+            cart.forEach(item => {
+                const price = parseFloat(item.price.replace('$', '')) || 0;
+                subtotal += price * (item.quantity || 1);
+            });
 
-            mainImages[index].classList.add('active');
-            thumbnails[index].classList.add('active-thumbnail');
-            currentIndex = index;
+            const shipping = 5.00;
+            const total = subtotal + shipping;
+
+            document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+        } catch (error) {
+            console.error('Error updating order summary:', error);
         }
-
-        prevBtn.addEventListener('click', function() {
-            const newIndex = currentIndex > 0 ? currentIndex - 1 : mainImages.length - 1;
-            showImage(newIndex);
-        });
-
-        nextBtn.addEventListener('click', function() {
-            const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-            showImage(newIndex);
-        });
-
-        thumbnails.forEach((thumb, index) => {
-            thumb.addEventListener('click', () => showImage(index));
-        });
-
-        // Auto-slide
-        let autoSlide = setInterval(() => {
-            const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-            showImage(newIndex);
-        }, 3000);
-
-        container.querySelector('.slider-container').addEventListener('mouseenter', () => {
-            clearInterval(autoSlide);
-        });
-
-        container.querySelector('.slider-container').addEventListener('mouseleave', () => {
-            autoSlide = setInterval(() => {
-                const newIndex = currentIndex < mainImages.length - 1 ? currentIndex + 1 : 0;
-                showImage(newIndex);
-            }, 3000);
-        });
     }
 
-    initSlider('slider1-container');
-
-    initSlider('slider2-container');
-
-    initSlider('slider3-container');
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    const wrappers = document.querySelectorAll('.img-wrapper');
-
-    wrappers.forEach((wrapper, index) => {
-        setTimeout(() => {
-            wrapper.classList.add('show');
-        }, index * 500);
-    });
+    updateOrderSummary();
+    window.addEventListener('storage', updateOrderSummary);
 });
 
 
-
-function updateWishlistCount() {
-    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    const countElement = document.getElementById('wishlist-count');
-    countElement.textContent = wishlist.length;
-    countElement.style.display = wishlist.length > 0 ? 'inline-block' : 'none';
-}
-
-document.querySelectorAll('.wishlist').forEach(button => {
-    button.addEventListener('click', function () {
-        const name = button.getAttribute('data-name');
-        const price = button.getAttribute('data-price');
-        const image = button.getAttribute('data-image');
-        const product = { name, price, image };
-
-        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-        // 👉 السماح بالتكرار
-        wishlist.push(product);
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
-
-        // ✅ تحديث العداد دايماً
-        updateWishlistCount();
-
-        // ✈️ حركة الطيران
-        const flyingImg = document.createElement('img');
-        flyingImg.src = image;
-        flyingImg.className = 'flying-img';
-
-        const rect = button.getBoundingClientRect();
-        flyingImg.style.top = `${rect.top + window.scrollY}px`;
-        flyingImg.style.left = `${rect.left + window.scrollX}px`;
-
-        document.body.appendChild(flyingImg);
-
-        const target = document.getElementById('wishlist-icon').getBoundingClientRect();
-        const deltaX = target.left - rect.left;
-        const deltaY = target.top - rect.top;
-
-        requestAnimationFrame(() => {
-            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-            flyingImg.style.opacity = '0';
-        });
-
-        setTimeout(() => flyingImg.remove(), 1000);
-    });
-});
-
-// 📦 عند تحميل الصفحة، نحدث العداد
-document.addEventListener('DOMContentLoaded', updateWishlistCount);
-
-
-
-
-
-function updatecartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const countElement = document.getElementById('cart-count');
-    countElement.textContent = cart.length;
-    countElement.style.display = cart.length > 0 ? 'inline-block' : 'none';
-}
-
-document.querySelectorAll('.cart').forEach(button => {
-    button.addEventListener('click', function () {
-        const name = button.getAttribute('data-name');
-        const price = button.getAttribute('data-price');
-        const image = button.getAttribute('data-image');
-        const product = { name, price, image };
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // 👉 السماح بالتكرار
-        cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // ✅ تحديث العداد دايماً
-        updatecartCount();
-
-        // ✈️ حركة الطيران
-        const flyingImg = document.createElement('img');
-        flyingImg.src = image;
-        flyingImg.className = 'flying-img';
-
-        const rect = button.getBoundingClientRect();
-        flyingImg.style.top = `${rect.top + window.scrollY}px`;
-        flyingImg.style.left = `${rect.left + window.scrollX}px`;
-
-        document.body.appendChild(flyingImg);
-
-        const target = document.getElementById('cart-icon').getBoundingClientRect();
-        const deltaX = target.left - rect.left;
-        const deltaY = target.top - rect.top;
-
-        requestAnimationFrame(() => {
-            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-            flyingImg.style.opacity = '0';
-        });
-
-        setTimeout(() => flyingImg.remove(), 1000);
-    });
-});
-
-// 📦 عند تحميل الصفحة، نحدث العداد
-document.addEventListener('DOMContentLoaded', updatecartCount);
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.nav-item.dropdown');
-    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-    let timeout;
-
-    // Show dropdown on hover
-    dropdown.addEventListener('mouseenter', function () {
-        clearTimeout(timeout); // Clear any hide timeout
-        dropdownMenu.style.display = 'block';
-    });
-
-    // Delay hiding dropdown on mouse leave
-    dropdown.addEventListener('mouseleave', function () {
-        timeout = setTimeout(function () {
-            dropdownMenu.style.display = 'none';
-        }, 1000); // 1000ms = 1 second delay
-    });
-
-    // Ensure clicking the link navigates
-    document.getElementById('skinCareDropdown').addEventListener('click', function (e) {
-        e.preventDefault();
-        window.location.href = this.getAttribute('href');
-    });
-});
 
 
 
@@ -226,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = this.getAttribute('href');
     });
 });
-
 
 
 
