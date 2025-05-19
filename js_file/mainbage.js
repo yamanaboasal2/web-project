@@ -61,8 +61,6 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-
-
 const swiper = new Swiper('.mySwiper', {
     loop: true,
     autoplay: {
@@ -78,3 +76,4 @@ const swiper = new Swiper('.mySwiper', {
         crossFade: true,
     },
 });
+
