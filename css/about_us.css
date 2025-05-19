@@ -100,6 +100,113 @@
     animation: borderAnimation 9s linear infinite;
     z-index: 1;
 }
+.slider-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:transparent;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* 3 شرائح */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 33.3333%; /* كل شريحة تأخذ ثلث الـ container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 50vw; /* نصف عرض الشاشة */
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* طبقة شفافة فوق الصورة */
+    border-radius: 10px;
+    pointer-events: none;
+}
+.text {
+    width: 50vw; /* النصف الآخر للنص */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* لمحاذاة عمودي */
+    align-items: center;     /* لمحاذاة أفقي */
+    text-align: center;
+}
+
+.text h2 {
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family: "Times New Roman";
+    color:#5d4037 ;
+    font-weight: 600;
+
+}
+
+.text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* التحكم بتحريك الشرائح حسب الراديو */
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-33.3333%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-66.6666%);
+}
+
+/* أزرار التنقل */
+
+.navigation {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.navigation label {
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#slide1:checked ~ .navigation label[for="slide1"],
+#slide2:checked ~ .navigation label[for="slide2"],
+#slide3:checked ~ .navigation label[for="slide3"] {
+    background:#5d4037;
+}
 
 .image-inner {
     width: 100%;

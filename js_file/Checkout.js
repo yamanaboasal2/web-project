@@ -1,35 +1,10 @@
-document.querySelector('.submit-btn').addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // 1. مسح السلة تمامًا
-    localStorage.setItem('cart', JSON.stringify([])); // ⭐ الطريقة الأكيدة
-    // أو:
-    localStorage.removeItem('cart'); // ⭐ بديل جيد
-
-    // 2. توجيه المستخدم إلى صفحة السلة مع رسالة نجاح
-    window.location.href = 'shopping_cart.html?order=success';
-});
-
-document.querySelector('.submit-btn').addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // 1. مسح السلة تمامًا
-    localStorage.setItem('cart', JSON.stringify([]));
-
-    // 2. عرض تنبيه نجاح الطلب
-    alert('Thank you! Your order has been placed successfully.');
-
-    // 3. توجيه المستخدم إلى صفحة السلة مع رسالة نجاح
-    window.location.href = 'shopping_cart.html?order=success';
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     function updateOrderSummary() {
         try {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            console.log('Cart data:', cart); // للتأكد من وجود بيانات
+            console.log('Cart data:', cart);
 
+            // Update order summary
             let subtotal = 0;
             cart.forEach(item => {
                 const price = parseFloat(item.price.replace('$', '')) || 0;
@@ -41,26 +16,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
             document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
             document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+
+            // Update cart items list
+            const cartItemsList = document.getElementById('cart-items-list');
+            cartItemsList.innerHTML = ''; // Clear existing items
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = '<p class="cart-items-empty">Your cart is empty.</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'cart-item-card';
+                itemCard.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image || 'https://via.placeholder.com/80'}" alt="${item.name || 'Product'}">
+                    </div>
+                    <div class="cart-item-details">
+                        <span class="cart-item-name">${item.name || 'Unknown Product'}</span>
+                        <span class="cart-item-price">${item.price || '$0.00'}</span>
+                        <span class="cart-item-quantity">Quantity: ${item.quantity || 1}</span>
+                    </div>
+                `;
+                cartItemsList.appendChild(itemCard);
+            });
         } catch (error) {
-            console.error('Error updating order summary:', error);
+            console.error('Error updating order summary or cart items:', error);
         }
     }
 
+    // Consolidated submit button handler
+    document.querySelector('.submit-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Clear the cart
+        localStorage.setItem('cart', JSON.stringify([]));
+
+        // Show success message
+        alert('Thank you! Your order has been placed successfully.');
+
+        // Redirect to cart page with success message
+        window.location.href = 'shopping_cart.html?order=success';
+    });
+
+    // Initial update
     updateOrderSummary();
     window.addEventListener('storage', updateOrderSummary);
-});
 
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
+    // Dropdown menu functionality
     const dropdown = document.querySelector('.mega-dropdown');
     const dropdownMenu = dropdown.querySelector('.dropdown-menu');
     let timeout;
 
-    // Show dropdown on hover
     dropdown.addEventListener('mouseenter', function () {
         clearTimeout(timeout);
         dropdownMenu.style.display = 'block';
@@ -68,14 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdownMenu.style.visibility = 'visible';
     });
 
-    // Delay hiding dropdown on mouse leave
     dropdown.addEventListener('mouseleave', function () {
         timeout = setTimeout(function () {
             dropdownMenu.style.display = 'none';
-        }, 1000); // 1-second delay
+        }, 1000);
     });
 
-    // Navigate to Shop.html on click
     document.getElementById('shopDropdown').addEventListener('click', function (e) {
         e.preventDefault();
         window.location.href = this.getAttribute('href');

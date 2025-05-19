@@ -33,7 +33,7 @@
               <a class="nav-link" href="about_us.html" data-translate="navbar.about">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Contact.html" data-translate="navbar.contact">Contact Us</a>
+              <a class="nav-link" href="contactus.html" data-translate="navbar.contact">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="skincare.html" id="skinCareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -148,16 +148,48 @@
 </section>
 
 <div class="about_background_wrapper">
-  <img src="../image/about_back.png" class="about_background">
-  <div class="overlay"></div>
-  <div class="text_on_image">
-    About Us
-    <div class="back_links">
-      <a href="index.html" class="back">Home</a>
-      <span> / </span>
-      <a href="about_us.html" class="back">About Us</a>
+  <div class="slider-container">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+
+    <div class="slides">
+      <div class="slide" id="s1">
+        <img src="../image/us1.png" alt="Slide 1">
+        <div class="overlay"></div>
+        <div class="text">
+          <h2>About Us</h2>
+          <p>Experience the purity of nature with our organic soaps,<br> handcrafted with love to nourish your skin and protect the planet.</p>
+      <button class="readmore" onclick="window.location.href='acne.html'">Explore our product</button>
+        </div>
+      </div>
+
+      <div class="slide" id="s2">
+        <img src="../image/us.png" alt="Slide 2">
+        <div class="text">
+          <h2>Our All-Natural Soap <br>Collection</h2>
+          <p>Discover Our Organic Soap Collection for Gentle and Sustainable Skincare.</p>
+          <button class="readmore"onclick="window.location.href='skincare.html'">Explore our product</button>
+        </div>
+      </div>
+
+      <div class="slide" id="s3">
+        <img src="../image/us2.png" alt="Slide 3">
+        <div class="text">
+          <h2>A Gentle, Earth-Friendly Cleansing Experience</h2>
+          <p>Explore the world of natural soap in our <br>captivating guide, "The Allure of Natural Soap.</p>
+          <button class="readmore" onclick="window.location.href='Shop.html'">Explore our product</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
     </div>
   </div>
+
 </div>
 
 <div class="next_div">

@@ -74,7 +74,6 @@ function displayWishlist() {
     // Update cart counter
     updateCartCount();
 }
-
 // Function to create flying animation
 function createFlyingAnimation(imageSrc, startElement, callback) {
     // Create a clone of the image
@@ -91,10 +90,10 @@ function createFlyingAnimation(imageSrc, startElement, callback) {
     flyingImage.style.width = '70px';
     flyingImage.style.height = '70px';
     flyingImage.style.zIndex = '1000';
-    flyingImage.style.transition = 'all 0.8s ease-in-out';
+    flyingImage.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
 
     // Target position (element with ID 'cart_icon' or fallback to top-right)
-    const cartIcon = document.getElementById('cart_icon');
+    const cartIcon = document.getElementById('cart-icon');
     const targetRect = cartIcon ? cartIcon.getBoundingClientRect() : { left: window.innerWidth - 100, top: 50 };
     const targetX = targetRect.left + (targetRect.width / 2) - 35; // Center of target
     const targetY = targetRect.top + (targetRect.height / 2) - 35; // Center of target

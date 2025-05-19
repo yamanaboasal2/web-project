@@ -4,29 +4,81 @@
     position: relative;
     width: 100%;
     height: auto; /* أو حدد ارتفاع حسب رغبتك */
+    margin: 100px;
+
 }
 
 .about_background {
-    width: 100%;
-    height: 450px;
+    background-image: url('../image/account.png');
+
+    width: 460px;
+    height: 560px;
     display: block;
+    border-radius: 0 150px 0 150px;
+    background-color: #B9AA9B;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease-in-out;
 }
 
-.overlay {
+/* عند الـ hover تتغير الخلفية لصورة جديدة */
+.about_background:hover {
+    background-image: url('../image/account1.png');
+}
+
+.floating-frame-container {
+    position: relative;
+    display: inline-block;
+    width: 460px; /* نفس عرض الصورة + الهوامش */
+    height: 560px; /* نفس ارتفاع الصورة + الهوامش */
+}
+.floating-frame {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #8d6e63; /* حد واضح */
+    border-radius: 0 150px 0 150px; /* استدارة واضحة */
+    background: transparent; /* تأكد من عدم وجود خلفية */
+    box-sizing: border-box;
+    z-index: 2;
+    pointer-events: none;
+    animation: floatDiagonal 3s ease-in-out infinite;
 }
+
+@keyframes floatDiagonal {
+    0%  {
+        transform: translate(0, 0); /* الموضع الأصلي */
+    }
+    50% {
+        transform: translate(10px, -10px); /* يتحرك بزاوية 45° */
+    }
+    100%{
+        transform: translate(-10px, 10px);
+    }
+}
+@keyframes borderColors {
+    0% { border-image-source: linear-gradient(45deg,#5d4037, #8d6e63, #5d4037); }
+    33% { border-image-source: linear-gradient(45deg, #5d4037, #8d6e63, #5d4037); }
+    66% { border-image-source: linear-gradient(45deg, #5d4037, #8d6e63, #5d4037); }
+    100% { border-image-source: linear-gradient(45deg, #5d4037, #8d6e63, #5d4037); }
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
 .text_on_image {
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #B9AA9B;
-    font-size: 48px;
+    color: #5A3921;
+    font-size: 50px;
     font-family: "Times New Roman";
     font-weight: bold;
     text-align: center;
@@ -49,8 +101,8 @@
     font-size: 16px;
 }
 .back {
-    color:#B9AA9B;
-    font-size: 15px;
+    color: #A09183	;
+    font-size: 18px;
     text-decoration: none;
     margin: 0 5px;
 }

@@ -255,14 +255,20 @@ tbody tr:hover {
 }
 
 #cart-icon {
-    position: fixed;
     top: 20px;
     right: 20px;
     font-size: 24px;
     color: #5d4037;
     z-index: 100;
 }
-
+.flying-image {
+    position: fixed;
+    width: 100px;
+    z-index: 1000;
+    border-radius: 8px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    pointer-events: none;
+}
 
 
 
