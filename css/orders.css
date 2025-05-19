@@ -1,0 +1,416 @@
+/* Global reset to prevent browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Your provided body styles */
+body {
+    background-image: url('../image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 245, 240, 0.3);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+/* Container for the layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Your provided sidebar styles (unchanged) */
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    background: #4a322b;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(184, 156, 116, 0.3);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-header span {
+    color: #e8d9c5;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Times New Roman";
+}
+
+.sidebar-header .logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #e8d9c5;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-item.active,
+.menu-item:hover {
+    background-color: rgba(184, 156, 116, 0.3);
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.para_admin {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: #e8d9c5;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin: 5px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: "Times New Roman";
+    display: inline-block;
+}
+
+.log_out {
+    background: linear-gradient(to right, #8d6e63, #5d4037, #795548);
+    color: #e8d9c5;
+    padding: 8px 1px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(232, 217, 197, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-family: 'Segoe UI', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    backdrop-filter: blur(3px);
+}
+
+.log_out:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px #e8d9c5;
+    background: linear-gradient(to right, #8d6e63, #5d4037, #795548);
+}
+
+.log_out:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px #e8d9c5; /* Fixed typo */
+    background: linear-gradient(to right, #8d6e63, #5d4037, #795548);
+}
+
+.log_out::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.log_out:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+.header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 25px 30px;
+    position: fixed;
+    left: 350px;
+    right: 0;
+    top: 0;
+    height: 60px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(184, 156, 116, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between; /* Aligns children to left and right */
+}
+
+.dashbored {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5d4037;
+    font-family: "Times New Roman";
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.filter button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #5d4037;
+    color: #e8d9c5;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter button:hover {
+    background-color: #8d6e63;
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 200px; /* كانت 350px، خففناها */
+    margin-top: 80px;
+    padding: 30px;
+    width: calc(100% - 70px); /* حسبنا حسب التعديل فوق */
+    flex-grow: 1;
+    border-radius: 10px;
+}
+
+h3 {
+    font-size: 28px;
+    color:  #5d4037;
+    margin-bottom: 25px;
+    font-family: "Georgia", serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse !important;/* مهم جداً */
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle; /* هذا يخلّي كل شي بنص الخلية تمامًا */
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color:  #5d4037;
+    color:#e8d9c5;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+.status {
+    padding: 6px 12px; /* Slightly reduced padding */
+    border-radius: 20px;
+    color: #e8d9c5;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 90px; /* Slightly reduced min-width */
+}
+
+.completed { background-color:  #5d4037; }
+.pending { background-color: #5d4037; }
+.cancelled { background-color: #5d4037; }
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* هذا فعلاً موجود، خلّيه */
+    gap: 5px;
+    height: 100%; /* خلّي العرض يملأ الخلية */
+}
+
+.actions button {
+    margin: 0;
+    padding: 6px; /* Reduced padding for smaller buttons */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+    background-color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+.actions button:hover {
+    background-color:#5d4037;
+    color:#FFFFFF;
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+        height: auto;
+        min-height: 60px;
+        flex-wrap: wrap;
+    }
+
+    .dashbored {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    .filter {
+        gap: 6px;
+    }
+
+    .filter select {
+        padding: 5px;
+        font-size: 13px;
+        max-width: 100px;
+    }
+
+    .filter button {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .main-content {
+        padding: 15px;
+        margin-top: 60px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .status {
+        padding: 4px 8px;
+        min-width: 70px;
+    }
+
+    .actions {
+        gap: 4px;
+    }
+
+    .actions button {
+        padding: 4px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .sidebar-header {
+        padding: 10px 0;
+    }
+
+    .sidebar-header .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        padding: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+
+    /* إخفاء بعض العناصر إذا لزم الأمر */
+    .para_admin {
+        display: none;
+    }
+}
+
+
+
