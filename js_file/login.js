@@ -95,6 +95,27 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = this.getAttribute('href');
     });
 });
+function openModal() {
+    document.getElementById("passwordModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("passwordModal").style.display = "none";
+}
+
+// كمان بنخلي المستخدم يقدر يسكرها بالضغط على أي مكان خارجها
+window.onclick = function(event) {
+    const modal = document.getElementById("passwordModal");
+    if (event.target === modal) {
+        closeModal();
+    }
+};
+
+
+
+
+
+
 
 
 
