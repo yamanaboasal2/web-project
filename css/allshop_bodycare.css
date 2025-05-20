@@ -22,6 +22,14 @@ body::before {
     backdrop-filter: blur(8px); /* تأثير الضبابية */
     z-index: -1; /* تحت المحتوى */
 }
+.flying-img {
+    position: absolute;
+    width: 100px;
+    z-index: 1000;
+    border-radius: 8px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    pointer-events: none;
+}
 
 /* تعديلات إضافية للمحتوى */
 .content {

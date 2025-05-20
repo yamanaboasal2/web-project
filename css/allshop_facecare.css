@@ -9,7 +9,14 @@ body {
     min-height: 100vh;
     position: relative;
 }
-
+.flying-img {
+    position: absolute;
+    width: 100px;
+    z-index: 1000;
+    border-radius: 8px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    pointer-events: none;
+}
 /* إنشاء طبقة شبه شفافة فوق الخلفية */
 body::before {
     content: '';
