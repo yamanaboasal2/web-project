@@ -1570,6 +1570,7 @@ body {
 }
 
 .slider-dot {
+    display: none;
     width: 14px;
     height: 14px;
     border-radius: 50%;
