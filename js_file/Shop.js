@@ -169,41 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    // تأثير العد التصاعدي
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 200;
-
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-count');
-        const count = +counter.innerText;
-        const increment = target / speed;
-
-        if(count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 1);
-        } else {
-            counter.innerText = target;
-        }
-    });
-
-    // بدء جميع الحركات عند تحميل الصفحة
-    const textElements = document.querySelectorAll('.text-content > *');
-    textElements.forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateX(0)';
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const marquee = document.querySelector('.marquee-content');
-    const items = marquee.innerHTML;
-    marquee.innerHTML = items + items; // مضاعفة العناصر للحركة السلسة
-});
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const megaDropdown = document.querySelector('.mega-dropdown');
     const dropdownToggle = megaDropdown.querySelector('.dropdown-toggle');
@@ -253,3 +218,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
