@@ -74,50 +74,59 @@ function updateWishlistCount() {
     countElement.style.display = wishlist.length > 0 ? 'inline-block' : 'none';
 }
 
-document.querySelectorAll('.wishlist').forEach(button => {
-    button.addEventListener('click', function () {
-        const name = button.getAttribute('data-name');
-        const price = button.getAttribute('data-price');
-        const image = button.getAttribute('data-image');
-        const product = { name, price, image };
+document.addEventListener('DOMContentLoaded', function () {
+    const wishlistButtons = document.querySelectorAll('.wishlist');
 
-        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (wishlistButtons.length > 0) {
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const name = button.getAttribute('data-name');
+                const price = button.getAttribute('data-price');
+                const image = button.getAttribute('data-image');
+                const id = button.getAttribute('data-id');
+                const product = { name, price, image };
 
-        // 👉 السماح بالتكرار
-        wishlist.push(product);
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                // أرسل إلى السيرفر
+                fetch('/web-project1/php/add_to_favorite.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `product_id=${id}`
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data.message);
+                    });
 
-        // ✅ تحديث العداد دايماً
-        updateWishlistCount();
+                // localStorage
+                let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateWishlistCount();
 
-        // ✈️ حركة الطيران
-        const flyingImg = document.createElement('img');
-        flyingImg.src = image;
-        flyingImg.className = 'flying-img';
+                // ✈️ Animation
+                const flyingImg = document.createElement('img');
+                flyingImg.src = image;
+                flyingImg.className = 'flying-img';
 
-        const rect = button.getBoundingClientRect();
-        flyingImg.style.top = `${rect.top + window.scrollY}px`;
-        flyingImg.style.left = `${rect.left + window.scrollX}px`;
+                const rect = button.getBoundingClientRect();
+                flyingImg.style.top = `${rect.top + window.scrollY}px`;
+                flyingImg.style.left = `${rect.left + window.scrollX}px`;
+                document.body.appendChild(flyingImg);
 
-        document.body.appendChild(flyingImg);
+                const target = document.getElementById('wishlist-icon').getBoundingClientRect();
+                const deltaX = target.left - rect.left;
+                const deltaY = target.top - rect.top;
 
-        const target = document.getElementById('wishlist-icon').getBoundingClientRect();
-        const deltaX = target.left - rect.left;
-        const deltaY = target.top - rect.top;
+                requestAnimationFrame(() => {
+                    flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
+                    flyingImg.style.opacity = '0';
+                });
 
-        requestAnimationFrame(() => {
-            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-            flyingImg.style.opacity = '0';
+                setTimeout(() => flyingImg.remove(), 1000);
+            });
         });
-
-        setTimeout(() => flyingImg.remove(), 1000);
-    });
+    }
 });
-
-// 📦 عند تحميل الصفحة، نحدث العداد
-document.addEventListener('DOMContentLoaded', updateWishlistCount);
-
-
 
 
 
@@ -226,8 +235,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = this.getAttribute('href');
     });
 });
-
-
 
 
 

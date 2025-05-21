@@ -64,7 +64,10 @@ function displayWishlist() {
                 
                     <button class="move-to-cart" data-index="${index}" aria-label="Add to cart">Add to Cart</button>
                     <td>
-                    <i class="fas fa-trash-alt remove" data-index="${index}" aria-label="Remove item"></i>
+                   <i class="fas fa-trash-alt remove"
+   data-index="${index}"
+   data-id="${product.id}"
+   aria-label="Remove item"></i>
                
             </td>
         `;
@@ -143,22 +146,34 @@ function moveToCart(index, buttonElement) {
 }
 
 // Function to remove a product from the wishlist
-function removeFromWishlist(index) {
-    // Remove product at the specified index
+function removeFromWishlist(index, productId) {
+    // 1. احذف من localStorage
     wishlist.splice(index, 1);
-
-    // Update localStorage
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-
-    // Refresh wishlist display
     displayWishlist();
+
+    // 2. أرسل حذف إلى السيرفر
+    fetch('/web-project1/php/remove_favorite.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `product_id=${productId}`
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Deleted from DB');
+            } else {
+                console.log('Failed to delete from DB');
+            }
+        });
 }
 
 // Add event listener for remove and move-to-cart buttons
 tableBody.addEventListener('click', (event) => {
     if (event.target.classList.contains('remove')) {
         const index = event.target.getAttribute('data-index');
-        removeFromWishlist(Number(index));
+        const productId = event.target.getAttribute('data-id');
+        removeFromWishlist(Number(index), Number(productId));
     } else if (event.target.classList.contains('move-to-cart')) {
         const index = event.target.getAttribute('data-index');
         moveToCart(Number(index), event.target);

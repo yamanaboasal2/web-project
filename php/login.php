@@ -19,14 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             if ($passwordInput === $row['Password']) {
                 $_SESSION['customer_id'] = $row['Customer_Id'];
-                echo "Login successful";
-                header("Location: mainbage.html");
+                header("Location: mainpage.html");  // لاحظ أنه تم تصحيح اسم الملف من 'mainbage.html' إلى 'mainpage.html'
                 exit();
             } else {
-                echo "Incorrect password.";
+                echo "<script>alert('Incorrect password.'); window.history.back();</script>";
             }
         } else {
-            echo "No account found with that email.";
+            echo "<script>alert('No account found with that email.'); window.history.back();</script>";
         }
     }
 }

@@ -152,7 +152,7 @@
   <div class="text_on_image">
     My Account
     <div class="back_links">
-      <a href="index.html" class="back">Home</a>
+      <a href="mainbage.html" class="back">Home</a>
       <span> / </span>
       <a href="login.html" class="back">My Account</a>
     </div>
@@ -162,7 +162,7 @@
 
 <div class="container" id="container">
   <div class="form-container sign-up">
-    <form action="register.php" method="POST">
+    <form action="../php/register.php" method="POST">
       <h1>Create Account</h1>
 
       <span>or use your email for registeration</span>
@@ -173,24 +173,28 @@
     </form>
   </div>
   <div class="form-container sign-in">
-    <form action="login.php" method="POST">
+    <form action="../php/login.php" method="POST">
       <h1>Sign In</h1>
       <span>or use your email password</span>
       <input type="email" name="email" placeholder="Your Email" required>
       <input type="password" name="password" placeholder="Your Password" required>
+
       <a href="#" class="forgot-password" onclick="openModal()">Forget Your Password?</a>
+      <button type="submit">Sign In</button>
+    </form>
       <div id="passwordModal" class="modal">
         <div class="modal-content">
-          <h2>Reset Password</h2>
-          <p>Enter your email to receive a reset link:</p>
-          <input type="email" placeholder="Enter your email" />
-          <button>Send</button>
+          <form>
+            <h2>Reset Password</h2>
+            <p>Enter your email to receive a reset link:</p>
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <button type="submit">Send</button>
+          </form>
           <br>
           <span class="close" onclick="closeModal()">&times;</span>
         </div>
       </div>
-      <button type="submit">Sign In</button>
-    </form>
+
   </div>
   <div class="toggle-container">
     <div class="toggle">
@@ -212,7 +216,6 @@
 <br>
 <br>
 <br>
-
 
 <footer class="footer">
   <div class="footer-container">
@@ -268,9 +271,9 @@
           <ul class="footer-links">
 
             <li><a href="about_us.html">About Us</a></li>
-            <li><a href="Contact.html">Contact Us</a></li>
-            <li><a href="https://nablussoap.ps/media-photo-gallery/">Our Products</a></li>
-            <li><a href="https://nablussoap.ps/careers/">Career Opportunities</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="Shop.html">Our Products</a></li>
+            <li><a href="career.html">Career Opportunities</a></li>
 
           </ul>
         </div>
@@ -286,7 +289,7 @@
         </div>
         <div class="developer-credit">
           Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
-          <a href="https://salman.ps" target="_blank">SALMAN.ps</a>
+          <a  target="_blank">Eng. Yaman & Eng.  Roaa </a>
         </div>
       </div>
     </div>
