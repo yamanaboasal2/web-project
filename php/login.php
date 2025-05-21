@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             if ($passwordInput === $row['Password']) {
                 $_SESSION['customer_id'] = $row['Customer_Id'];
-                header("Location: mainpage.html");  // لاحظ أنه تم تصحيح اسم الملف من 'mainbage.html' إلى 'mainpage.html'
+                header("Location: /web-project1/html_file/mainbage.php");  // التوجيه الصحيح مع المسار الكامل
                 exit();
             } else {
                 echo "<script>alert('Incorrect password.'); window.history.back();</script>";
