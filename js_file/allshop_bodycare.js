@@ -301,8 +301,79 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.wishlist-btn')) {
+            const button = e.target.closest('.wishlist-btn');
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price').replace('$', '')) || 0;
+            const image = button.getAttribute('data-image');
 
-    // تحديث عدد المفضلة
+            // افترض أن لديك user_id (يتم الحصول عليه من جلسة المستخدم)
+            const user_id = 1; // استبدل هذا بمعرف المستخدم الفعلي من جلسة تسجيل الدخول
+
+            if (!image) {
+                console.error('No image provided for wishlist item');
+                return;
+            }
+
+            const product = { name, price: `$${price.toFixed(2)}`, image }; // تنسيق السعر كما في الكود الثاني
+
+            // إرسال طلب AJAX إلى قاعدة البيانات
+            fetch('../php/add_to_wishlist.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `user_id=${user_id}&product_name=${encodeURIComponent(name)}&product_price=${price}&product_image=${encodeURIComponent(image)}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // إضافة المنتج إلى localStorage
+                        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                        wishlist.push(product); // السماح بالتكرار كما في الكود الثاني
+                        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+                        // تحديث عدد المفضلة
+                        updateWishlistCount();
+
+                        // تأثير الصورة الطائرة
+                        const flyingImg = document.createElement('img');
+                        flyingImg.src = image;
+                        flyingImg.className = 'flying-img';
+                        const rect = button.getBoundingClientRect();
+                        flyingImg.style.top = `${rect.top + window.scrollY}px`;
+                        flyingImg.style.left = `${rect.left + window.scrollX}px`;
+                        document.body.appendChild(flyingImg);
+
+                        const wishlistIcon = document.getElementById('wishlist-icon');
+                        if (!wishlistIcon) {
+                            console.error('wishlist-icon not found in DOM');
+                            flyingImg.remove();
+                            return;
+                        }
+                        const target = wishlistIcon.getBoundingClientRect();
+                        const deltaX = target.left - rect.left;
+                        const deltaY = target.top - rect.top;
+
+                        requestAnimationFrame(() => {
+                            flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
+                            flyingImg.style.opacity = '0';
+                        });
+
+                        setTimeout(() => flyingImg.remove(), 1000);
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding to wishlist:', error);
+                    alert('حدث خطأ أثناء إضافة المنتج إلى المفضلة');
+                });
+        }
+    });
+
+// تحديث عدد المفضلة بناءً على localStorage
     function updateWishlistCount() {
         const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         const countElement = document.getElementById('wishlist-count');
@@ -310,50 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
         countElement.style.display = wishlist.length > 0 ? 'inline-block' : 'none';
     }
 
-    document.addEventListener('click', function (e) {
-        if (e.target.closest('.wishlist-btn')) {
-            const button = e.target.closest('.wishlist-btn');
-            const name = button.getAttribute('data-name');
-            const price = button.getAttribute('data-price');
-            const image = button.getAttribute('data-image');
-            if (!image) {
-                console.error('No image provided for wishlist item');
-                return;
-            }
-            const product = { name, price, image };
-
-            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-            wishlist.push(product); // السماح بالتكرار
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            updateWishlistCount();
-
-            const flyingImg = document.createElement('img');
-            flyingImg.src = image;
-            flyingImg.className = 'flying-img';
-            const rect = button.getBoundingClientRect();
-            flyingImg.style.top = `${rect.top + window.scrollY}px`;
-            flyingImg.style.left = `${rect.left + window.scrollX}px`;
-            document.body.appendChild(flyingImg);
-
-            const wishlistIcon = document.getElementById('wishlist-icon');
-            if (!wishlistIcon) {
-                console.error('wishlist-icon not found in DOM');
-                flyingImg.remove();
-                return;
-            }
-            const target = wishlistIcon.getBoundingClientRect();
-            const deltaX = target.left - rect.left;
-            const deltaY = target.top - rect.top;
-
-            requestAnimationFrame(() => {
-                flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-                flyingImg.style.opacity = '0';
-            });
-
-            setTimeout(() => flyingImg.remove(), 1000);
-        }
-    });
-
+// استدعاء تحديث العدد عند تحميل الصفحة
     updateWishlistCount();
 
     // تحديث عدد عربة التسوق
