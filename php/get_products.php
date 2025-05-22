@@ -13,11 +13,20 @@ try {
 
     $type = isset($_GET['type']) ? $_GET['type'] : '';
 
-    $sql = "SELECT id, name, description, type, specific_type, price, quantity, primary_image, secondary_image, created_at 
-            FROM products 
-            WHERE type = :type";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':type', $type);
+    if ($type === '') {
+        // إذا لم يتم تمرير type، اجلب جميع المنتجات
+        $sql = "SELECT id, name, description, type, specific_type, price, quantity, primary_image, secondary_image, created_at 
+                FROM products";
+        $stmt = $conn->prepare($sql);
+    } else {
+        // إذا تم تمرير type، اجلب المنتجات بناءً على type
+        $sql = "SELECT id, name, description, type, specific_type, price, quantity, primary_image, secondary_image, created_at 
+                FROM products 
+                WHERE type = :type";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':type', $type);
+    }
+
     $stmt->execute();
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
