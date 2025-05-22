@@ -155,19 +155,44 @@ document.addEventListener('DOMContentLoaded', function () {
                 const image = button.getAttribute('data-image');
                 const id = button.getAttribute('data-id');
                 const product = { id, name, price, image };
+                const customerId = 1; // يجب استبدالها بقيمة ديناميكية من تسجيل الدخول
 
-                // أرسل إلى السيرفر
-                fetch('/web-project1/php/add_to_favorite.php', {
+                console.log("🔄 Sending fetch with:", `product_id=${id}&customer_id=${customerId}`);
+
+                fetch('../php/add_to_favorite.php', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: `product_id=${id}`
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `product_id=${id}&customer_id=${customerId}`
                 })
-                    .then(res => res.json())
+                    .then(res => {
+                        if (!res.ok) {
+                            return res.text().then(text => {
+                                throw new Error(`HTTP error! status: ${res.status}, response: ${text}`);
+                            });
+                        }
+                        return res.json();
+                    })
                     .then(data => {
-                        console.log(data.message);
+                        console.log("✅ Server response:", data);
+                        if (data.success) {
+                            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                            if (!wishlist.some(item => item.id === id)) {
+                                wishlist.push(product);
+                                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                                updateWishlistCount();
+                                // Animation code...
+                            }
+                        } else {
+                            console.error("❌ Server error:", data.message);
+                            alert("Failed to add to wishlist: " + data.message);
+                        }
+                    })
+                    .catch(err => {
+                        console.error("❌ Fetch error:", err);
+                        alert("An error occurred while adding to wishlist: " + err.message);
                     });
-
-                // localStorage
                 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
                 wishlist.push(product);
                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
@@ -193,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 setTimeout(() => flyingImg.remove(), 1000);
+
             });
         });
     }
@@ -271,6 +297,8 @@ function updatecartCount() {
 }
 // 📦 عند تحميل الصفحة، نحدث العداد
 document.addEventListener('DOMContentLoaded', updatecartCount);
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const dropdown = document.querySelector('.nav-item.dropdown');
