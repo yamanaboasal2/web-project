@@ -17,3 +17,33 @@ Stack trace:
 #1 {main}
   thrown in C:\xampp\htdocs\web-project1\php\remove_cart.php on line 12
 [22-May-2025 10:21:31 Europe/Berlin] Missing customer_id or product_id: customer_id=1, product_id=0
+[22-May-2025 14:38:21 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Name' in 'field list' in C:\xampp\htdocs\web-project1\php\get_customer.php:49
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\get_customer.php(49): mysqli->prepare('SELECT Customer...')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\get_customer.php on line 49
+[22-May-2025 14:38:34 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Name' in 'field list' in C:\xampp\htdocs\web-project1\php\get_customer.php:49
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\get_customer.php(49): mysqli->prepare('SELECT Customer...')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\get_customer.php on line 49
+[22-May-2025 14:45:16 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Name' in 'field list' in C:\xampp\htdocs\web-project1\php\get_customer.php:49
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\get_customer.php(49): mysqli->prepare('SELECT Customer...')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\get_customer.php on line 49
+[22-May-2025 14:53:01 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Name' in 'field list' in C:\xampp\htdocs\web-project1\php\get_customer.php:49
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\get_customer.php(49): mysqli->prepare('SELECT Customer...')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\get_customer.php on line 49
+[22-May-2025 14:53:59 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Name' in 'field list' in C:\xampp\htdocs\web-project1\php\get_customer.php:49
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\get_customer.php(49): mysqli->prepare('SELECT Customer...')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\get_customer.php on line 49
+[22-May-2025 14:58:51 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'Name' in 'field list' in C:\xampp\htdocs\web-project1\php\get_customer.php:49
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\get_customer.php(49): mysqli->prepare('SELECT Customer...')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\get_customer.php on line 49

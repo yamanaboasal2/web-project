@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('wishlist', JSON.stringify(wishlist));
         displayWishlist();
 
-        fetch('http://localhost/web-project1/php/remove_favorite.php',{
+        fetch('../php/remove_favorite.php',{
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: `product_id=${encodeURIComponent(productId)}`

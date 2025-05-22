@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     exit;
 }
 
-$sql = "SELECT * FROM customers";
+$sql = "SELECT * FROM customer";
 $result = $conn->query($sql);
 
 $customers = [];

@@ -44,3 +44,60 @@
 {"customer_id":1,"product_id":0}
 {"customer_id":1,"product_id":0}
 {"customer_id":1,"product_id":0}
+Array
+(
+)
+
+
+Invalid customer ID
+Array
+(
+)
+
+{"id":13}
+Customer deleted: 13
+GET: Array
+(
+    [id] => 1
+)
+
+GET: Array
+(
+    [id] => 2
+)
+
+GET: Array
+(
+    [id] => 1
+)
+
+2025-05-22 14:38:21 GET: Array
+(
+    [id] => 1
+)
+
+2025-05-22 14:38:34 GET: Array
+(
+    [id] => 1
+)
+
+2025-05-22 14:45:16 GET: Array
+(
+    [id] => 1
+)
+
+2025-05-22 14:53:01 GET: Array
+(
+    [id] => 1
+)
+
+2025-05-22 14:53:59 GET: Array
+(
+    [id] => 1
+)
+
+2025-05-22 14:58:51 GET: Array
+(
+    [id] => 1
+)
+
