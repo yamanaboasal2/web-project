@@ -1,3 +1,38 @@
+<?php
+// Connect to the database
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "soap";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->exec("SET NAMES utf8");
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+// Get the search query
+$query = isset($_GET['query']) ? trim($_GET['query']) : '';
+$results = [];
+
+if (!empty($query)) {
+    $stmt = $conn->prepare("SELECT * FROM pages WHERE content LIKE :query OR title LIKE :query");
+    $search_term = "%" . $query . "%";
+    $stmt->bindParam(':query', $search_term);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Function to highlight search term
+function highlight($text, $query) {
+    if (empty($query)) return $text;
+    return preg_replace("/($query)/i", '<span class="highlight">$1</span>', $text);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +57,122 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay to dim background */
+            z-index: 1000;
+        }
+        .results-container {
+            max-width: 800px;
+            width: 90%;
+            position: fixed;
+            top: 80%; /* Position near the bottom */
+            left: 50%;
+            transform: translate(-50%, 0); /* Center horizontally, no vertical offset */
+            padding: 20px;
+            background: rgba(101, 67, 33, 0.2); /* Brown with transparency */
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-height: 400px; /* Fixed height for scrolling */
+            overflow-y: auto; /* Enable vertical scroll */
+            z-index: 1001; /* Above overlay */
+            display: none; /* Hidden by default */
+        }
+        .results-container.show {
+            display: block; /* Show when results are present */
+        }
+        .results-container h4 {
+            color: #FFF8DC; /* Cornsilk for header */
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .result-card {
+            background: rgba(139, 69, 19, 0.9); /* SaddleBrown with slight transparency */
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .result-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #FFF8DC; /* Cornsilk for card title */
+        }
+        .result-card p {
+            font-size: 0.9rem;
+            color: #F5DEB3; /* Wheat for card content */
+            margin: 0;
+        }
+        .highlight {
+            background-color: #6B4E31; /* DarkBrown for highlight */
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #FFF8DC;
+        }
+        .no-results {
+            background: rgba(139, 69, 19, 0.9); /* SaddleBrown for no-results */
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            color: #FFF8DC; /* Cornsilk for text */
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #6B4E31; /* DarkBrown for close button */
+            color: #FFF8DC; /* Cornsilk for X */
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 14px;
+            line-height: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .close-btn:hover {
+            background: #5C4033; /* Darker brown on hover */
+        }
+        /* Custom scrollbar */
+        .results-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .results-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .results-container::-webkit-scrollbar-thumb {
+            background: #8B4513; /* SaddleBrown for scrollbar */
+            border-radius: 10px;
+        }
+        .results-container::-webkit-scrollbar-thumb:hover {
+            background: #5C4033; /* Darker brown on hover */
+        }
+    </style>
+
+
+
 </head>
 <body>
 
@@ -109,10 +260,37 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit" data-translate="search.button">Search</button>
-                    </form>
+
+
+                    <!-- Search Form -->
+                    <div class="search-container">
+                        <form class="d-flex my-4" role="search" method="GET" action="mainbage.php">
+                            <input class="form-control me-2" type="search" name="query" placeholder="Search products..." aria-label="Search" value="<?php echo htmlspecialchars($query); ?>" required>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <!-- Overlay and Search Results -->
+                    <?php if (!empty($query)): ?>
+                        <div class="overlay show"></div>
+                        <div class="results-container show">
+                            <button class="close-btn" onclick="closeResults()">X</button>
+                            <h4>Search Results for: <?php echo htmlspecialchars($query); ?></h4>
+                            <?php if (empty($results)): ?>
+                                <div class="no-results">
+                                    No results found for your search. Try different keywords.
+                                </div>
+                            <?php else: ?>
+                                <?php foreach ($results as $result): ?>
+                                    <div class="result-card">
+                                        <h5><?php echo highlight(htmlspecialchars($result['title']), $query); ?></h5>
+                                        <p><?php echo highlight(htmlspecialchars($result['content']), $query); ?></p>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+
 
                     <form class="style_iqon" role="iqon" style="display: flex; align-items: center; gap: 10px;">
                         <div class="profile-icons" style="display: flex; gap: 8px;">
@@ -1256,5 +1434,11 @@
 <script src="../js_file/temp2.js"></script>
 <script src="../js_file/insta.js"></script>
 <script src="../js_file/contactus.js"></script>
+<script>
+    function closeResults() {
+        document.querySelector('.results-container').classList.remove('show');
+        document.querySelector('.overlay').classList.remove('show');
+    }
+</script>
 </body>
 </html>

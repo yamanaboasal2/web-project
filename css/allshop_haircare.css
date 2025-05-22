@@ -2429,3 +2429,129 @@ background: #5a3921;
         justify-content: space-between;
     }
 }
+
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 10px;
+}/* تأثير الظهور لـ haircare-intro-content */
+.haircare-intro-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.haircare-intro-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تنسيقات Grid View */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card.grid-view {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* تنسيقات List View */
+.product-card.list-view {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card.list-view .card-media {
+    flex: 0 0 150px;
+    margin-right: 20px;
+}
+
+.product-card.list-view .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-card.list-view .product-title {
+    font-size: 1.1rem;
+}
+
+.product-card.list-view .product-price {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* تنسيقات الصورة الطائرة */
+.flying-img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+    z-index: 1000;
+}
+
+/* تنسيقات أزرار العرض */
+.view-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.view-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: #333;
+}
+
+.view-btn.active svg {
+    stroke: #007bff;
+}
+
+/* تنسيقات القائمة الضخمة */
+.mega-dropdown {
+    position: relative;
+}
+
+.mega-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.mega-dropdown .dropdown-menu.show {
+    display: block;
+}

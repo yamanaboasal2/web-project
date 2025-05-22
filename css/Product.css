@@ -408,3 +408,16 @@ h3 {
         max-width: 300px;
     }
 }
+/* تنسيق الصور في جدول المنتجات */
+.image-preview {
+    max-width: 50px;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* تنسيق خلية الصور لدعم صورتين */
+#productTable td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* المسافة بين الصورتين */
+}
