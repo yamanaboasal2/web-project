@@ -6,3 +6,14 @@
 [21-May-2025 23:54:10 Europe/Berlin] Missing customer_id or product_id: customer_id=0, product_id=0
 [21-May-2025 23:55:13 Europe/Berlin] Missing customer_id or product_id: customer_id=1, product_id=0
 [21-May-2025 23:57:29 Europe/Berlin] Missing customer_id or product_id: customer_id=1, product_id=0
+[22-May-2025 01:23:17 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown database 'soap' in C:\xampp\htdocs\web-project1\php\remove_cart.php:12
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\remove_cart.php(12): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'soap')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\remove_cart.php on line 12
+[22-May-2025 01:23:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown database 'soap' in C:\xampp\htdocs\web-project1\php\remove_cart.php:12
+Stack trace:
+#0 C:\xampp\htdocs\web-project1\php\remove_cart.php(12): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'soap')
+#1 {main}
+  thrown in C:\xampp\htdocs\web-project1\php\remove_cart.php on line 12
+[22-May-2025 10:21:31 Europe/Berlin] Missing customer_id or product_id: customer_id=1, product_id=0

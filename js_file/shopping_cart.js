@@ -97,43 +97,36 @@ cartContainer.addEventListener('click', (event) => {
 
 // Display cart on page load
 displayCart();
-function removeFromCart(index, productId) {
-    const customerId = 1; // تأكد أن هذا الرقم صحيح
+document.querySelectorAll('.remove').forEach(button => {
+    button.addEventListener('click', function() {
+        let productId = parseInt(this.dataset.productid);
+        if (isNaN(productId) || productId <= 0) {
+            console.error('Invalid product_id:', this.dataset.productid);
+            return;
+        }
+        removeFromCart(productId);
+    });
+});
+function removeFromCart(index) {
+    // حذف المنتج من المصفوفة حسب الايندكس
+    cart.splice(index, 1);
 
-    console.log('🔎 Sending to server:', { customer_id: customerId, product_id: productId });
+    // تحديث localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-    const formData = new URLSearchParams();
-    formData.append('customer_id', customerId);
-    formData.append('product_id', productId);
-
-    fetch('/web-project1/php/remove_cart.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString()
-    })
-        .then(res => {
-            if (!res.ok) {
-                throw new Error(`HTTP error! Status: ${res.status}`);
-            }
-            return res.json();
-        })
-        .then(data => {
-            console.log('📦 Response from server:', data);
-            if (data.success) {
-                cart.splice(index, 1);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                displayCart();
-            } else {
-                console.warn('❌ فشل الحذف من قاعدة البيانات:', data.message);
-                alert('Error removing product from database: ' + data.message);
-            }
-        })
-        .catch(err => {
-            console.error('⚠️ خطأ في الطلب:', err);
-            alert('Network or server error occurred.');
-        });
+    // تحديث العرض
+    displayCart();
 }
+tableBody.addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove')) {
+        const index = Number(event.target.getAttribute('data-index'));
+        const productId = Number(event.target.getAttribute('data-product_id')); // لاحظ الاسم
 
+        console.log('Deleting product:', productId, 'at index:', index);
+
+        removeFromCart(index, productId);
+    }
+});
 document.addEventListener('DOMContentLoaded', function () {
     // Dropdown 1
     const dropdown1 = document.querySelector('.nav-item.dropdown');
