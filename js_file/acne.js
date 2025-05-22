@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 console.log("🔄 Sending fetch with:", `product_id=${id}&customer_id=${customerId}`);
 
-                fetch('/web-project1/php/add_to_favorite.php', {
+                fetch('http://localhost/web-project1/php/add_to_favorite.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
@@ -108,7 +108,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                     .then(res => {
                         if (!res.ok) {
-                            throw new Error(`HTTP error! status: ${res.status}`);
+                            return res.text().then(text => {
+                                throw new Error(`HTTP error! status: ${res.status}, response: ${text}`);
+                            });
                         }
                         return res.json();
                     })
@@ -120,22 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 wishlist.push(product);
                                 localStorage.setItem('wishlist', JSON.stringify(wishlist));
                                 updateWishlistCount();
-                                // الأنيميشن
-                                const flyingImg = document.createElement('img');
-                                flyingImg.src = image;
-                                flyingImg.className = 'flying-img';
-                                const rect = button.getBoundingClientRect();
-                                flyingImg.style.top = `${rect.top + window.scrollY}px`;
-                                flyingImg.style.left = `${rect.left + window.scrollX}px`;
-                                document.body.appendChild(flyingImg);
-                                const target = document.getElementById('wishlist-icon').getBoundingClientRect();
-                                const deltaX = target.left - rect.left;
-                                const deltaY = target.top - rect.top;
-                                requestAnimationFrame(() => {
-                                    flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
-                                    flyingImg.style.opacity = '0';
-                                });
-                                setTimeout(() => flyingImg.remove(), 1000);
+                                // Animation code...
                             }
                         } else {
                             console.error("❌ Server error:", data.message);
@@ -144,13 +131,42 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .catch(err => {
                         console.error("❌ Fetch error:", err);
-                        alert("An error occurred while adding to wishlist.");
+                        alert("An error occurred while adding to wishlist: " + err.message);
                     });
+                let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                updateWishlistCount();
+
+                // ✈️ Animation
+                const flyingImg = document.createElement('img');
+                flyingImg.src = image;
+                flyingImg.className = 'flying-img';
+
+                const rect = button.getBoundingClientRect();
+                flyingImg.style.top = `${rect.top + window.scrollY}px`;
+                flyingImg.style.left = `${rect.left + window.scrollX}px`;
+                document.body.appendChild(flyingImg);
+
+                const target = document.getElementById('wishlist-icon').getBoundingClientRect();
+                const deltaX = target.left - rect.left;
+                const deltaY = target.top - rect.top;
+
+                requestAnimationFrame(() => {
+                    flyingImg.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.3)`;
+                    flyingImg.style.opacity = '0';
+                });
+
+                setTimeout(() => flyingImg.remove(), 1000);
+
             });
         });
     }
 });
-document.addEventListener('DOMContentLoaded', updateWishlistCount);document.querySelectorAll('.cart').forEach(button => {
+document.addEventListener('DOMContentLoaded', updateWishlistCount);
+
+
+document.querySelectorAll('.cart').forEach(button => {
     button.addEventListener('click', function () {
         const name = button.getAttribute('data-name');
         const price = button.getAttribute('data-price');
