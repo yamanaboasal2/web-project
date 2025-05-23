@@ -55,7 +55,6 @@ function renderTable(products) {
     };
     products.forEach(product => {
         const row = table.insertRow();
-        // عرض كل من الصورة الأساسية والثانوية إذا كانت موجودة
         const imageCell = product.secondary_image
             ? `<img src="${product.primary_image}" class="image-preview" style="display:inline-block; max-width:50px; margin-right:5px;" alt="Primary Image">
                <img src="${product.secondary_image}" class="image-preview" style="display:inline-block; max-width:50px;" alt="Secondary Image">`
@@ -137,6 +136,45 @@ function loadProducts() {
         .catch(error => console.error('Error loading products:', error));
 }
 
+function subscribeNewsletter() {
+    const emailInput = document.getElementById('newsletterEmail');
+    if (!emailInput) {
+        console.error('Email input not found');
+        return;
+    }
+    const email = emailInput.value;
+    if (!email) {
+        alert('Please enter an email address');
+        return;
+    }
+
+    fetch('../php/subscribe.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'email=' + encodeURIComponent(email)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Subscribed successfully!');
+                emailInput.value = '';
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error subscribing:', error);
+            alert('An error occurred while subscribing: ' + error.message);
+        });
+}
+
 document.getElementById('addProductForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
@@ -152,11 +190,11 @@ document.getElementById('addProductForm').addEventListener('submit', function(e)
         })
         .then(data => {
             if (data.status === 'success') {
-                alert('تم إضافة المنتج بنجاح!');
+                alert('Product added successfully!');
                 this.reset();
                 document.getElementById('primaryImagePreview').style.display = 'none';
                 document.getElementById('secondaryImagePreview').style.display = 'none';
-                loadProducts(); // تحديث الجدول بعد الإضافة
+                loadProducts();
             } else {
                 alert('خطأ: ' + data.message);
             }

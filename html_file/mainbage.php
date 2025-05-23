@@ -1312,19 +1312,17 @@ function highlight($text, $query) {
                     </div>
                 </div>
             </div>
-
             <div class="newsletter-section">
                 <div class="newsletter-container">
-                    <img src="../image/Iqon (1).png"></img>
+                    <img src="../image/Iqon (1).png" alt="Newsletter Icon">
                     <h3 class="newsletter-title">Be the first to know</h3>
                     <p class="newsletter-subtitle">Subscribe to our newsletter for updates and offers</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter Your Email" required class="email-input">
-                        <button type="submit" class="submit-arrow"></button>
-                    </form>
+                    <div class="newsletter-form">
+                        <input type="email" id="newsletterEmail" placeholder="Enter Your Email" required class="email-input">
+                        <button type="button" class="submit-arrow" onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
                 </div>
             </div>
-
             <!-- العمود الأيمن: Quick Links -->
             <div class="right-column">
                 <div class="footer-section">
@@ -1373,6 +1371,7 @@ function highlight($text, $query) {
 <script src="../js_file/temp.js"></script>
 <script src="../js_file/temp2.js"></script>
 <script src="../js_file/insta.js"></script>
+<script src="../js_file/media.js"></script>
 <script src="../js_file/contactus.js"></script>
 <script>
     function closeResults() {

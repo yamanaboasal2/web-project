@@ -105,5 +105,26 @@ Array
 (
 )
 
+{"id":1}
+Customer deleted: 1
+2025-05-23 00:58:44 GET: Array
+(
+    [id] => 2
+)
+
+2025-05-23 00:58:47 GET: Array
+(
+    [id] => 2
+)
+
+2025-05-23 00:58:53 GET: Array
+(
+    [id] => 2
+)
+
+Array
+(
+)
+
 {"id":14}
 Customer deleted: 14

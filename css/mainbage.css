@@ -2925,11 +2925,6 @@ background: #5a3921;
     text-align: center;
 }
 
-@media (max-width: 1200px) {
-    .category-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
-    }
-}
 
 @media (max-width: 768px) {
     .category-grid {
@@ -2941,19 +2936,6 @@ background: #5a3921;
     }
 }
 
-@media (max-width: 480px) {
-    .category-grid {
-        grid-template-columns: 1fr; /* 1 column on small mobile */
-    }
-
-    .main-title {
-        font-size: 1.8rem;
-    }
-
-    .container {
-        padding: 10px;
-    }
-}
 
 
 
@@ -4494,13 +4476,6 @@ h2 {
     background: #5d432f;
 }
 
-/* Responsive adjustment for title */
-@media (max-width: 768px) {
-    .faq-main-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-}
 
 
 
@@ -5175,47 +5150,7 @@ body {
     text-decoration: none;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .instagram-post {
-        min-width: calc(33.333% - 20px);
-    }
-}
 
-@media (max-width: 992px) {
-    .instagram-post {
-        min-width: calc(50% - 15px);
-    }
-}
-
-@media (max-width: 768px) {
-    .instagram-post {
-        min-width: calc(100% - 30px);
-    }
-
-    .slider-title {
-        font-size: 32px;
-    }
-
-    .slider-subtitle {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .instagram-post {
-        min-width: calc(100% - 20px);
-    }
-
-    .slider-title {
-        font-size: 28px;
-        margin: 30px 0 15px;
-    }
-
-    .slider-subtitle {
-        font-size: 16px;
-    }
-}
 
 /* Animations */
 @keyframes pulse {
@@ -5254,5 +5189,588 @@ body {
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    /* General Reset for Mobile */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+        overflow-x: hidden;
+    }
+    .container,
+    .container-inner,
+    .skn-container,
+    .e-con-inner,
+    .faq-container,
+    .footer-container {
+        width: 100%;
+        padding: 8px;
+        margin: 0 auto;
+    }
+
+    /* Video Banner Section */
+    .elementor-section.wdt-soap-banner {
+        height: auto;
+        padding: 10px 5px;
+    }
+    .elementor-background-video-container {
+        position: relative;
+    }
+    .elementor-background-video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 200px;
+    }
+    .video-content h1.video-main-title {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        text-align: center;
+        padding: 8px;
+        margin: 5px 0;
+    }
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 8px 0;
+    }
+    .icon-container .icon {
+        font-size: 1rem;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+
+    /* Category Grid Section */
+    .category-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+    }
+    .category-item {
+        width: 100%;
+    }
+    .category-item img.category-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .category-title {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 5px;
+    }
+    h1.main-title {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    /* Luxury Marquee */
+    .luxury-marquee {
+        font-size: 0.8rem;
+        margin: 10px 0;
+    }
+    .marquee-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        animation: none;
+    }
+    .marquee-item {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+    .marquee-item a {
+        font-size: 0.8rem;
+    }
+
+    /* Image and Content Section */
+    .container-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .image-container,
+    .content-container {
+        width: 100%;
+    }
+    .image-wrapper img.filler-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .heading-wrapper h1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .content-text p {
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1.4;
+        margin: 5px 0;
+    }
+    .button-wrapper a.button {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* Product Slider Section */
+    .product-section {
+        flex-direction: column;
+        padding: 10px 5px;
+    }
+    .text-column,
+    .slider-column {
+        width: 100%;
+    }
+    .text-content h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .text-content .subheading,
+    .text-content p {
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 5px 0;
+    }
+    .view-all-btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .product-slider-container {
+        width: 100%;
+    }
+    .swiper-slide.product-card {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+        padding: 5px;
+    }
+    .product-card .card-media img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .card-info .product-title {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .card-info .product-price {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .card-info .add-to-cart {
+        font-size: 0.8rem;
+        padding: 6px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .card-badges button.wishlist-btn {
+        width: 24px;
+        height: 24px;
+    }
+    .card-badges svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Skincare Section */
+    .skn-full.skn-heading-image-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .skn-heading-section,
+    .skn-image-section {
+        width: 100%;
+    }
+    .skn-heading-title h1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .skn-subheading-content span {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .skn-heading-content .skn-text-line {
+        font-size: 0.75rem;
+        text-align: center;
+        line-height: 1.3;
+        margin: 5px 0;
+    }
+    .skn-img-main img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .skn-img-small {
+        display: none; /* Hide parallax images for simplicity */
+    }
+    .skn-button-section a.skn-button {
+        font-size: 0.8rem;
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* FAQ Section */
+    .faq-main-title {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+    .faq-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .faq-column {
+        width: 100%;
+    }
+    .faq-item .faq-question h3 {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+    .faq-answer p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin: 5px 0;
+    }
+    .faq-item .arrow-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .question-divider {
+        margin: 5px 0;
+    }
+
+    /* Comment Form Section */
+    .comment-form-container {
+        padding: 10px;
+    }
+    .comment-form-container h3 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .comment-form-container input,
+    .comment-form-container textarea {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 6px;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+    .star-rating i {
+        font-size: 0.9rem;
+        margin: 0 2px;
+    }
+    .comment-form-container button {
+        font-size: 0.8rem;
+        padding: 8px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .privacy-notice {
+        font-size: 0.7rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Testimonial Section */
+    .wdt-heading-holder h1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .wdt-subheading-content-wrapper span {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .wdt-testimonial-container {
+        width: 100%;
+    }
+    .wdt-testimonial-wrapper .swiper-slide {
+        padding: 8px;
+    }
+
+    /* Instagram Slider */
+    .instagram-slider .slider-title {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .slider-subtitle {
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 5px 0;
+    }
+    .slider-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 5px;
+    }
+    .slider-track {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        width: max-content;
+    }
+    .instagram-post {
+        width: 150px;
+        flex: 0 0 auto;
+    }
+    .instagram-post img.post-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .post-overlay .post-icon {
+        font-size: 1.2rem;
+    }
+
+    /* Footer Section */
+    .footer-grid {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+    .left-column,
+    .newsletter-section,
+    .right-column {
+        width: 100%;
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
+        gap: 8px;
+    }
+    .social-icon {
+        font-size: 1rem;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+    .certificates img {
+        width: 50px;
+        margin: 3px;
+    }
+    .newsletter-container img {
+        width: 30px;
+        margin: 5px auto;
+    }
+    .newsletter-title {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+    .newsletter-subtitle {
+        font-size: 0.75rem;
+        margin: 5px 0;
+    }
+    .newsletter-form {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .newsletter-form input.email-input {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 6px;
+        border-radius: 5px;
+    }
+    .newsletter-form button.submit-arrow {
+        font-size: 0.8rem;
+        padding: 6px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .footer-links li a {
+        font-size: 0.8rem;
+        margin: 5px 0;
+        display: block;
+    }
+    .copyright-section {
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .company-info,
+    .developer-credit {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Search Results Overlay */
+    .overlay {
+        display: block;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .results-container {
+        width: 90%;
+        max-height: 250px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .results-container h4 {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+    .result-card {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+    .result-card h5 {
+        font-size: 0.9rem;
+    }
+    .result-card p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+    .close-btn {
+        font-size: 10px;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+    }
+    .no-results {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}@media (max-width: 768px) {
+    /* Product Slider Section */
+    .product-section {
+        padding: 5px;
+        margin: 0;
+    }
+    .product-slider-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 5px 0;
+    }
+    .swiper-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+    }
+    .swiper-slide.product-card {
+        width: 120px; /* Further reduced width for ultra-compact cards */
+        max-width: 120px;
+        margin: 0 3px;
+        padding: 3px;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    .product-card .card-media {
+        position: relative;
+        width: 100%;
+        height: 80px; /* Smaller image height */
+    }
+    .product-card .card-media img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .card-info .product-title {
+        font-size: 0.65rem; /* Smaller font for title */
+        text-align: center;
+        margin: 3px 0;
+        line-height: 1.2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .card-info .product-price {
+        font-size: 0.6rem; /* Smaller font for price */
+        text-align: center;
+        margin: 2px 0;
+    }
+    .card-info .add-to-cart {
+        font-size: 0.6rem;
+        padding: 4px;
+        width: 100%;
+        border-radius: 3px;
+        line-height: 1.2;
+    }
+    .card-badges button.wishlist-btn {
+        width: 18px;
+        height: 18px;
+        top: 3px;
+        right: 3px;
+    }
+    .card-badges svg {
+        width: 12px;
+        height: 12px;
+    }
+    .swiper-scrollbar {
+        height: 3px;
+        margin-top: 3px;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    .swiper-scrollbar-drag {
+        background: #8B4513; /* Matches your theme */
+    }
+
+    /* Instagram Slider */
+    .instagram-slider {
+        padding: 5px;
+        margin: 0;
+    }
+    .instagram-slider .slider-title {
+        font-size: 0.9rem;
+        text-align: center;
+        margin: 5px 0;
+    }
+    .slider-subtitle {
+        font-size: 0.65rem;
+        text-align: center;
+        margin: 3px 0;
+    }
+    .slider-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 5px 0;
+    }
+    .slider-track {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        width: max-content;
+    }
+    .instagram-post {
+        width: 80px; /* Further reduced post width */
+        flex: 0 0 auto;
+    }
+    .instagram-post img.post-image {
+        width: 100%;
+        height: 80px; /* Smaller image height */
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .post-overlay .post-icon {
+        font-size: 0.9rem;
     }
 }
